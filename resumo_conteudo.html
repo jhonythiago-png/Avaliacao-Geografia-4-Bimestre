@@ -1,471 +1,97 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
-<title>📚 Resumo – Geografia</title>
-<style>
+<html lang="pt-BR"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+<title>📚 Resumo – Geografia</title><style>
 * { box-sizing: border-box; margin: 0; padding: 0; }
-body { font-family: 'Segoe UI', system-ui, sans-serif; background: #eefaf6; color: #14211d; padding-bottom: 80px; }
-
-.top-nav { background: #0f2e2b; padding: 10px 16px; display: flex; align-items: center; justify-content: space-between; position: sticky; top: 0; z-index: 50; border-bottom: 1px solid rgba(255,255,255,0.1); }
-.top-nav a { color: #5eead4; font-size: 0.8rem; font-weight: 700; text-decoration: none; background: rgba(13,148,136,0.25); border: 1px solid rgba(13,148,136,0.4); padding: 5px 12px; border-radius: 20px; }
-.top-nav span { color: rgba(255,255,255,0.45); font-size: 0.78rem; }
-
-.hero { background: linear-gradient(145deg,#064e3b,#0d9488,#0891b2); padding: 32px 20px 24px; text-align: center; position: relative; overflow: hidden; }
-.hero::after { content: ''; position: absolute; inset: 0; background: radial-gradient(ellipse at 70% 30%, rgba(255,255,255,0.1), transparent 60%); pointer-events: none; }
-.hero-emoji { font-size: 3rem; display: block; margin-bottom: 10px; position: relative; }
-.hero h1 { font-size: 1.55rem; font-weight: 900; color: white; line-height: 1.2; position: relative; }
-.hero h2 { font-size: 0.95rem; color: rgba(255,255,255,0.75); font-weight: 400; margin-top: 6px; position: relative; }
-.hero-pill { display: inline-block; background: rgba(255,255,255,0.18); border: 1px solid rgba(255,255,255,0.3); color: white; font-size: 0.72rem; font-weight: 700; padding: 4px 14px; border-radius: 20px; margin-top: 12px; position: relative; }
-
+body { font-family: 'Segoe UI', system-ui, sans-serif; background: #fff7ed; color: #3b2410; padding-bottom: 80px; }
+.top-nav { background: #7c2d12; padding: 10px 16px; display: flex; align-items: center; justify-content: space-between; position: sticky; top: 0; z-index: 50; }
+.top-nav a { color: #fdba74; font-size: .8rem; font-weight: 700; text-decoration: none; background: rgba(255,255,255,.12); padding: 5px 12px; border-radius: 20px; }
+.top-nav span { color: rgba(255,255,255,.55); font-size: .78rem; }
+.hero { background: linear-gradient(145deg,#9a3412,#ea580c,#f59e0b); padding: 30px 20px 22px; text-align: center; }
+.hero-emoji { font-size: 3rem; display: block; margin-bottom: 8px; }
+.hero h1 { font-size: 1.5rem; font-weight: 900; color: #fff; }
+.hero h2 { font-size: .95rem; color: rgba(255,255,255,.85); font-weight: 400; margin-top: 6px; }
+.hero-pill { display: inline-block; background: rgba(255,255,255,.2); color: #fff; font-size: .72rem; font-weight: 700; padding: 4px 14px; border-radius: 20px; margin-top: 12px; }
 .print-btn-wrap { text-align: right; padding: 10px 16px 0; }
-.print-btn { display: inline-flex; align-items: center; gap: 6px; padding: 7px 16px; background: transparent; border: 1px solid rgba(13,148,136,0.35); border-radius: 20px; font-size: 0.78rem; font-family: inherit; font-weight: 600; color: rgba(13,148,136,0.7); cursor: pointer; }
-.print-btn:hover { border-color: #0d9488; color: #0d9488; }
-
-.nav-dots { display: flex; justify-content: center; gap: 6px; padding: 12px 8px; background: #eefaf6; border-bottom: 1px solid #d7f0e9; flex-wrap: wrap; position: sticky; top: 41px; z-index: 40; }
-.nav-dot { background: none; border: 2px solid #7dd3c5; color: #0d9488; font-size: 0.68rem; font-weight: 700; padding: 4px 9px; border-radius: 20px; cursor: pointer; white-space: nowrap; }
-.nav-dot.active, .nav-dot:active { background: #0d9488; color: white; border-color: #0d9488; }
-
-.section { padding: 20px 16px 8px; }
+.print-btn { padding: 7px 16px; background: transparent; border: 1px solid #ea580c; border-radius: 20px; font-size: .78rem; font-family: inherit; font-weight: 600; color: #ea580c; cursor: pointer; }
+.nav-dots { display: flex; justify-content: center; gap: 6px; padding: 10px 8px; background: #fff7ed; border-bottom: 1px solid #fde3c8; flex-wrap: wrap; position: sticky; top: 41px; z-index: 40; }
+.nav-dot { background: none; border: 2px solid #fdba74; color: #c2410c; font-size: .68rem; font-weight: 700; padding: 4px 9px; border-radius: 20px; cursor: pointer; white-space: nowrap; }
+.nav-dot.active { background: #ea580c; color: #fff; border-color: #ea580c; }
+.group-title { margin: 22px 16px 0; padding: 10px 14px; background: linear-gradient(135deg,#ea580c,#f59e0b); color: #fff; border-radius: 12px; font-weight: 900; font-size: 1rem; }
+.section { padding: 20px 16px 8px; max-width: 720px; margin: 0 auto; }
 .section-header { display: flex; align-items: center; gap: 12px; margin-bottom: 14px; }
-.section-icon { width: 44px; height: 44px; border-radius: 14px; display: flex; align-items: center; justify-content: center; font-size: 1.4rem; flex-shrink: 0; }
-.s1 { background: linear-gradient(135deg,#0d9488,#2dd4bf); }
-.s2 { background: linear-gradient(135deg,#0369a1,#38bdf8); }
-.s3 { background: linear-gradient(135deg,#7c3aed,#a855f7); }
-.s4 { background: linear-gradient(135deg,#d97706,#f59e0b); }
-.s5 { background: linear-gradient(135deg,#facc15,#f59e0b); }
-.s6 { background: linear-gradient(135deg,#16a34a,#22c55e); }
-.s7 { background: linear-gradient(135deg,#dc2626,#f43f5e); }
-.s8 { background: linear-gradient(135deg,#475569,#64748b); }
-.section-title { font-size: 1.05rem; font-weight: 800; color: #14211d; }
-.section-sub { font-size: 0.74rem; color: #7c8f89; margin-top: 2px; }
-
-.card { background: white; border-radius: 16px; padding: 16px; margin-bottom: 12px; box-shadow: 0 2px 12px rgba(13,148,136,0.08); border: 1px solid #dcf3ee; }
-.card-title { font-size: 0.72rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px; color: #0d9488; margin-bottom: 10px; }
-
-.tip { background: linear-gradient(135deg,#ecfdf5,#eff6ff); border-left: 4px solid #2dd4bf; border-radius: 0 12px 12px 0; padding: 12px 14px; margin-bottom: 12px; font-size: 0.88rem; line-height: 1.6; }
-.tip .tip-title { font-size: 0.7rem; font-weight: 700; color: #0d9488; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 5px; }
-.tip strong { color: #0d9488; }
-
-.rule-box { background: white; border: 2px solid #0d9488; border-radius: 14px; padding: 14px; margin-bottom: 12px; }
-.rule-title { font-size: 0.7rem; font-weight: 700; color: #0d9488; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 10px; }
-.rule-row { display: flex; align-items: flex-start; gap: 10px; margin-bottom: 10px; padding-bottom: 10px; border-bottom: 1px dashed #dcf3ee; }
-.rule-row:last-child { margin-bottom: 0; padding-bottom: 0; border-bottom: none; }
-.rule-tag { color: white; font-size: 0.75rem; font-weight: 800; padding: 3px 10px; border-radius: 6px; white-space: nowrap; flex-shrink: 0; margin-top: 2px; }
-.bg-teal   { background: #0d9488; }
-.bg-blue   { background: #0369a1; }
-.bg-purple { background: #7c3aed; }
-.bg-amber  { background: #d97706; }
-.bg-green  { background: #16a34a; }
-.bg-red    { background: #dc2626; }
-.bg-gray   { background: #475569; }
-.rule-text { font-size: 0.88rem; line-height: 1.55; }
-.rule-text em { color: #0d9488; font-style: normal; font-weight: 700; }
-.rule-text small { display: block; color: #93a19c; font-size: 0.78rem; margin-top: 2px; }
-
-.example-box { background: #f6fdfb; border: 1.5px solid #dcf3ee; border-radius: 12px; padding: 12px 14px; margin-bottom: 12px; font-size: 0.88rem; line-height: 1.7; }
-.example-box .ex-label { font-size: 0.68rem; font-weight: 700; color: #7c8f89; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 6px; }
-.ex-correct { color: #16a34a; font-weight: 700; }
-
-.flow-grid { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; margin-bottom: 12px; }
-.flow-step { background: #f6fdfb; border: 1.5px solid #dcf3ee; border-radius: 12px; padding: 8px 12px; font-size: 0.82rem; font-weight: 700; color: #0d9488; }
-.flow-arrow { color: #7c8f89; font-weight: 900; }
-
-.num-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
-.num-item { background: #f6fdfb; border: 1.5px solid #dcf3ee; border-radius: 12px; padding: 10px 12px; text-align: center; }
-.num-item .num-big { font-size: 1.2rem; font-weight: 900; color: #0369a1; }
-.num-item .num-def  { font-size: 0.74rem; color: #6b7280; margin-top: 2px; line-height: 1.3; }
-
-.bottom-nav { display: flex; gap: 10px; padding: 0 14px; margin: 20px 0 10px; }
-.bottom-nav a { flex: 1; padding: 13px 10px; border-radius: 14px; text-decoration: none; text-align: center; font-size: 0.85rem; font-weight: 700; display: flex; align-items: center; justify-content: center; gap: 6px; }
-.btn-home { background: rgba(13,148,136,0.12); border: 1.5px solid rgba(13,148,136,0.25); color: #0d9488 !important; }
-.btn-next { background: linear-gradient(135deg,#0d9488,#2dd4bf); color: white !important; }
-
-.divider { height: 1px; background: #dcf3ee; margin: 8px 16px 0; }
-.progress-footer { position: fixed; bottom: 0; left: 0; right: 0; background: white; border-top: 1px solid #dcf3ee; padding: 10px 16px; display: flex; align-items: center; gap: 12px; z-index: 20; }
-.pf-label { font-size: 0.75rem; font-weight: 700; color: #0d9488; white-space: nowrap; }
-.pf-bar { flex: 1; background: #dcf3ee; border-radius: 10px; height: 8px; overflow: hidden; }
-.pf-fill { height: 100%; background: linear-gradient(90deg,#0d9488,#16a34a); border-radius: 10px; transition: width 0.5s; width: 0%; }
-.pf-pct { font-size: 0.75rem; font-weight: 700; color: #7c8f89; }
-.credit { text-align: center; padding: 16px 14px 8px; font-size: 0.75rem; color: #bbb; }
-.credit strong { color: #5eead4; }
-
-@media print {
-  .top-nav, .print-btn-wrap, .nav-dots, .progress-footer, .bottom-nav, .hero, .credit, .pf-bar, .pf-pct { display: none !important; }
-  .print-title-header { display: block !important; }
-  html, body { background: white !important; color: #111 !important; font-size: 11pt; min-height: 0 !important; height: auto !important; overflow: visible !important; }
-  body { padding-bottom: 0 !important; }
-  body * { background-color: transparent !important; background-image: none !important; color: #111 !important; box-shadow: none !important; text-shadow: none !important; overflow: visible !important; }
-
-  .section { padding: 10px 0 4px !important; page-break-inside: avoid !important; }
-  .section-header { margin-bottom: 8px !important; }
-  .section-icon { width: 32px !important; height: 32px !important; font-size: 1rem !important; -webkit-print-color-adjust: exact !important; print-color-adjust: exact !important; }
-  .section-title { font-size: 12pt !important; font-weight: 700 !important; color: #14211d !important; }
-  .section-sub   { color: #555 !important; }
-
-  .card { border: 1px solid #bbb !important; border-radius: 6px !important; break-inside: avoid !important; page-break-inside: avoid !important; margin-bottom: 8px !important; padding: 10px !important; }
-  .card-title { color: #0d9488 !important; }
-
-  .rule-box { border: 1.5px solid #555 !important; border-radius: 6px !important; break-inside: avoid !important; page-break-inside: avoid !important; padding: 10px !important; }
-  .rule-title { color: #0d9488 !important; }
-  .rule-tag { -webkit-print-color-adjust: exact !important; print-color-adjust: exact !important; font-size: 8pt !important; padding: 2px 6px !important; }
-  .rule-text { font-size: 10pt !important; }
-  .rule-text em { color: #0d9488 !important; }
-  .rule-row { border-bottom: 1px dashed #ccc !important; }
-
-  .tip { border-left: 3px solid #0d9488 !important; background: #f4fdfb !important; break-inside: avoid !important; page-break-inside: avoid !important; padding: 8px 10px !important; -webkit-print-color-adjust: exact !important; print-color-adjust: exact !important; }
-  .tip strong { color: #0d9488 !important; }
-
-  .example-box { border: 1px solid #ccc !important; border-radius: 4px !important; break-inside: avoid !important; page-break-inside: avoid !important; }
-  .ex-correct { color: #166534 !important; }
-
-  .flow-grid { break-inside: avoid !important; page-break-inside: avoid !important; }
-  .flow-step { border: 1px solid #ccc !important; }
-  .flow-arrow { color: #555 !important; }
-
-  .num-grid { break-inside: avoid !important; page-break-inside: avoid !important; }
-  .num-item { border: 1px solid #ddd !important; border-radius: 4px !important; }
-  .num-item .num-big { color: #0369a1 !important; }
-
-  .divider { border-top: 1px solid #ddd !important; display: block !important; }
-
-  #sec1 { page-break-before: avoid !important; }
-  #sec2, #sec3, #sec4, #sec5, #sec6, #sec7, #sec8 { page-break-before: always !important; }
-
-  @page { margin: 1.5cm; }
-}
-
-/* ---- PDF EXPORT (JS-generated, not native print) ---- */
-body.pdf-export .top-nav, body.pdf-export .print-btn-wrap, body.pdf-export .nav-dots, body.pdf-export .progress-footer, body.pdf-export .bottom-nav, body.pdf-export .hero, body.pdf-export .credit, body.pdf-export .pf-bar, body.pdf-export .pf-pct { display: none !important; }
-  body.pdf-export .print-title-header { display: block !important; }
-  body.pdf-export, body.pdf-export { background: white !important; color: #111 !important; font-size: 11pt; min-height: 0 !important; height: auto !important; overflow: visible !important; }
-  body.pdf-export { padding-bottom: 0 !important; }
-  body.pdf-export * { background-color: transparent !important; background-image: none !important; color: #111 !important; box-shadow: none !important; text-shadow: none !important; overflow: visible !important; }
-  body.pdf-export .section { padding: 10px 0 4px !important; page-break-inside: avoid !important; }
-  body.pdf-export .section-header { margin-bottom: 8px !important; }
-  body.pdf-export .section-icon { width: 32px !important; height: 32px !important; font-size: 1rem !important; -webkit-print-color-adjust: exact !important; print-color-adjust: exact !important; }
-  body.pdf-export .section-title { font-size: 12pt !important; font-weight: 700 !important; color: #14211d !important; }
-  body.pdf-export .section-sub { color: #555 !important; }
-  body.pdf-export .card { border: 1px solid #bbb !important; border-radius: 6px !important; break-inside: avoid !important; page-break-inside: avoid !important; margin-bottom: 8px !important; padding: 10px !important; }
-  body.pdf-export .card-title { color: #0d9488 !important; }
-  body.pdf-export .rule-box { border: 1.5px solid #555 !important; border-radius: 6px !important; break-inside: avoid !important; page-break-inside: avoid !important; padding: 10px !important; }
-  body.pdf-export .rule-title { color: #0d9488 !important; }
-  body.pdf-export .rule-tag { -webkit-print-color-adjust: exact !important; print-color-adjust: exact !important; font-size: 8pt !important; padding: 2px 6px !important; }
-  body.pdf-export .rule-text { font-size: 10pt !important; }
-  body.pdf-export .rule-text em { color: #0d9488 !important; }
-  body.pdf-export .rule-row { border-bottom: 1px dashed #ccc !important; }
-  body.pdf-export .tip { border-left: 3px solid #0d9488 !important; background: #f4fdfb !important; break-inside: avoid !important; page-break-inside: avoid !important; padding: 8px 10px !important; -webkit-print-color-adjust: exact !important; print-color-adjust: exact !important; }
-  body.pdf-export .tip strong { color: #0d9488 !important; }
-  body.pdf-export .example-box { border: 1px solid #ccc !important; border-radius: 4px !important; break-inside: avoid !important; page-break-inside: avoid !important; }
-  body.pdf-export .ex-correct { color: #166534 !important; }
-  body.pdf-export .flow-grid { break-inside: avoid !important; page-break-inside: avoid !important; }
-  body.pdf-export .flow-step { border: 1px solid #ccc !important; }
-  body.pdf-export .flow-arrow { color: #555 !important; }
-  body.pdf-export .num-grid { break-inside: avoid !important; page-break-inside: avoid !important; }
-  body.pdf-export .num-item { border: 1px solid #ddd !important; border-radius: 4px !important; }
-  body.pdf-export .num-item .num-big { color: #0369a1 !important; }
-  body.pdf-export .divider { border-top: 1px solid #ddd !important; display: block !important; }
-  body.pdf-export #sec1 { page-break-before: avoid !important; }
-  body.pdf-export #sec2, body.pdf-export #sec3, body.pdf-export #sec4, body.pdf-export #sec5, body.pdf-export #sec6, body.pdf-export #sec7, body.pdf-export #sec8 { page-break-before: always !important; }
-</style>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
-</head>
-<body>
-
-<!-- PRINT HEADER (hidden on screen) -->
-<div class="print-title-header" style="display:none;text-align:center;padding:0 0 12px;border-bottom:2px solid #0d9488;margin-bottom:16px;">
-  <div style="font-size:14pt;font-weight:900;color:#0d9488;">Geografia — Guia de Estudos</div>
-  <div style="font-size:10pt;color:#555;margin-top:4px;">Recursos Naturais e Trabalho Humano · Capítulos 7 e 8 · Desenvolvido por Jhony Beraldo</div>
-</div>
-
-<div class="top-nav">
-  <a href="index.html">🏠 Início</a>
-  <span>📚 Resumo do Conteúdo</span>
-</div>
-<div class="hero">
-  <span class="hero-emoji">📚</span>
-  <h1>Resumo de Geografia</h1>
-  <h2>Recursos Naturais e o Trabalho Humano · Caps. 7 e 8</h2>
-  <div class="hero-pill">🌱 Leia antes de fazer a prova!</div>
-</div>
-
+.section-icon { width: 44px; height: 44px; border-radius: 14px; display: flex; align-items: center; justify-content: center; font-size: 1.4rem; flex-shrink: 0; background: linear-gradient(135deg,#ea580c,#f59e0b); }
+.section-title { font-size: 1.05rem; font-weight: 800; }
+.section-sub { font-size: .75rem; color: #8a6a50; margin-top: 2px; }
+.tip { background: linear-gradient(135deg,#fff1e0,#fffaf3); border-left: 4px solid #f59e0b; border-radius: 0 12px 12px 0; padding: 12px 14px; margin-bottom: 12px; font-size: .92rem; line-height: 1.65; break-inside: avoid; }
+.tip-title { font-size: .72rem; font-weight: 700; color: #c2410c; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 5px; }
+.tip strong, .rule-text em { color: #c2410c; font-style: normal; font-weight: 700; }
+.rule-box { background: #fff; border: 2px solid #ea580c; border-radius: 14px; padding: 14px; margin-bottom: 12px; break-inside: avoid; }
+.rule-title { font-size: .72rem; font-weight: 700; color: #ea580c; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 10px; }
+.rule-row { display: flex; align-items: flex-start; gap: 10px; padding: 8px 0; border-bottom: 1px dashed #fde3c8; }
+.rule-row:last-child { border-bottom: none; }
+.rule-tag { color: #fff; font-size: .75rem; font-weight: 800; padding: 3px 10px; border-radius: 6px; flex-shrink: 0; margin-top: 2px; max-width: 150px; }
+.rule-text { font-size: .9rem; line-height: 1.55; }
+.example-box { background: #fffaf3; border: 1.5px solid #fde3c8; border-radius: 12px; padding: 12px 14px; margin-bottom: 12px; font-size: .9rem; line-height: 1.7; break-inside: avoid; }
+.ex-label { font-size: .68rem; font-weight: 700; color: #8a6a50; text-transform: uppercase; margin-bottom: 6px; }
+.divider { height: 1px; background: #fde3c8; margin: 8px 16px 0; }
+.bottom-nav { display: flex; gap: 10px; padding: 0 14px; margin: 20px auto 10px; max-width: 720px; }
+.bottom-nav a { flex: 1; padding: 13px 10px; border-radius: 14px; text-decoration: none; text-align: center; font-size: .85rem; font-weight: 700; border: 1.5px solid #ea580c; color: #ea580c; }
+.bottom-nav a.nx { background: linear-gradient(135deg,#ea580c,#f59e0b); color: #fff; border: none; }
+.progress-footer { position: fixed; bottom: 0; left: 0; right: 0; background: #fff; border-top: 1px solid #fde3c8; padding: 10px 16px; display: flex; align-items: center; gap: 12px; z-index: 20; }
+.pf-label { font-size: .75rem; font-weight: 700; color: #ea580c; }
+.pf-bar { flex: 1; background: #fde3c8; border-radius: 10px; height: 8px; overflow: hidden; }
+.pf-fill { height: 100%; background: linear-gradient(90deg,#ea580c,#16a34a); width: 0%; transition: width .4s; }
+.pf-pct { font-size: .75rem; font-weight: 700; color: #8a6a50; }
+.credit { text-align: center; padding: 16px 14px 8px; font-size: .75rem; opacity: .5; }
+body.pdf-export .top-nav, body.pdf-export .print-btn-wrap, body.pdf-export .nav-dots, body.pdf-export .progress-footer, body.pdf-export .bottom-nav, body.pdf-export .hero { display: none !important; }
+body.pdf-export { background: #fff !important; color: #111 !important; padding-bottom: 0 !important; }
+body.pdf-export * { background-color: transparent !important; background-image: none !important; color: #111 !important; box-shadow: none !important; }
+body.pdf-export .group-title { border-bottom: 2px solid #ea580c; border-radius: 0; padding: 4px 0; }
+body.pdf-export .rule-box { border: 1.5px solid #555 !important; }
+body.pdf-export .rule-row { border-bottom: 1px dashed #ccc !important; }
+body.pdf-export .tip { border-left: 3px solid #ea580c !important; background: #f6f6f6 !important; }
+body.pdf-export .example-box { border: 1px solid #ccc !important; }
+body.pdf-export .section { break-inside: auto; }
+body.pdf-export .rule-tag { border: 1px solid #999; }
+</style></head><body>
+<div class="top-nav"><a href="index.html">🏠 Início</a><span>📚 Resumo do Conteúdo</span></div>
+<div class="hero"><span class="hero-emoji">📚</span><h1>Resumo de Geografia</h1><h2>4º Bimestre · Capítulos 10 e 11</h2><div class="hero-pill">📝 Leia com calma antes de fazer os níveis!</div></div>
 <div class="print-btn-wrap"><button class="print-btn" id="pdfBtn" onclick="downloadPDF()">⬇️ Baixar PDF</button></div>
-
-<div class="nav-dots">
-  <button class="nav-dot active" data-target="sec1">💧 Água</button>
-  <button class="nav-dot" data-target="sec2">🏞️ Mananciais</button>
-  <button class="nav-dot" data-target="sec3">🎨 Tipos</button>
-  <button class="nav-dot" data-target="sec4">🚰 Saneamento</button>
-  <button class="nav-dot" data-target="sec5">⚡ Energia</button>
-  <button class="nav-dot" data-target="sec6">🌽 Matéria-prima</button>
-  <button class="nav-dot" data-target="sec7">🏭 Trabalho</button>
-  <button class="nav-dot" data-target="sec8">⚙️ Tecnologia</button>
-</div>
-
-<!-- SEC 1 -->
-<div class="section" id="sec1">
-  <div class="section-header">
-    <div class="section-icon s1">💧</div>
-    <div><div class="section-title">A Água, um Recurso Natural</div><div class="section-sub">De onde vem e por que é tão importante</div></div>
-  </div>
-
-  <div class="tip"><div class="tip-title">💡 Por que a água é importante?</div>
-    A água é um <strong>recurso natural</strong> fundamental para todos os seres vivos. Usamos água para beber, cozinhar, tomar banho, produzir alimentos e muito mais.
-  </div>
-
-  <div class="rule-box">
-    <div class="rule-title">📐 Água doce × Água salgada</div>
-    <div class="rule-row"><span class="rule-tag bg-blue">Água salgada</span><div class="rule-text">É a <em>maior parte</em> da água do planeta.<small>Está nos oceanos e mares.</small></div></div>
-    <div class="rule-row"><span class="rule-tag bg-teal">Água doce</span><div class="rule-text">É uma parte <em>muito pequena</em> em comparação com a água salgada.<small>Rios, lagos, geleiras e água subterrânea. É a que bebemos e usamos no dia a dia.</small></div></div>
-  </div>
-
-  <div class="tip"><div class="tip-title">🌧️ De onde vem a chuva?</div>
-    O calor do <strong>Sol</strong> esquenta a água dos rios, lagos e mares. Essa água <strong>evapora</strong> (vira vapor e sobe para o céu) e forma as nuvens. Quando as nuvens ficam pesadas, a água cai como <strong>chuva</strong>. Esse é o ciclo da água!
-  </div>
-</div>
-<div class="divider"></div>
-
-<!-- SEC 2 -->
-<div class="section" id="sec2">
-  <div class="section-header">
-    <div class="section-icon s2">🏞️</div>
-    <div><div class="section-title">Águas Superficiais e Subterrâneas</div><div class="section-sub">Os mananciais, nossas reservas de água</div></div>
-  </div>
-
-  <div class="tip"><div class="tip-title">💡 O que são mananciais?</div>
-    As reservas de água da Terra são chamadas de <strong>mananciais</strong>.
-  </div>
-
-  <div class="rule-box">
-    <div class="rule-title">📐 Dois tipos de manancial</div>
-    <div class="rule-row"><span class="rule-tag bg-blue">Águas superficiais</span><div class="rule-text">Estão <em>na superfície</em> da Terra.<small>Ex: rios, lagos, lagoas e córregos.</small></div></div>
-    <div class="rule-row"><span class="rule-tag bg-teal">Águas subterrâneas</span><div class="rule-text">Ficam <em>escondidas embaixo da terra</em>.<small>Ex: fontes naturais, poços, lençol freático.</small></div></div>
-  </div>
-
-  <div class="example-box">
-    <div class="ex-label">Exemplo</div>
-    A água da chuva entra no solo e fica guardada em espaços embaixo dele. Essa é a <span class="ex-correct">água subterrânea</span> (também chamada de lençol freático).
-  </div>
-</div>
-<div class="divider"></div>
-
-<!-- SEC 3 -->
-<div class="section" id="sec3">
-  <div class="section-header">
-    <div class="section-icon s3">🎨</div>
-    <div><div class="section-title">Tipos de Água: Azul, Verde e Cinza</div><div class="section-sub">As cores que os cientistas usam para classificar a água</div></div>
-  </div>
-
-  <div class="tip"><div class="tip-title">💡 Por que existem essas "cores"?</div>
-    Os maiores gastos de água estão relacionados ao cultivo da terra e à criação de animais. Para isso, os cientistas classificaram os tipos de água em três grupos.
-  </div>
-
-  <div class="rule-box">
-    <div class="rule-title">📐 As três cores da água</div>
-    <div class="rule-row"><span class="rule-tag bg-blue">Água azul</span><div class="rule-text">Água dos rios, lagos, represas e chuvas.<small>É usada na agricultura e na casa das pessoas (água potável).</small></div></div>
-    <div class="rule-row"><span class="rule-tag bg-green">Água verde</span><div class="rule-text">Água disponível no solo para os vegetais.<small>É absorvida pelas raízes das plantas e depois evapora (evapotranspiração).</small></div></div>
-    <div class="rule-row"><span class="rule-tag bg-gray">Água cinza</span><div class="rule-text">Água que <em>já foi utilizada</em> pelo ser humano.<small>Vai para a rede de esgoto — precisa ser limpa e tratada antes de voltar à natureza.</small></div></div>
-  </div>
-</div>
-<div class="divider"></div>
-
-<!-- SEC 4 -->
-<div class="section" id="sec4">
-  <div class="section-header">
-    <div class="section-icon s4">🚰</div>
-    <div><div class="section-title">Saneamento, Esgoto e Água em Números</div><div class="section-sub">Para onde vai a água depois que usamos?</div></div>
-  </div>
-
-  <div class="tip"><div class="tip-title">💡 A água foi pelo ralo!</div>
-    Depois de escovar os dentes ou tomar banho, a água usada vai para onde? Na maioria das vezes, ela é levada pela rede de <strong>esgoto</strong>.
-  </div>
-
-  <div class="rule-box">
-    <div class="rule-title">📐 Palavras importantes</div>
-    <div class="rule-row"><span class="rule-tag bg-teal">Saneamento</span><div class="rule-text">Tratamento da água e do esgoto.<small>Deixa a água própria para consumo e devolve à natureza de forma correta.</small></div></div>
-    <div class="rule-row"><span class="rule-tag bg-gray">Esgoto</span><div class="rule-text">Rede que recebe as águas já utilizadas.<small>São impróprias para consumo e precisam passar pela Estação de Tratamento de Esgoto (ETE).</small></div></div>
-  </div>
-
-  <div class="tip"><div class="tip-title">📊 Você sabia?</div>
-    No Brasil, a cada <strong>100 pessoas</strong>: <strong>45 não têm</strong> rede de esgoto em casa e <strong>16 não têm</strong> água potável para beber.
-  </div>
-
-  <div class="card">
-    <div class="card-title">🔢 Água em números (água virtual)</div>
-    <div class="num-grid">
-      <div class="num-item"><div class="num-big">100 L</div><div class="num-def">de água para produzir 1 kg de batata</div></div>
-      <div class="num-item"><div class="num-big">135 L</div><div class="num-def">de água usados por dia para higiene</div></div>
-      <div class="num-item"><div class="num-big">110 L</div><div class="num-def">consumo médio de água por pessoa, por dia</div></div>
-      <div class="num-item"><div class="num-big">40 L</div><div class="num-def">desperdiçados a cada 100 litros de água potável no Brasil</div></div>
-    </div>
-  </div>
-</div>
-<div class="divider"></div>
-
-<!-- SEC 5 -->
-<div class="section" id="sec5">
-  <div class="section-header">
-    <div class="section-icon s5">⚡</div>
-    <div><div class="section-title">Energia: as Hidrelétricas</div><div class="section-sub">Como a água vira energia elétrica</div></div>
-  </div>
-
-  <div class="tip"><div class="tip-title">💡 A água move o mundo</div>
-    A água também é fundamental para gerar <strong>energia elétrica</strong>! As <strong>hidrelétricas</strong> (como a Usina de Itaipu) usam a <strong>força da água</strong> que desce com força para mover turbinas e gerar energia.
-  </div>
-
-  <div class="rule-box">
-    <div class="rule-title">📐 Como a energia chega até nós</div>
-    <div class="rule-row"><span class="rule-tag bg-blue">1. Represa</span><div class="rule-text">A água é represada e ganha força ao ser liberada.</div></div>
-    <div class="rule-row"><span class="rule-tag bg-teal">2. Turbinas</span><div class="rule-text">A força da água move as turbinas e gera energia elétrica.</div></div>
-    <div class="rule-row"><span class="rule-tag bg-amber">3. Cabos de alta tensão</span><div class="rule-text">Uma rede de cabos leva essa energia até transformadores.</div></div>
-    <div class="rule-row"><span class="rule-tag bg-green">4. Casas e empresas</span><div class="rule-text">A energia é redistribuída para casas e empresas.</div></div>
-  </div>
-</div>
-<div class="divider"></div>
-
-<!-- SEC 6 -->
-<div class="section" id="sec6">
-  <div class="section-header">
-    <div class="section-icon s6">🌽</div>
-    <div><div class="section-title">Matéria-prima: da Natureza ao Produto</div><div class="section-sub">Como a natureza vira produto final</div></div>
-  </div>
-
-  <div class="tip"><div class="tip-title">💡 O que é matéria-prima?</div>
-    Chamamos de <strong>matéria-prima</strong> os itens que servem de base para a criação de um produto final. Ela pode ser retirada diretamente da natureza (<em>in natura</em>) ou já ter passado por algum processo de modificação.
-  </div>
-
-  <div class="example-box">
-    <div class="ex-label">Exemplo — Da roça até a pamonha</div>
-    <div class="flow-grid">
-      <div class="flow-step">🌽 Plantar milho</div><div class="flow-arrow">→</div>
-      <div class="flow-step">✂️ Colher e descascar</div><div class="flow-arrow">→</div>
-      <div class="flow-step">🥣 Preparar a massa</div><div class="flow-arrow">→</div>
-      <div class="flow-step">🌿 Enrolar na palha</div><div class="flow-arrow">→</div>
-      <div class="flow-step">🍲 Cozinhar</div><div class="flow-arrow">→</div>
-      <div class="flow-step">🎉 Pamonha pronta!</div>
-    </div>
-  </div>
-
-  <div class="rule-box">
-    <div class="rule-title">📐 Outros exemplos de matéria-prima</div>
-    <div class="rule-row"><span class="rule-tag bg-blue">Água</span><div class="rule-text">Usada na fabricação de muitos produtos.</div></div>
-    <div class="rule-row"><span class="rule-tag bg-teal">Algodão</span><div class="rule-text">Usado para fazer roupas (tecidos).</div></div>
-    <div class="rule-row"><span class="rule-tag bg-amber">Argila</span><div class="rule-text">Usada para fazer potes de cerâmica.</div></div>
-    <div class="rule-row"><span class="rule-tag bg-green">Madeira</span><div class="rule-text">Usada para fazer móveis.</div></div>
-  </div>
-</div>
-<div class="divider"></div>
-
-<!-- SEC 7 -->
-<div class="section" id="sec7">
-  <div class="section-header">
-    <div class="section-icon s7">🏭</div>
-    <div><div class="section-title">Trabalho Manual e Trabalho Industrial</div><div class="section-sub">Duas formas diferentes de produzir</div></div>
-  </div>
-
-  <div class="rule-box">
-    <div class="rule-title">📐 Manual (artesanato) × Industrial</div>
-    <div class="rule-row"><span class="rule-tag bg-amber">Trabalho manual</span><div class="rule-text">Uma <em>só pessoa</em> faz o objeto do início ao fim.<small>Prepara a matéria-prima, modela e finaliza. É detalhado e cada peça é única (artesanato).</small></div></div>
-    <div class="rule-row"><span class="rule-tag bg-gray">Trabalho industrial</span><div class="rule-text">Usa <em>máquinas</em> para produzir muitos produtos iguais.<small>Em grande quantidade e de forma mais rápida (fábricas).</small></div></div>
-  </div>
-
-  <div class="tip"><div class="tip-title">🏭 A Revolução Industrial</div>
-    Começou na <strong>Inglaterra</strong>, por volta de <strong>1760</strong>. As primeiras fábricas fabricavam <strong>fios e tecidos</strong>, com teares movidos a vapor. Depois vieram os <strong>trens</strong>, para transportar cargas e pessoas mais rápido. Com o tempo, surgiram as <strong>linhas de montagem</strong>, usadas até hoje na fabricação de automóveis.
-  </div>
-</div>
-<div class="divider"></div>
-
-<!-- SEC 8 -->
-<div class="section" id="sec8">
-  <div class="section-header">
-    <div class="section-icon s8">⚙️</div>
-    <div><div class="section-title">Tecnologia, Minerais e Cuidado com a Natureza</div><div class="section-sub">Da necessidade à invenção — e o cuidado que precisamos ter</div></div>
-  </div>
-
-  <div class="tip"><div class="tip-title">💡 Necessidade gera invenção</div>
-    O ser humano cria ferramentas e tecnologias para resolver necessidades do dia a dia. Por exemplo: a necessidade de <strong>limpar os dentes</strong> criou a <em>escova de dentes</em>; a necessidade de <strong>cortar materiais</strong> criou a <em>tesoura</em>.
-  </div>
-
-  <div class="rule-box">
-    <div class="rule-title">📐 Minerais usados na tecnologia</div>
-    <div class="rule-row"><span class="rule-tag bg-gray">Computador</span><div class="rule-text">Usa plástico (do petróleo), vidro (da areia) e minerais.<small>Ex: quartzo, ouro, prata, chumbo e cobre.</small></div></div>
-  </div>
-
-  <div class="tip"><div class="tip-title">🌳 Cuidado com a natureza</div>
-    Explorar recursos naturais <strong>sem planejamento</strong> pode causar: <strong>desmatamento</strong>, <strong>poluição dos rios</strong>, <strong>perda de fertilidade do solo</strong> e <strong>poluição sonora</strong>. Por isso, é importante usar os recursos naturais com responsabilidade!
-  </div>
-
-  <div class="pf-bar"><div class="pf-fill" id="pfFill"></div></div>
-  <div class="pf-pct" id="pfPct">0%</div>
-</div>
-
-<div class="bottom-nav">
-  <a href="index.html" class="btn-home">🏠 Voltar ao Início</a>
-  <a href="nivel1_basico.html" class="btn-next">⭐ Nível 1 →</a>
-</div>
-
-<div style="height:60px;"></div>
-<div class="progress-footer">
-  <div class="pf-label">📖 Progresso</div>
-  <div class="pf-bar"><div class="pf-fill" id="pfFill"></div></div>
-  <div class="pf-pct" id="pfPct">0%</div>
-</div>
-
+<div class="nav-dots"><button class="nav-dot active" data-target="sec1">👥 Sociedade</button><button class="nav-dot" data-target="sec2">💰 Impostos</button><button class="nav-dot" data-target="sec3">🏛️ Direitos</button><button class="nav-dot" data-target="sec4">🎒 Educação</button><button class="nav-dot" data-target="sec5">🏗️ Infraestrutura</button><button class="nav-dot" data-target="sec6">🌳 Equipamentos</button><button class="nav-dot" data-target="sec7">🛒 Necessidades</button><button class="nav-dot" data-target="sec8">🧾 Consumo</button><button class="nav-dot" data-target="sec9">✅ Cuidados</button><button class="nav-dot" data-target="sec10">💧 Água</button><button class="nav-dot" data-target="sec11">🌱 Consciente</button><button class="nav-dot" data-target="sec12">⭐ Dicas</button></div>
+<div class="group-title">📘 Capítulo 10 — Serviços públicos e cidadania</div><div class="section" id="sec1"><div class="section-header"><div class="section-icon">👥</div><div><div class="section-title">Sociedade e cidadão</div><div class="section-sub">Quem faz parte da cidade</div></div></div><div class="tip"><div class="tip-title">💡 Bora entender</div>Neste capítulo a gente aprende o <strong>vocabulário do cidadão</strong>: palavras que usamos no dia a dia pra falar de como vivemos juntos.</div><div class="rule-box"><div class="rule-title">📐 Duas palavras importantes</div><div class="rule-row"><span class="rule-tag" style="background:#ea580c">Sociedade</span><div class="rule-text">Grupo de pessoas que <em>vivem em um lugar</em> e se relacionam entre si.</div></div><div class="rule-row"><span class="rule-tag" style="background:#16a34a">Cidadão</span><div class="rule-text">Toda pessoa que <em>participa da sociedade</em>, com seus <em>direitos e deveres</em>. Criança também é cidadã!</div></div></div><div class="tip"><div class="tip-title">🧠 Macete</div>Cidadão = <strong>direitos + deveres</strong>. Tem direito de usar o parque, mas também o dever de cuidar dele.</div></div><div class="divider"></div><div class="section" id="sec2"><div class="section-header"><div class="section-icon">💰</div><div><div class="section-title">Impostos: de onde vem o dinheiro</div><div class="section-sub">Quem paga o parque, a escola e o hospital</div></div></div><div class="tip"><div class="tip-title">💡 Pergunta do parque</div>Quem construiu o parque? Quem pagou? Resposta: os <strong>cidadãos pagam impostos</strong>, e os <strong>governantes</strong> usam esse dinheiro para construir e cuidar do que é público.</div><div class="rule-box"><div class="rule-title">🔢 O caminho do dinheiro</div><div class="rule-row"><span class="rule-tag" style="background:#ea580c">1</span><div class="rule-text">Os cidadãos <strong>elegem os governantes</strong> (votando).</div></div><div class="rule-row"><span class="rule-tag" style="background:#16a34a">2</span><div class="rule-text">Os governantes eleitos <strong>tomam decisões</strong> pra melhorar a vida de todos.</div></div><div class="rule-row"><span class="rule-tag" style="background:#7c3aed">3</span><div class="rule-text">Os cidadãos que pagam impostos são <strong>contribuintes</strong>.</div></div><div class="rule-row"><span class="rule-tag" style="background:#0891b2">4</span><div class="rule-text">O dinheiro arrecadado é usado pra <strong>construir e manter</strong> serviços e equipamentos públicos.</div></div><div class="rule-row"><span class="rule-tag" style="background:#be185d">5</span><div class="rule-text">Assim todos podem <strong>aproveitar</strong> parques, hospitais, escolas e outros serviços.</div></div></div><div class="rule-box"><div class="rule-title">📐 Tipos de contribuinte</div><div class="rule-row"><span class="rule-tag" style="background:#ea580c">Direto</span><div class="rule-text">Quem <em>trabalha e paga imposto</em> sobre o que ganha. Ex.: seus pais.</div></div><div class="rule-row"><span class="rule-tag" style="background:#16a34a">Indireto</span><div class="rule-text">Quem paga imposto <em>sem perceber</em>, porque já vem no preço de tudo o que compra. Ex.: você, criança!</div></div></div><div class="example-box"><div class="ex-label">Exemplos de serviços pagos com impostos</div>Carteira de identidade, atendimento em hospital público, coleta de lixo, parques e praças.</div><div class="tip"><div class="tip-title">🧠 Fiscalizar</div>Quem cumpre o dever de pagar impostos tem o <strong>direito de saber onde o dinheiro é usado</strong>. Isso se chama <strong>fiscalizar</strong> o trabalho dos governantes. Aos 18 anos, começando a trabalhar, você vira contribuinte direto também.</div></div><div class="divider"></div><div class="section" id="sec3"><div class="section-header"><div class="section-icon">🏛️</div><div><div class="section-title">Direitos essenciais e serviços públicos</div><div class="section-sub">O que o Estado precisa garantir</div></div></div><div class="rule-box"><div class="rule-title">📐 Palavras-chave</div><div class="rule-row"><span class="rule-tag" style="background:#ea580c">Estado</span><div class="rule-text">Com <em>E maiúsculo</em>: o povo de um país (cidadãos + governantes), vivendo organizado por leis, num território e com governo próprio.</div></div><div class="rule-row"><span class="rule-tag" style="background:#16a34a">Constituição Federal</span><div class="rule-text">Criada em <em>1988</em>. É o maior conjunto de leis do Brasil. Garante todos os direitos e deveres.</div></div><div class="rule-row"><span class="rule-tag" style="background:#7c3aed">Artigo 5º</span><div class="rule-text">Destaca os direitos à <em>vida, liberdade, igualdade, segurança e propriedade</em>.</div></div></div><div class="tip"><div class="tip-title">💡 Direitos que o Estado deve garantir</div><strong>Vida, liberdade, propriedade, igualdade, educação, saúde, trabalho, segurança e voto</strong> (essa lista caiu na cruzadinha!).</div><div class="rule-box"><div class="rule-title">📐 Serviços essenciais</div><div class="rule-row"><span class="rule-tag" style="background:#ea580c">Saúde</span><div class="rule-text">Hospitais, médicos, ambulância.</div></div><div class="rule-row"><span class="rule-tag" style="background:#16a34a">Segurança</span><div class="rule-text">Polícia.</div></div><div class="rule-row"><span class="rule-tag" style="background:#7c3aed">Bombeiros</span><div class="rule-text">Socorro em incêndios e emergências.</div></div><div class="rule-row"><span class="rule-tag" style="background:#0891b2">Coleta de lixo</span><div class="rule-text">Mantém a cidade limpa.</div></div><div class="rule-row"><span class="rule-tag" style="background:#be185d">Trabalho</span><div class="rule-text">Garante comida, moradia, roupa, educação e saúde pra família.</div></div></div><div class="tip"><div class="tip-title">🧠 Público x particular</div>Alguns serviços públicos o governo passa pra <strong>empresas</strong> fazerem (escolas, clínicas, energia elétrica). Aí o serviço é prestado de forma <strong>particular</strong>, como na sua escola.</div></div><div class="divider"></div><div class="section" id="sec4"><div class="section-header"><div class="section-icon">🎒</div><div><div class="section-title">Educação: direito de todos</div><div class="section-sub">Artigo 208 da Constituição</div></div></div><div class="tip"><div class="tip-title">💡 Dever do Estado</div>O artigo 208 diz que é <strong>dever do Estado</strong> oferecer educação escolar.</div><div class="rule-box"><div class="rule-title">📐 O que o Estado precisa oferecer</div><div class="rule-row"><span class="rule-tag" style="background:#ea580c">Ensino obrigatório e gratuito</span><div class="rule-text">Para crianças, adolescentes <em>e</em> adultos que não puderam estudar na infância.</div></div><div class="rule-row"><span class="rule-tag" style="background:#16a34a">Atendimento especializado</span><div class="rule-text">Para quem tem necessidade especial.</div></div><div class="rule-row"><span class="rule-tag" style="background:#7c3aed">Creche e pré-escola</span><div class="rule-text">Para crianças de <em>até 5 anos</em>.</div></div><div class="rule-row"><span class="rule-tag" style="background:#0891b2">Programas de apoio</span><div class="rule-text">Material didático, transporte, alimentação e assistência à saúde.</div></div></div></div><div class="divider"></div><div class="section" id="sec5"><div class="section-header"><div class="section-icon">🏗️</div><div><div class="section-title">Infraestrutura e saneamento</div><div class="section-sub">Serviços que sustentam a cidade</div></div></div><div class="tip"><div class="tip-title">💡 Infraestrutura</div>São os serviços que <strong>dão suporte ao funcionamento da sociedade</strong>: transporte (estradas e ferrovias), saneamento, energia elétrica, telecomunicações e serviços de emergência.</div><div class="rule-box"><div class="rule-title">📐 As charadas do livro</div><div class="rule-row"><span class="rule-tag" style="background:#ea580c">Energia elétrica</span><div class="rule-text">"Aperta a tecla, acende a luz, mas se poupar, a conta reduz."</div></div><div class="rule-row"><span class="rule-tag" style="background:#16a34a">Transporte</span><div class="rule-text">"Daqui pra lá, de lá pra cá, muitos vão e muitos vêm."</div></div><div class="rule-row"><span class="rule-tag" style="background:#7c3aed">Telecomunicações</span><div class="rule-text">"Assistir, escutar, conectar... existem as antenas."</div></div><div class="rule-row"><span class="rule-tag" style="background:#0891b2">Coleta de lixo</span><div class="rule-text">"Todos produzem e poucos recolhem."</div></div></div><div class="tip"><div class="tip-title">💧 Saneamento básico</div>É o conjunto de serviços fundamentais: <strong>água potável, esgoto canalizado e tratado, limpeza urbana, drenagem da água da chuva e manejo do lixo</strong>. É um direito garantido pela Constituição e pela lei nº <strong>11.445/2007</strong>.</div><div class="rule-box"><div class="rule-title">🔢 O caminho da água</div><div class="rule-row"><span class="rule-tag" style="background:#ea580c">1</span><div class="rule-text">A água é <strong>retirada de um manancial</strong> (fonte natural).</div></div><div class="rule-row"><span class="rule-tag" style="background:#16a34a">2</span><div class="rule-text">Ela não está limpa, então precisa ser <strong>tratada</strong>.</div></div><div class="rule-row"><span class="rule-tag" style="background:#7c3aed">3</span><div class="rule-text">Depois de tratada fica <strong>potável</strong> e é distribuída por <strong>tubulações</strong> até as casas.</div></div><div class="rule-row"><span class="rule-tag" style="background:#0891b2">4</span><div class="rule-text">Ao usar (lavar louça, tomar banho...), a água fica suja e vai pra <strong>rede de esgoto</strong>.</div></div><div class="rule-row"><span class="rule-tag" style="background:#be185d">5</span><div class="rule-text">As tubulações levam essa água pra <strong>estação de tratamento</strong>.</div></div><div class="rule-row"><span class="rule-tag" style="background:#b45309">6</span><div class="rule-text">Na rede de <strong>esgoto pluvial</strong>, a água da chuva vai <strong>direto pros rios</strong> (não precisa de tratamento).</div></div><div class="rule-row"><span class="rule-tag" style="background:#ea580c">7</span><div class="rule-text">Depois de tratada, a água do esgoto doméstico é <strong>devolvida à natureza</strong>.</div></div></div><div class="tip"><div class="tip-title">🧠 Por que tratar o esgoto?</div>Pra devolver a água limpa à natureza, sem poluir os rios e sem causar doenças.</div></div><div class="divider"></div><div class="section" id="sec6"><div class="section-header"><div class="section-icon">🌳</div><div><div class="section-title">Equipamentos públicos e cidadão cuidadoso</div><div class="section-sub">Cada um faz a sua parte</div></div></div><div class="tip"><div class="tip-title">💡 O que são?</div><strong>Equipamentos públicos</strong> são lugares e objetos feitos pra todos usarem: ruas, sinais de trânsito, vias de transporte, praças, parques, paradas de ônibus...</div><div class="rule-box"><div class="rule-title">📐 Atitudes de um bom cidadão</div><div class="rule-row"><span class="rule-tag" style="background:#ea580c">Parquinho</span><div class="rule-text">Cuidar dos brinquedos. A prefeitura faz a manutenção.</div></div><div class="rule-row"><span class="rule-tag" style="background:#16a34a">Ônibus</span><div class="rule-text">Respeitar os lugares preferenciais.</div></div><div class="rule-row"><span class="rule-tag" style="background:#7c3aed">Lixo</span><div class="rule-text">Colocar no lugar certo e na hora da coleta, fazendo a sua parte.</div></div></div><div class="tip"><div class="tip-title">🧠 Cidadania</div>Exercer a cidadania é ter <strong>consciência dos direitos e dos deveres</strong>, para construir uma sociedade <strong>mais justa e solidária</strong>. Quem recebe um equipamento de uso comum é <strong>responsável por cuidar e preservar</strong>.</div></div><div class="divider"></div><div class="group-title">📗 Capítulo 11 — De olho no consumo</div><div class="section" id="sec7"><div class="section-header"><div class="section-icon">🛒</div><div><div class="section-title">Necessidades básicas e secundárias</div><div class="section-sub">O que a gente precisa de verdade</div></div></div><div class="rule-box"><div class="rule-title">📐 Dois tipos de necessidade</div><div class="rule-row"><span class="rule-tag" style="background:#ea580c">Básicas</span><div class="rule-text">Simples e essenciais: <em>alimentação, água, moradia, roupa, higiene, descanso, aprender</em>.</div></div><div class="rule-row"><span class="rule-tag" style="background:#16a34a">Secundárias</span><div class="rule-text">Criadas pela vida moderna: ligadas à <em>tecnologia, automação e acesso à informação</em> (celular, computador, internet, câmera, patinete...).</div></div></div><div class="tip"><div class="tip-title">🧠 Pra pensar</div>Há 100 anos ou menos muita coisa de hoje não existia, e agora faz parte do nosso dia a dia. Por isso, muitas vezes, as pessoas <strong>compram mais do que deveriam</strong>.</div></div><div class="divider"></div><div class="section" id="sec8"><div class="section-header"><div class="section-icon">🧾</div><div><div class="section-title">Consumo, consumidor e consumismo</div><div class="section-sub">Três palavras parecidas, três ideias diferentes</div></div></div><div class="rule-box"><div class="rule-title">📐 Não confunda!</div><div class="rule-row"><span class="rule-tag" style="background:#ea580c">Consumo</span><div class="rule-text">A atitude de <em>usar, gastar ou utilizar</em> um objeto.</div></div><div class="rule-row"><span class="rule-tag" style="background:#16a34a">Consumidor</span><div class="rule-text">Quem <em>compra um produto e o utiliza</em> (quem consome algo).</div></div><div class="rule-row"><span class="rule-tag" style="background:#7c3aed">Consumismo</span><div class="rule-text">Consumir de <em>forma exagerada</em>, por vontade e não por necessidade real. Em casos extremos pode virar doença.</div></div></div><div class="example-box"><div class="ex-label">Exemplos do livro</div>Bebê mamando: <strong>consumidor</strong> = bebê, <strong>consumo</strong> = leite.<br>Menina lendo: consumidor = menina, consumo = livro (busca por conhecimento).<br>Menina com ventilador: consumidor = menina, consumo = ventilador (energia).</div><div class="tip"><div class="tip-title">⚠️ Desperdício</div>Desperdício é gastar ou comprar além do necessário: jogar comida fora, deixar luz e aparelhos ligados à toa, comprar coisas repetidas, guardar roupa e brinquedo sem usar.</div></div><div class="divider"></div><div class="section" id="sec9"><div class="section-header"><div class="section-icon">✅</div><div><div class="section-title">Cuidados do consumidor</div><div class="section-sub">O que é bom fazer e o que é bom evitar</div></div></div><div class="rule-box"><div class="rule-title">👍 É bom fazer</div><div class="rule-row"><span class="rule-tag" style="background:#ea580c">Lista</span><div class="rule-text">Fazer lista de compras antes de ir ao mercado, pra não comprar mais que o necessário.</div></div><div class="rule-row"><span class="rule-tag" style="background:#16a34a">À vista</span><div class="rule-text">Pagar à vista (dinheiro) em vez de usar cartão de crédito.</div></div><div class="rule-row"><span class="rule-tag" style="background:#7c3aed">Doar</span><div class="rule-text">Doar roupas e objetos que não usa mais, mas estão em boas condições.</div></div></div><div class="rule-box"><div class="rule-title">👎 É bom evitar</div><div class="rule-row"><span class="rule-tag" style="background:#ea580c">Impulso</span><div class="rule-text">Comprar por impulso.</div></div><div class="rule-row"><span class="rule-tag" style="background:#16a34a">Alimentos</span><div class="rule-text">Desperdiçar alimentos.</div></div><div class="rule-row"><span class="rule-tag" style="background:#7c3aed">Repetidos</span><div class="rule-text">Comprar objetos desnecessários e repetidos.</div></div></div><div class="tip"><div class="tip-title">💛 Empatia</div>Quando perdemos o controle, podemos nos prejudicar e deixar de ajudar o próximo, de fazer alguém feliz. Isso é <strong>empatia</strong>: se colocar no lugar do outro.</div></div><div class="divider"></div><div class="section" id="sec10"><div class="section-header"><div class="section-icon">💧</div><div><div class="section-title">Consumindo água</div><div class="section-sub">Muita água no Brasil, mas cuidado!</div></div></div><div class="tip"><div class="tip-title">💡 Atenção</div>O Brasil é rico em recursos hídricos, mas isso não quer dizer que podemos desperdiçar. <strong>A cada 4 pessoas no planeta, 1 não tem acesso à água potável.</strong></div><div class="tip"><div class="tip-title">🧠 Racionamento</div>É a atitude de <strong>limitar os recursos naturais</strong> pra preservar a vida ou em situações de emergência. Em algumas regiões, é o último recurso pra garantir a sobrevivência de todos.</div><div class="rule-box"><div class="rule-title">📐 A água nas regiões do Brasil</div><div class="rule-row"><span class="rule-tag" style="background:#ea580c">Norte</span><div class="rule-text">Mais <em>chuvosa</em>, com os rios de maior extensão. Mesmo assim, água potável é de difícil acesso e há locais sem saneamento.</div></div><div class="rule-row"><span class="rule-tag" style="background:#16a34a">Nordeste</span><div class="rule-text">Em algumas partes o clima é <em>seco</em>. Falta água tratada e saneamento.</div></div><div class="rule-row"><span class="rule-tag" style="background:#7c3aed">Centro-Oeste</span><div class="rule-text">Muita água usada na <em>agricultura e pecuária</em>. O Pantanal tem cada vez menos água.</div></div><div class="rule-row"><span class="rule-tag" style="background:#0891b2">Sudeste</span><div class="rule-text">No inverno e sem chuva, precisa <em>racionar</em>. Muita gente e atividades poluentes: desperdício e contaminação.</div></div><div class="rule-row"><span class="rule-tag" style="background:#be185d">Sul</span><div class="rule-text"><em>Melhores índices</em> de saneamento e abastecimento, mas racionamento em períodos de seca (agricultura intensa).</div></div></div></div><div class="divider"></div><div class="section" id="sec11"><div class="section-header"><div class="section-icon">🌱</div><div><div class="section-title">Consumo consciente e solidariedade</div><div class="section-sub">Usar com sabedoria e pensar nos outros</div></div></div><div class="tip"><div class="tip-title">💡 Consumo consciente</div>Os recursos naturais devem ser usados com <strong>sabedoria</strong>: de forma <strong>consciente e responsável</strong>, causando o menor impacto possível à natureza e às outras pessoas.</div><div class="rule-box"><div class="rule-title">📐 Hábitos de quem consome com consciência</div><div class="rule-row"><span class="rule-tag" style="background:#ea580c">Sacolas</span><div class="rule-text">Reduzir o uso de sacolas plásticas.</div></div><div class="rule-row"><span class="rule-tag" style="background:#16a34a">Água</span><div class="rule-text">Usar a água de maneira consciente.</div></div><div class="rule-row"><span class="rule-tag" style="background:#7c3aed">Lixo</span><div class="rule-text">Separar o lixo reciclável do orgânico.</div></div><div class="rule-row"><span class="rule-tag" style="background:#0891b2">Doar</span><div class="rule-text">Doar o que não usa mais (isso é ser <em>solidário</em>).</div></div></div><div class="tip"><div class="tip-title">📖 Para pensar (João 12:3-5)</div>Maria usou algo muito valioso por amor e gratidão. Judas reclamou que era desperdício, mas estava pensando em si mesmo. Ser menos egoísta é usar os recursos de forma equilibrada e pensar em quem precisa.</div></div><div class="divider"></div><div class="section" id="sec12"><div class="section-header"><div class="section-icon">⭐</div><div><div class="section-title">Dicionário rápido e dicas finais</div><div class="section-sub">Revisão relâmpago</div></div></div><div class="rule-box"><div class="rule-title">📐 Dicionário do cidadão</div><div class="rule-row"><span class="rule-tag" style="background:#ea580c">Contribuinte</span><div class="rule-text">Quem paga impostos.</div></div><div class="rule-row"><span class="rule-tag" style="background:#16a34a">Governantes</span><div class="rule-text">Quem os cidadãos elegem pra decidir e administrar.</div></div><div class="rule-row"><span class="rule-tag" style="background:#7c3aed">Estado</span><div class="rule-text">Povo + governantes, organizados por leis.</div></div><div class="rule-row"><span class="rule-tag" style="background:#0891b2">Serviços públicos</span><div class="rule-text">Serviços para todos: saúde, educação, segurança, água, energia, lixo, transporte.</div></div><div class="rule-row"><span class="rule-tag" style="background:#be185d">Racionamento</span><div class="rule-text">Limitar um recurso (como a água) pra preservar a vida.</div></div><div class="rule-row"><span class="rule-tag" style="background:#b45309">Consumismo</span><div class="rule-text">Comprar demais, sem necessidade.</div></div></div><div class="rule-box"><div class="rule-title">📐 Checklist antes da prova</div><div class="rule-row"><span class="rule-tag" style="background:#ea580c">1</span><div class="rule-text">Sei explicar sociedade, cidadão, direitos e deveres?</div></div><div class="rule-row"><span class="rule-tag" style="background:#16a34a">2</span><div class="rule-text">Sei de onde vem o dinheiro dos serviços (impostos) e quem é contribuinte direto e indireto?</div></div><div class="rule-row"><span class="rule-tag" style="background:#7c3aed">3</span><div class="rule-text">Sei o que a Constituição de 1988 e o artigo 5º garantem?</div></div><div class="rule-row"><span class="rule-tag" style="background:#0891b2">4</span><div class="rule-text">Lembro o caminho da água e o que é saneamento básico?</div></div><div class="rule-row"><span class="rule-tag" style="background:#be185d">5</span><div class="rule-text">Sei diferenciar consumo, consumidor e consumismo?</div></div><div class="rule-row"><span class="rule-tag" style="background:#b45309">6</span><div class="rule-text">Lembro as regiões do Brasil e a situação da água em cada uma?</div></div></div><div class="tip"><div class="tip-title">🌟 Você consegue!</div>Leia o resumo com calma, depois faça os níveis 1, 2 e 3. Errou? Leia a explicação e tente de novo. É errando que a gente aprende!</div></div><div class="divider"></div>
+<div class="bottom-nav"><a href="index.html">🏠 Início</a><a class="nx" href="nivel1_basico.html">⭐ Nível 1 →</a></div>
+<div style="height:60px"></div>
+<div class="progress-footer"><div class="pf-label">📖 Progresso</div><div class="pf-bar"><div class="pf-fill" id="pfFill"></div></div><div class="pf-pct" id="pfPct">0%</div></div>
 <div class="credit">Desenvolvido por <strong>Jhony Beraldo</strong></div>
-
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
 <script>
+var sections = ['sec1','sec2','sec3','sec4','sec5','sec6','sec7','sec8','sec9','sec10','sec11','sec12'];
+document.querySelectorAll('.nav-dot').forEach(function(b){ b.addEventListener('click', function(){
+  document.querySelectorAll('.nav-dot').forEach(function(d){ d.classList.remove('active'); }); b.classList.add('active');
+  var t = document.getElementById(b.getAttribute('data-target')); if (t) t.scrollIntoView({behavior:'smooth', block:'start'}); }); });
+function updateProgress(){
+  var pct = Math.min(100, Math.round((window.scrollY + window.innerHeight) / document.body.scrollHeight * 100));
+  document.getElementById('pfFill').style.width = pct + '%'; document.getElementById('pfPct').textContent = pct + '%';
+  for (var i = sections.length - 1; i >= 0; i--) { var el = document.getElementById(sections[i]);
+    if (el && window.scrollY >= el.offsetTop - 140) { document.querySelectorAll('.nav-dot').forEach(function(d, idx){ d.classList.toggle('active', idx === i); }); break; } }
+}
+window.addEventListener('scroll', updateProgress, { passive: true }); updateProgress();
+
 function downloadPDF() {
   var btn = document.getElementById('pdfBtn');
   var originalText = btn.textContent;
   btn.textContent = '⏳ Gerando PDF...';
   btn.disabled = true;
   document.body.classList.add('pdf-export');
-  var opt = {
-    margin: 12,
-    filename: 'Resumo_Geografia.pdf',
-    image: { type: 'jpeg', quality: 0.98 },
-    html2canvas: { scale: 2, useCORS: true },
-    jsPDF: { unit: 'mm', format: 'a4', orientation: 'portrait' },
-    pagebreak: { mode: ['css', 'legacy'] }
-  };
+  var opt = { margin: 12, filename: 'Resumo_Geografia_4Bim.pdf', image: { type: 'jpeg', quality: 0.98 },
+    html2canvas: { scale: 2, useCORS: true }, jsPDF: { unit: 'mm', format: 'a4', orientation: 'portrait' },
+    pagebreak: { mode: ['css', 'legacy'] } };
   html2pdf().set(opt).from(document.body).save().then(function() {
-    document.body.classList.remove('pdf-export');
-    btn.textContent = originalText;
-    btn.disabled = false;
+    document.body.classList.remove('pdf-export'); btn.textContent = originalText; btn.disabled = false;
   }).catch(function(err) {
-    document.body.classList.remove('pdf-export');
-    btn.textContent = originalText;
-    btn.disabled = false;
+    document.body.classList.remove('pdf-export'); btn.textContent = originalText; btn.disabled = false;
     alert('Nao foi possivel gerar o PDF. Tente novamente.');
   });
 }
 
-document.querySelectorAll('.nav-dot[data-target]').forEach(function(btn) {
-  btn.addEventListener('click', function() {
-    document.querySelectorAll('.nav-dot').forEach(function(d) { d.classList.remove('active'); });
-    btn.classList.add('active');
-    var target = document.getElementById(btn.dataset.target);
-    if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-  });
-});
-var sections = ['sec1','sec2','sec3','sec4','sec5','sec6','sec7','sec8'];
-function updateProgress() {
-  var scrolled = window.scrollY + window.innerHeight;
-  var total = document.body.scrollHeight;
-  var pct = Math.min(100, Math.round((scrolled / total) * 100));
-  document.getElementById('pfFill').style.width = pct + '%';
-  document.getElementById('pfPct').textContent = pct + '%';
-  for (var i = sections.length - 1; i >= 0; i--) {
-    var el = document.getElementById(sections[i]);
-    if (el && window.scrollY >= el.offsetTop - 120) {
-      document.querySelectorAll('.nav-dot').forEach(function(d, idx) { d.classList.toggle('active', idx === i); });
-      break;
-    }
-  }
-}
-window.addEventListener('scroll', updateProgress, { passive: true });
-updateProgress();
-</script>
-</body>
-</html>
+</script></body></html>

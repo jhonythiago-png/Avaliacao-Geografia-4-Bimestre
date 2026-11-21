@@ -1,395 +1,198 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
-<title>⭐ Nível 1 – Básico</title>
-<style>
+<html lang="pt-BR"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+<title>⭐ Nível 1 — Básico – Geografia</title><style>
 * { box-sizing: border-box; margin: 0; padding: 0; }
-body { font-family: 'Segoe UI', system-ui, sans-serif; background: #eefaf6; min-height: 100vh; padding-bottom: 40px; }
-.top-nav { background: #0f2e2b; padding: 10px 16px; display: flex; align-items: center; justify-content: space-between; position: sticky; top: 0; z-index: 50; border-bottom: 1px solid rgba(255,255,255,0.08); }
-.top-nav a.nav-home { color: #5eead4; font-size: 0.8rem; font-weight: 700; text-decoration: none; background: rgba(13,148,136,0.25); border: 1px solid rgba(13,148,136,0.4); padding: 5px 12px; border-radius: 20px; }
-.top-nav .nav-title { font-size: 0.78rem; color: rgba(255,255,255,0.45); flex: 1; text-align: center; }
-.exam-header { background: white; border: 2px solid #0d9488; border-radius: 16px; padding: 16px; margin: 12px 14px 16px; }
-.eh-title { text-align: center; font-size: 0.95rem; font-weight: 900; color: #0d9488; margin-bottom: 14px; }
+body { font-family: 'Segoe UI', system-ui, sans-serif; background: #fff7ed; color: #3b2410; min-height: 100vh; padding-bottom: 40px; }
+.top-nav { background: #7c2d12; padding: 10px 16px; display: flex; align-items: center; justify-content: space-between; position: sticky; top: 0; z-index: 50; }
+.top-nav a { color: #fdba74; font-size: .8rem; font-weight: 700; text-decoration: none; background: rgba(255,255,255,.12); padding: 5px 12px; border-radius: 20px; }
+.top-nav .nav-title { font-size: .78rem; color: rgba(255,255,255,.55); flex: 1; text-align: center; }
+.exam-header { background: #fff; border: 2px solid #ea580c; border-radius: 16px; padding: 16px; margin: 12px 14px 16px; color: #333; }
+.eh-title { text-align: center; font-size: .95rem; font-weight: 900; color: #ea580c; margin-bottom: 14px; }
 .eh-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px 16px; }
-.eh-field label { display: block; font-size: 0.68rem; color: #888; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 4px; }
-.eh-field input { width: 100%; border: none; border-bottom: 2px solid #0d9488; padding: 5px 2px; font-size: 0.9rem; font-family: inherit; outline: none; background: transparent; color: #333; }
-.eh-nota { border-bottom: 2px solid #0d9488; padding: 5px 2px; font-size: 0.85rem; color: #bbb; font-style: italic; min-height: 28px; }
-.header { text-align: center; padding: 22px 16px 14px; background: linear-gradient(135deg,#0d9488,#2dd4bf); margin-bottom: 18px; }
-.header h1 { font-size: 1.4rem; font-weight: 900; color: white; }
-.header p  { font-size: 0.82rem; color: rgba(255,255,255,0.85); margin-top: 4px; }
-.level-tag { display: inline-block; background: rgba(255,255,255,0.25); color: white; font-size: 0.72rem; font-weight: 800; padding: 3px 12px; border-radius: 20px; margin-bottom: 8px; text-transform: uppercase; letter-spacing: 1px; }
-.wrap { padding: 0 14px; }
+.eh-field label { display: block; font-size: .68rem; color: #888; text-transform: uppercase; margin-bottom: 4px; }
+.eh-field input { width: 100%; border: none; border-bottom: 2px solid #ea580c; padding: 5px 2px; font-size: .9rem; font-family: inherit; outline: none; background: transparent; color: #333; }
+.header { text-align: center; padding: 22px 16px 14px; background: linear-gradient(135deg,#ea580c,#f59e0b); margin-bottom: 18px; }
+.header h1 { font-size: 1.4rem; font-weight: 900; color: #fff; }
+.header p { font-size: .82rem; color: rgba(255,255,255,.88); margin-top: 4px; }
+.level-tag { display: inline-block; background: rgba(255,255,255,.25); color: #fff; font-size: .72rem; font-weight: 800; padding: 3px 12px; border-radius: 20px; margin-bottom: 8px; text-transform: uppercase; letter-spacing: 1px; }
+.wrap { padding: 0 14px; max-width: 700px; margin: 0 auto; }
 .print-btn-wrap { text-align: right; margin-bottom: 12px; }
-.print-btn { display: inline-flex; align-items: center; gap: 6px; padding: 7px 16px; background: transparent; border: 1px solid rgba(13,148,136,0.35); border-radius: 20px; font-size: 0.78rem; font-family: inherit; font-weight: 600; color: rgba(13,148,136,0.6); cursor: pointer; }
-.score-bar { background: white; border-radius: 14px; padding: 12px 16px; margin-bottom: 16px; display: flex; justify-content: space-between; align-items: center; }
-.score-label { font-size: 0.82rem; color: #888; }
-.score-num { font-size: 1.4rem; font-weight: 900; color: #0d9488; }
-.card { background: white; border: 1px solid #dcf3ee; border-radius: 16px; padding: 18px; margin-bottom: 14px; box-shadow: 0 3px 12px rgba(13,148,136,0.08); border-left: 5px solid #0d9488; }
-.q-num { background: linear-gradient(135deg,#0d9488,#2dd4bf); color: white; font-weight: 900; font-size: 0.75rem; padding: 3px 10px; border-radius: 20px; display: inline-block; margin-bottom: 8px; }
-.q-type { font-size: 0.72rem; opacity: 0.55; text-transform: uppercase; letter-spacing: 0.5px; color: #999; margin-left: 6px; }
-.q-text { font-size: 0.97rem; color: #333; margin-bottom: 14px; line-height: 1.6; }
-.q-text strong { color: #0d9488; font-weight: 700; }
+.print-btn { padding: 7px 16px; background: transparent; border: 1px solid #ea580c; border-radius: 20px; font-size: .78rem; font-family: inherit; font-weight: 600; color: #ea580c; cursor: pointer; }
+.info-banner { background: #ffffff; border: 1px solid #fde3c8; border-radius: 14px; padding: 12px 14px; margin-bottom: 16px; font-size: .84rem; line-height: 1.5; }
+.info-banner strong { color: #ea580c; }
+.score-bar { background: #ffffff; border: 1px solid #fde3c8; border-radius: 14px; padding: 12px 16px; margin-bottom: 16px; display: flex; justify-content: space-between; align-items: center; }
+.score-label { font-size: .82rem; color: #8a6a50; }
+.score-num { font-size: 1.4rem; font-weight: 900; color: #ea580c; }
+.card { background: #ffffff; border: 1px solid #fde3c8; border-radius: 16px; padding: 18px; margin-bottom: 14px; box-shadow: 0 3px 12px rgba(0,0,0,.07); }
+.card.reflect { border: 1px dashed #ea580c; }
+.card.passage { border-left: 5px solid #ea580c; }
+.q-num { background: linear-gradient(135deg,#ea580c,#f59e0b); color: #fff; font-weight: 900; font-size: .75rem; padding: 3px 10px; border-radius: 20px; display: inline-block; margin-bottom: 8px; }
+.q-type { font-size: .72rem; opacity: .6; text-transform: uppercase; letter-spacing: .5px; margin-left: 6px; }
+.q-text { font-size: 1rem; margin-bottom: 14px; line-height: 1.6; }
+.q-text strong { color: #ea580c; }
 .options { display: flex; flex-direction: column; gap: 9px; }
-.opt-btn { background: #f6fdfb; border: 2px solid #dcf3ee; border-radius: 12px; padding: 12px 14px; font-size: 0.92rem; font-family: inherit; cursor: pointer; text-align: left; color: #444; transition: transform 0.1s; line-height: 1.4; }
-.opt-btn:active { transform: scale(0.97); }
+.opt-btn { background: #fffaf3; border: 2px solid #fcd9b0; border-radius: 12px; padding: 12px 14px; font-size: .95rem; font-family: inherit; cursor: pointer; text-align: left; color: #4a3320; line-height: 1.4; transition: transform .1s; }
+.opt-btn:active { transform: scale(.97); }
 .opt-btn.correct { background: #d4edda; border-color: #28a745; color: #155724; }
-.opt-btn.wrong   { background: #f8d7da; border-color: #dc3545; color: #721c24; }
+.opt-btn.wrong { background: #f8d7da; border-color: #dc3545; color: #721c24; }
 .opt-btn.disabled { pointer-events: none; }
-.feedback { display: none; margin-top: 10px; padding: 12px 13px; border-radius: 10px; font-size: 0.88rem; line-height: 1.6; }
+.blank-input { background: #fffaf3; border: 1.5px solid #fcd9b0; border-radius: 10px; padding: 11px 13px; color: #3b2410; font-size: .95rem; font-family: inherit; width: 100%; margin-bottom: 8px; outline: none; }
+.blank-input:focus { border-color: #ea580c; }
+.blank-input.correct-input { border-color: #28a745; }
+.blank-input.wrong-input { border-color: #dc3545; }
+textarea.blank-input { min-height: 80px; resize: vertical; }
+.check-btn { background: linear-gradient(135deg,#ea580c,#f59e0b); border: none; border-radius: 10px; padding: 11px 20px; font-size: .9rem; font-family: inherit; font-weight: 800; color: #fff; cursor: pointer; display: block; width: 100%; }
+.check-btn:disabled { opacity: .4; pointer-events: none; }
+.feedback { display: none; margin-top: 10px; padding: 12px 13px; border-radius: 10px; font-size: .9rem; line-height: 1.6; }
 .feedback.show { display: block; }
-.feedback.ok  { background: #d4edda; border: 1px solid #28a745; color: #155724; }
+.feedback.ok { background: #d4edda; border: 1px solid #28a745; color: #155724; }
 .feedback.nok { background: #f8d7da; border: 1px solid #dc3545; color: #721c24; }
-.fb-answer { font-weight: 800; display: block; margin-bottom: 4px; }
-.fb-tip    { font-size: 0.83rem; opacity: 0.85; color: #333; }
-.finish-btn { display: block; width: 100%; padding: 16px; background: linear-gradient(135deg,#0d9488,#16a34a); color: white; border: none; border-radius: 16px; font-size: 1.1rem; font-family: inherit; font-weight: 900; cursor: pointer; margin-top: 6px; }
-.result-panel { display: none; background: white; border: none; border-radius: 20px; padding: 28px 20px; text-align: center; margin-top: 20px; }
+.feedback.model { background: #ffffff; border: 1px solid #ea580c; }
+.finish-btn { display: block; width: 100%; padding: 16px; background: linear-gradient(135deg,#ea580c,#f59e0b); color: #fff; border: none; border-radius: 16px; font-size: 1.1rem; font-family: inherit; font-weight: 900; cursor: pointer; margin-top: 6px; }
+.result-panel { display: none; background: #ffffff; border: 1px solid #fde3c8; border-radius: 20px; padding: 28px 20px; text-align: center; margin-top: 20px; }
 .result-panel.show { display: block; }
 .result-big { font-size: 4rem; margin-bottom: 10px; }
-.result-grade { font-size: 3.5rem; font-weight: 900; background: linear-gradient(135deg,#0d9488,#16a34a); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; margin: 8px 0 2px; }
-.result-grade-label { font-size: 0.8rem; font-weight: 700; color: #888; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 10px; }
-.result-msg   { font-size: 1.1rem; font-weight: 800; color: #333; margin-bottom: 8px; }
-.result-score { font-size: 0.88rem; color: #888; margin-bottom: 16px; }
+.result-grade { font-size: 3.2rem; font-weight: 900; color: #ea580c; margin: 8px 0 2px; }
+.result-grade-label { font-size: .8rem; font-weight: 700; opacity: .7; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 10px; }
+.result-msg { font-size: 1.1rem; font-weight: 800; margin-bottom: 8px; }
+.result-score { font-size: .88rem; opacity: .75; margin-bottom: 16px; }
 .result-actions { display: flex; gap: 10px; justify-content: center; flex-wrap: wrap; }
-.retry-btn { flex: 1; min-width: 130px; background: linear-gradient(135deg,#38bdf8,#0369a1); color: white; border: none; border-radius: 14px; padding: 13px 16px; font-size: 0.9rem; font-family: inherit; font-weight: 700; cursor: pointer; }
-.gabarito-link { flex: 1; min-width: 130px; background: rgba(13,148,136,0.1); border: 1.5px solid rgba(13,148,136,0.25); color: #0d9488 !important; border-radius: 14px; padding: 13px 16px; text-decoration: none; font-weight: 700; font-size: 0.9rem; display: flex; align-items: center; justify-content: center; gap: 6px; }
-.bottom-nav { display: flex; gap: 10px; padding: 0; margin: 20px 0 10px; }
-.bottom-nav a { flex: 1; padding: 13px 10px; border-radius: 14px; text-decoration: none; text-align: center; font-size: 0.85rem; font-weight: 700; display: flex; align-items: center; justify-content: center; gap: 6px; }
-.btn-prev { background: rgba(13,148,136,0.08); border: 1.5px solid rgba(13,148,136,0.2); color: #0d9488 !important; }
-.btn-next { background: linear-gradient(135deg,#0d9488,#2dd4bf); color: white !important; }
-.btn-home-only { background: rgba(13,148,136,0.08); border: 1.5px solid rgba(13,148,136,0.2); color: #0d9488 !important; flex: 0.6; }
-.credit { text-align: center; padding: 20px 14px 8px; font-size: 0.75rem; color: #bbb; }
-.credit strong { color: #0d9488; }
-@media print {
-  .top-nav,.print-btn-wrap,.score-bar,.finish-btn,.result-panel,#resultPanel,.bottom-nav { display: none !important; }
-  html, body { background: white !important; color: #111 !important; min-height: 0 !important; height: auto !important; overflow: visible !important; }
-  body { padding-bottom: 0 !important; }
-  body * { background-color: transparent !important; background-image: none !important; color: #111 !important; box-shadow: none !important; overflow: visible !important; }
-  .exam-header { display: block !important; border: 2px solid #555 !important; }
-  .eh-field input { border-bottom: 1.5px solid #555 !important; color: #111 !important; }
-  .card { border: 1px solid #ccc !important; break-inside: avoid !important; page-break-inside: avoid !important; }
-  .opt-btn { border: 1.5px solid #bbb !important; color: #222 !important; background: white !important; margin-bottom: 4px !important; }
-  .opt-btn.correct, .opt-btn.wrong { background: white !important; border-color: #bbb !important; }
-  .feedback { display: none !important; }
-  .header { background: #0d9488 !important; -webkit-print-color-adjust: exact !important; print-color-adjust: exact !important; }
-  .credit { color: #888 !important; }
-  @page { margin: 1.5cm; }
-}
-
-/* ---- PDF EXPORT (JS-generated, not native print) ---- */
-body.pdf-export .top-nav, body.pdf-export .print-btn-wrap, body.pdf-export .score-bar, body.pdf-export .finish-btn, body.pdf-export .result-panel, body.pdf-export #resultPanel, body.pdf-export .bottom-nav { display: none !important; }
-  body.pdf-export, body.pdf-export { background: white !important; color: #111 !important; min-height: 0 !important; height: auto !important; overflow: visible !important; }
-  body.pdf-export { padding-bottom: 0 !important; }
-  body.pdf-export * { background-color: transparent !important; background-image: none !important; color: #111 !important; box-shadow: none !important; overflow: visible !important; }
-  body.pdf-export .exam-header { display: block !important; border: 2px solid #555 !important; }
-  body.pdf-export .eh-field input { border-bottom: 1.5px solid #555 !important; color: #111 !important; }
-  body.pdf-export .card { border: 1px solid #ccc !important; break-inside: avoid !important; page-break-inside: avoid !important; }
-  body.pdf-export .opt-btn { border: 1.5px solid #bbb !important; color: #222 !important; background: white !important; margin-bottom: 4px !important; }
-  body.pdf-export .opt-btn.correct, body.pdf-export .opt-btn.wrong { background: white !important; border-color: #bbb !important; }
-  body.pdf-export .feedback { display: none !important; }
-  body.pdf-export .header { background: #0d9488 !important; -webkit-print-color-adjust: exact !important; print-color-adjust: exact !important; }
-  body.pdf-export .credit { color: #888 !important; }
-</style>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
-</head>
-<body>
-<div class="top-nav">
-  <a href="index.html" class="nav-home">🏠 Início</a>
-  <span class="nav-title">⭐ Nível 1 — Básico</span>
-</div>
-
-<div class="exam-header">
-  <div class="eh-title">🌎 Avaliação de Geografia — Nível 1</div>
-  <div class="eh-grid">
-    <div class="eh-field"><label>Nome</label><input type="text" placeholder="Seu nome"></div>
-    <div class="eh-field"><label>Data</label><input type="text" placeholder="__/__/____"></div>
-  </div>
-</div>
-
-<div class="header">
-  <div class="level-tag">Nível 1</div>
-  <h1>⭐ Básico</h1>
-  <p>Recursos naturais, água e trabalho — 14 questões</p>
-</div>
-
+.retry-btn { flex: 1; min-width: 130px; background: linear-gradient(135deg,#ea580c,#f59e0b); color: #fff; border: none; border-radius: 14px; padding: 13px 16px; font-size: .9rem; font-family: inherit; font-weight: 700; cursor: pointer; }
+.gabarito-link { flex: 1; min-width: 130px; border: 1.5px solid #ea580c; color: #ea580c !important; border-radius: 14px; padding: 13px 16px; text-decoration: none; font-weight: 700; font-size: .9rem; display: flex; align-items: center; justify-content: center; }
+.bottom-nav { display: flex; gap: 10px; margin: 20px 0 10px; }
+.bottom-nav a { flex: 1; padding: 13px 10px; border-radius: 14px; text-decoration: none; text-align: center; font-size: .85rem; font-weight: 700; display: flex; align-items: center; justify-content: center; border: 1.5px solid #ea580c; color: #ea580c; }
+.bottom-nav a.nx { background: linear-gradient(135deg,#ea580c,#f59e0b); color: #fff; border: none; }
+.credit { text-align: center; padding: 20px 14px 8px; font-size: .75rem; opacity: .5; }
+body.pdf-export .top-nav, body.pdf-export .print-btn-wrap, body.pdf-export .score-bar, body.pdf-export .info-banner, body.pdf-export .finish-btn, body.pdf-export .result-panel, body.pdf-export .bottom-nav { display: none !important; }
+body.pdf-export { background: #fff !important; color: #111 !important; padding-bottom: 0 !important; }
+body.pdf-export * { background-color: transparent !important; background-image: none !important; color: #111 !important; box-shadow: none !important; }
+body.pdf-export .exam-header { border: 2px solid #555 !important; }
+body.pdf-export .eh-field input { border-bottom: 1.5px solid #555 !important; }
+body.pdf-export .card { border: 1px solid #ccc !important; break-inside: avoid; page-break-inside: avoid; }
+body.pdf-export .opt-btn { border: 1.5px solid #bbb !important; margin-bottom: 4px !important; }
+body.pdf-export .blank-input { border: none !important; border-bottom: 1.5px solid #555 !important; border-radius: 0 !important; }
+body.pdf-export textarea.blank-input { border: 1px solid #999 !important; }
+body.pdf-export .check-btn, body.pdf-export .feedback { display: none !important; }
+body.pdf-export .header { border-bottom: 2px solid #ea580c !important; }
+body.pdf-export .credit { color: #888 !important; }
+</style></head><body>
+<div class="top-nav"><a href="index.html">🏠 Início</a><span class="nav-title">⭐ Nível 1 — Básico</span></div>
+<div class="exam-header"><div class="eh-title">🌎 Avaliação de Geografia — Nível 1 — Básico</div>
+<div class="eh-grid"><div class="eh-field"><label>Nome</label><input type="text" placeholder="Seu nome"></div><div class="eh-field"><label>Data</label><input type="text" placeholder="__/__/____"></div></div></div>
+<div class="header"><div class="level-tag">Nível 1 — Básico</div><h1>⭐ Nível 1 — Básico</h1><p>Cidadania, serviços públicos e consumo — 39 questões</p></div>
 <div class="wrap">
 <div class="print-btn-wrap"><button class="print-btn" id="pdfBtn" onclick="downloadPDF()">⬇️ Baixar PDF</button></div>
-<div class="score-bar">
-  <span class="score-label">Pontuação</span>
-  <span class="score-num" id="scoreDisplay">0 / 14</span>
-</div>
 
-<!-- Q1 -->
-<div class="card" id="q1">
-  <div class="q-num">1</div><span class="q-type">Recursos naturais</span>
-  <div class="q-text">A água é um recurso natural importante porque:</div>
-  <div class="options">
-    <button class="opt-btn" data-q="q1" data-correct="false" data-msg="Errado! A água tem muitas outras funções além do lazer, como beber e produzir alimentos." data-tip="💡 Pense em tudo que você usa água para fazer em um dia!">Só serve para nadar e brincar</button>
-    <button class="opt-btn" data-q="q1" data-correct="true" data-msg="Isso mesmo! Sem água, nenhum ser vivo sobrevive." data-tip="">É essencial para a vida de todos os seres vivos</button>
-    <button class="opt-btn" data-q="q1" data-correct="false" data-msg="Errado! Usamos água todos os dias, várias vezes ao dia." data-tip="💡 Pense em quantas vezes você usa água hoje.">Não pode ser usada todos os dias</button>
-  </div>
-  <div class="feedback" id="fb-q1"></div>
-</div>
-
-<!-- Q2 -->
-<div class="card" id="q2">
-  <div class="q-num">2</div><span class="q-type">Água doce e salgada</span>
-  <div class="q-text">Qual tipo de água é a <strong>maior parte</strong> da água do nosso planeta?</div>
-  <div class="options">
-    <button class="opt-btn" data-q="q2" data-correct="false" data-msg="Errado! A água doce é muito pequena em comparação com a água salgada." data-tip="💡 Pense nos oceanos — eles são enormes!">Água doce</button>
-    <button class="opt-btn" data-q="q2" data-correct="true" data-msg="Isso mesmo! A água salgada dos oceanos e mares é a maior parte da água da Terra." data-tip="">Água salgada, dos oceanos e mares</button>
-    <button class="opt-btn" data-q="q2" data-correct="false" data-msg="Errado! A água da chuva é uma parte pequena do total de água do planeta." data-tip="💡 A chuva é água doce, e a água doce é minoria.">Água da chuva</button>
-  </div>
-  <div class="feedback" id="fb-q2"></div>
-</div>
-
-<!-- Q3 -->
-<div class="card" id="q3">
-  <div class="q-num">3</div><span class="q-type">Ciclo da água</span>
-  <div class="q-text">Como se chama o processo em que o Sol esquenta a água, ela vira vapor e sobe formando as nuvens?</div>
-  <div class="options">
-    <button class="opt-btn" data-q="q3" data-correct="false" data-msg="Errado! Saneamento é o tratamento da água e do esgoto." data-tip="💡 Saneamento não tem relação com o Sol esquentando a água.">Saneamento</button>
-    <button class="opt-btn" data-q="q3" data-correct="true" data-msg="Isso mesmo! A evaporação leva a água para o céu, formando as nuvens." data-tip="">Evaporação</button>
-    <button class="opt-btn" data-q="q3" data-correct="false" data-msg="Errado! Esgoto é a rede que recebe a água já usada nas casas." data-tip="💡 Pense na palavra 'vapor' escondida em 'evaporação'!">Esgoto</button>
-  </div>
-  <div class="feedback" id="fb-q3"></div>
-</div>
-
-<!-- Q4 -->
-<div class="card" id="q4">
-  <div class="q-num">4</div><span class="q-type">Mananciais</span>
-  <div class="q-text">As reservas de água da Terra são chamadas de:</div>
-  <div class="options">
-    <button class="opt-btn" data-q="q4" data-correct="false" data-msg="Errado! Aquário é um recipiente com água para peixes, não uma reserva natural." data-tip="💡 Pense em rios, lagos e água subterrânea.">Aquários</button>
-    <button class="opt-btn" data-q="q4" data-correct="true" data-msg="Isso mesmo! Mananciais são as reservas de água da Terra." data-tip="">Mananciais</button>
-    <button class="opt-btn" data-q="q4" data-correct="false" data-msg="Errado! Vulcões não têm relação com reservas de água." data-tip="💡 A palavra certa lembra 'manar', que é jorrar água.">Vulcões</button>
-  </div>
-  <div class="feedback" id="fb-q4"></div>
-</div>
-
-<!-- Q5 -->
-<div class="card" id="q5">
-  <div class="q-num">5</div><span class="q-type">Águas subterrâneas</span>
-  <div class="q-text">A água que fica escondida embaixo da terra (em fontes e poços) é chamada de água:</div>
-  <div class="options">
-    <button class="opt-btn" data-q="q5" data-correct="true" data-msg="Isso mesmo! Água subterrânea fica embaixo da terra, no lençol freático." data-tip="">Subterrânea</button>
-    <button class="opt-btn" data-q="q5" data-correct="false" data-msg="Errado! 'Aérea' seria algo que fica no ar, não embaixo da terra." data-tip="💡 'Sub' significa embaixo, e 'terrânea' vem de terra.">Aérea</button>
-    <button class="opt-btn" data-q="q5" data-correct="false" data-msg="Errado! Isso não é um tipo de água estudado em Geografia." data-tip="💡 'Sub' significa embaixo, e 'terrânea' vem de terra.">Sonora</button>
-  </div>
-  <div class="feedback" id="fb-q5"></div>
-</div>
-
-<!-- Q6 -->
-<div class="card" id="q6">
-  <div class="q-num">6</div><span class="q-type">Tipos de água</span>
-  <div class="q-text">Segundo o livro, a <strong>água azul</strong> é a água que:</div>
-  <div class="options">
-    <button class="opt-btn" data-q="q6" data-correct="false" data-msg="Errado! Essa é a água cinza — já foi usada e precisa ser tratada." data-tip="💡 A água azul ainda não foi usada pelas pessoas.">Já foi usada e precisa de tratamento</button>
-    <button class="opt-btn" data-q="q6" data-correct="true" data-msg="Isso mesmo! Água azul vem de rios, lagos, represas e chuvas, podendo ser potável." data-tip="">Vem de rios, lagos, represas e chuvas, podendo ser potável</button>
-    <button class="opt-btn" data-q="q6" data-correct="false" data-msg="Errado! Essa é a água verde — absorvida pelas raízes das plantas." data-tip="💡 Pense na cor do céu e dos rios!">Fica presa dentro das plantas</button>
-  </div>
-  <div class="feedback" id="fb-q6"></div>
-</div>
-
-<!-- Q7 -->
-<div class="card" id="q7">
-  <div class="q-num">7</div><span class="q-type">Tipos de água</span>
-  <div class="q-text">A água que é absorvida pelas raízes das plantas é chamada de água:</div>
-  <div class="options">
-    <button class="opt-btn" data-q="q7" data-correct="true" data-msg="Isso mesmo! Água verde é a água do solo, absorvida pelas plantas." data-tip="">Verde</button>
-    <button class="opt-btn" data-q="q7" data-correct="false" data-msg="Errado! Água cinza é a que já foi usada pelas pessoas." data-tip="💡 Pense na cor das folhas das plantas!">Cinza</button>
-    <button class="opt-btn" data-q="q7" data-correct="false" data-msg="Errado! Essa cor não é usada para classificar os tipos de água." data-tip="💡 Pense na cor das folhas das plantas!">Preta</button>
-  </div>
-  <div class="feedback" id="fb-q7"></div>
-</div>
-
-<!-- Q8 -->
-<div class="card" id="q8">
-  <div class="q-num">8</div><span class="q-type">Tipos de água</span>
-  <div class="q-text">A água cinza é aquela que:</div>
-  <div class="options">
-    <button class="opt-btn" data-q="q8" data-correct="true" data-msg="Isso mesmo! Água cinza já foi usada pelas pessoas e precisa de tratamento antes de voltar à natureza." data-tip="">Já foi usada pelas pessoas e precisa ser tratada antes de voltar à natureza</button>
-    <button class="opt-btn" data-q="q8" data-correct="false" data-msg="Errado! Essa é a água azul, que vem das chuvas." data-tip="💡 Pense na água do banho ou da pia depois de usada.">Cai direto do céu</button>
-    <button class="opt-btn" data-q="q8" data-correct="false" data-msg="Errado! Essa é a água azul, encontrada em geleiras." data-tip="💡 Pense na água do banho ou da pia depois de usada.">Fica nas geleiras</button>
-  </div>
-  <div class="feedback" id="fb-q8"></div>
-</div>
-
-<!-- Q9 -->
-<div class="card" id="q9">
-  <div class="q-num">9</div><span class="q-type">Saneamento</span>
-  <div class="q-text">A rede que recebe a água já utilizada (suja) em nossas casas se chama:</div>
-  <div class="options">
-    <button class="opt-btn" data-q="q9" data-correct="false" data-msg="Errado! Manancial é uma reserva de água, não a rede de água usada." data-tip="💡 Pense na água que desce pelo ralo!">Manancial</button>
-    <button class="opt-btn" data-q="q9" data-correct="true" data-msg="Isso mesmo! O esgoto recebe a água já utilizada nas casas." data-tip="">Esgoto</button>
-    <button class="opt-btn" data-q="q9" data-correct="false" data-msg="Errado! Represa é onde a água fica guardada para gerar energia." data-tip="💡 Pense na água que desce pelo ralo!">Represa</button>
-  </div>
-  <div class="feedback" id="fb-q9"></div>
-</div>
-
-<!-- Q10 -->
-<div class="card" id="q10">
-  <div class="q-num">10</div><span class="q-type">Saneamento</span>
-  <div class="q-text">O tratamento que deixa a água própria para consumo e cuida do esgoto se chama:</div>
-  <div class="options">
-    <button class="opt-btn" data-q="q10" data-correct="true" data-msg="Isso mesmo! Saneamento é o tratamento da água e do esgoto." data-tip="">Saneamento</button>
-    <button class="opt-btn" data-q="q10" data-correct="false" data-msg="Errado! Agricultura é o cultivo da terra, não o tratamento de água." data-tip="💡 A palavra lembra 'sanear', que é deixar limpo e saudável.">Agricultura</button>
-    <button class="opt-btn" data-q="q10" data-correct="false" data-msg="Errado! Artesanato é o trabalho manual de criar objetos." data-tip="💡 A palavra lembra 'sanear', que é deixar limpo e saudável.">Artesanato</button>
-  </div>
-  <div class="feedback" id="fb-q10"></div>
-</div>
-
-<!-- Q11 -->
-<div class="card" id="q11">
-  <div class="q-num">11</div><span class="q-type">Energia</span>
-  <div class="q-text">As hidrelétricas, como a Usina de Itaipu, usam a força da água para:</div>
-  <div class="options">
-    <button class="opt-btn" data-q="q11" data-correct="false" data-msg="Errado! Irrigar plantações é uma das utilidades da água, mas não é a função da hidrelétrica." data-tip="💡 Pense na palavra 'hidrelétrica' — tem 'elétrica' dentro!">Irrigar plantações</button>
-    <button class="opt-btn" data-q="q11" data-correct="true" data-msg="Isso mesmo! Hidrelétricas usam a força da água para gerar energia elétrica." data-tip="">Gerar energia elétrica</button>
-    <button class="opt-btn" data-q="q11" data-correct="false" data-msg="Errado! Isso não tem relação com hidrelétricas." data-tip="💡 Pense na palavra 'hidrelétrica' — tem 'elétrica' dentro!">Fabricar sabonetes</button>
-  </div>
-  <div class="feedback" id="fb-q11"></div>
-</div>
-
-<!-- Q12 -->
-<div class="card" id="q12">
-  <div class="q-num">12</div><span class="q-type">Matéria-prima</span>
-  <div class="q-text">Chamamos de <strong>matéria-prima</strong>:</div>
-  <div class="options">
-    <button class="opt-btn" data-q="q12" data-correct="false" data-msg="Errado! O produto pronto já passou pela transformação da matéria-prima." data-tip="💡 Pense no milho antes de virar pamonha!">O produto já pronto na loja</button>
-    <button class="opt-btn" data-q="q12" data-correct="true" data-msg="Isso mesmo! Matéria-prima é o item retirado da natureza que serve de base para criar outro produto." data-tip="">O item retirado da natureza que serve de base para criar outro produto</button>
-    <button class="opt-btn" data-q="q12" data-correct="false" data-msg="Errado! Dinheiro não é um recurso da natureza." data-tip="💡 Pense no milho antes de virar pamonha!">O dinheiro usado para comprar um produto</button>
-  </div>
-  <div class="feedback" id="fb-q12"></div>
-</div>
-
-<!-- Q13 -->
-<div class="card" id="q13">
-  <div class="q-num">13</div><span class="q-type">Trabalho manual e industrial</span>
-  <div class="q-text">No trabalho manual (artesanato), o produto é feito:</div>
-  <div class="options">
-    <button class="opt-btn" data-q="q13" data-correct="false" data-msg="Errado! Isso é o trabalho industrial, feito por máquinas." data-tip="💡 Pense em um artesão fazendo uma peça de cerâmica.">Por muitas máquinas ao mesmo tempo</button>
-    <button class="opt-btn" data-q="q13" data-correct="true" data-msg="Isso mesmo! No trabalho manual, uma só pessoa faz o objeto do início ao fim, com muito cuidado." data-tip="">Do início ao fim por uma só pessoa, de forma detalhada</button>
-    <button class="opt-btn" data-q="q13" data-correct="false" data-msg="Errado! O artesão tem muito cuidado ao produzir suas peças." data-tip="💡 Pense em um artesão fazendo uma peça de cerâmica.">Sem nenhum cuidado</button>
-  </div>
-  <div class="feedback" id="fb-q13"></div>
-</div>
-
-<!-- Q14 -->
-<div class="card" id="q14">
-  <div class="q-num">14</div><span class="q-type">Tecnologia e minerais</span>
-  <div class="q-text">Para fabricar um computador, usamos minerais como:</div>
-  <div class="options">
-    <button class="opt-btn" data-q="q14" data-correct="false" data-msg="Errado! Sal e açúcar são usados na alimentação, não na fabricação de computadores." data-tip="💡 Pense em metais preciosos, como joias!">Sal e açúcar</button>
-    <button class="opt-btn" data-q="q14" data-correct="true" data-msg="Isso mesmo! Ouro, prata, cobre e quartzo são alguns dos minerais usados na fabricação de computadores." data-tip="">Ouro, prata, cobre e quartzo</button>
-    <button class="opt-btn" data-q="q14" data-correct="false" data-msg="Errado! Arroz e feijão são alimentos, não minerais." data-tip="💡 Pense em metais preciosos, como joias!">Arroz e feijão</button>
-  </div>
-  <div class="feedback" id="fb-q14"></div>
-</div>
-
+<div class="score-bar"><span class="score-label">Pontuação</span><span class="score-num" id="scoreDisplay">0 / 39</span></div>
+<div class="card" id="q1" data-type="mc" data-ans="vivem num mesmo lugar e se relacionam entre si" data-exp="Sociedade é um grupo de pessoas que vive num lugar e convive umas com as outras."><div class="q-num">1</div><span class="q-type">Sociedade e cidadão</span><div class="q-text">Sociedade é um grupo de pessoas que:</div><div class="options"><button class="opt-btn" data-c="1">vivem num mesmo lugar e se relacionam entre si</button><button class="opt-btn" data-c="0">moram sozinhas, bem longe de todo mundo</button><button class="opt-btn" data-c="0">trabalham só em hospitais</button></div><div class="feedback"></div></div>
+<div class="card" id="q2" data-type="mc" data-ans="participa da sociedade, com seus direitos e deveres" data-exp="Cidadão é quem faz parte da sociedade e tem direitos e deveres. Criança também é cidadã!"><div class="q-num">2</div><span class="q-type">Sociedade e cidadão</span><div class="q-text">Cidadão é toda pessoa que:</div><div class="options"><button class="opt-btn" data-c="1">participa da sociedade, com seus direitos e deveres</button><button class="opt-btn" data-c="0">só tem direitos e nenhum dever</button><button class="opt-btn" data-c="0">tem mais de 18 anos</button></div><div class="feedback"></div></div>
+<div class="card" id="q3" data-type="mc" data-ans="Algo que todos podem usar, como praça, parque e ciclovia" data-exp="Equipamento público é um lugar ou objeto feito para todos usarem: ruas, praças, parques, ponto de ônibus..."><div class="q-num">3</div><span class="q-type">Equipamentos públicos</span><div class="q-text">O que é um equipamento público?</div><div class="options"><button class="opt-btn" data-c="0">Uma loja que só vende pra quem tem cartão</button><button class="opt-btn" data-c="0">Um brinquedo que só você usa em casa</button><button class="opt-btn" data-c="1">Algo que todos podem usar, como praça, parque e ciclovia</button></div><div class="feedback"></div></div>
+<div class="card" id="q4" data-type="mc" data-ans="impostos e taxas pagos pelos cidadãos" data-exp="Os cidadãos pagam impostos e taxas, e os governantes usam esse dinheiro para construir e manter tudo o que é público."><div class="q-num">4</div><span class="q-type">Impostos</span><div class="q-text">O dinheiro para construir e cuidar de parques, ruas e hospitais públicos vem de:</div><div class="options"><button class="opt-btn" data-c="1">impostos e taxas pagos pelos cidadãos</button><button class="opt-btn" data-c="0">sorteios da prefeitura</button><button class="opt-btn" data-c="0">presentes que o governador ganha</button></div><div class="feedback"></div></div>
+<div class="card" id="q5" data-type="mc" data-ans="dinheiro que os cidadãos pagam ao governo para pagar os serviços e equipamentos públicos" data-exp="Imposto é o dinheiro que a gente paga ao governo. Ele volta pra gente em forma de serviços, como hospital, escola e coleta de lixo."><div class="q-num">5</div><span class="q-type">Impostos</span><div class="q-text">Imposto é:</div><div class="options"><button class="opt-btn" data-c="0">uma multa por jogar lixo no chão</button><button class="opt-btn" data-c="0">um presente que se dá ao vizinho</button><button class="opt-btn" data-c="1">dinheiro que os cidadãos pagam ao governo para pagar os serviços e equipamentos públicos</button></div><div class="feedback"></div></div>
+<div class="card" id="q6" data-type="mc" data-ans="contribuinte" data-exp="Contribuinte é o cidadão que paga impostos."><div class="q-num">6</div><span class="q-type">Impostos</span><div class="q-text">Quem paga impostos ao governo se chama:</div><div class="options"><button class="opt-btn" data-c="1">contribuinte</button><button class="opt-btn" data-c="0">consumista</button><button class="opt-btn" data-c="0">governante</button></div><div class="feedback"></div></div>
+<div class="card" id="q7" data-type="mc" data-ans="os cidadãos, votando" data-exp="No Brasil os cidadãos elegem os governantes pelo voto."><div class="q-num">7</div><span class="q-type">Cidadania e governo</span><div class="q-text">No Brasil, quem escolhe os governantes?</div><div class="options"><button class="opt-btn" data-c="1">os cidadãos, votando</button><button class="opt-btn" data-c="0">os próprios governantes, sozinhos</button><button class="opt-btn" data-c="0">as empresas privadas</button></div><div class="feedback"></div></div>
+<div class="card" id="q8" data-type="mc" data-ans="indireta" data-exp="Tudo o que você compra já tem imposto no preço. Por isso criança é contribuinte indireta. Aos 18 anos, trabalhando, passa a ser contribuinte direta também."><div class="q-num">8</div><span class="q-type">Impostos</span><div class="q-text">Uma criança compra um lanche e o imposto já vem dentro do preço. Ela é contribuinte:</div><div class="options"><button class="opt-btn" data-c="0">nenhuma — criança nunca paga imposto</button><button class="opt-btn" data-c="0">direta</button><button class="opt-btn" data-c="1">indireta</button></div><div class="feedback"></div></div>
+<div class="card" id="q9" data-type="mc" data-ans="diretos" data-exp="Quem trabalha e paga imposto sobre o que ganha é contribuinte direto."><div class="q-num">9</div><span class="q-type">Impostos</span><div class="q-text">Seus pais trabalham e pagam imposto sobre o salário. Eles são contribuintes:</div><div class="options"><button class="opt-btn" data-c="0">que não existem</button><button class="opt-btn" data-c="1">diretos</button><button class="opt-btn" data-c="0">indiretos</button></div><div class="feedback"></div></div>
+<div class="card" id="q10" data-type="mc" data-ans="saber onde o dinheiro público está sendo usado" data-exp="O cidadão pode acompanhar e fiscalizar o trabalho dos governantes, porque o dinheiro público é de todos."><div class="q-num">10</div><span class="q-type">Impostos</span><div class="q-text">Quem paga impostos tem o direito de:</div><div class="options"><button class="opt-btn" data-c="0">decidir sozinho o que o governo vai construir</button><button class="opt-btn" data-c="1">saber onde o dinheiro público está sendo usado</button><button class="opt-btn" data-c="0">pegar o dinheiro de volta quando quiser</button></div><div class="feedback"></div></div>
+<div class="card" id="q11" data-type="mc" data-ans="coleta de lixo e atendimento em hospital público" data-exp="Carteira de identidade, hospital público e coleta de lixo são exemplos de serviços que vêm dos impostos."><div class="q-num">11</div><span class="q-type">Impostos</span><div class="q-text">Qual destes serviços é pago com os impostos?</div><div class="options"><button class="opt-btn" data-c="0">uma pizza no restaurante</button><button class="opt-btn" data-c="0">um brinquedo comprado na loja</button><button class="opt-btn" data-c="1">coleta de lixo e atendimento em hospital público</button></div><div class="feedback"></div></div>
+<div class="card" id="q12" data-type="mc" data-ans="Constituição Federal" data-exp="A Constituição Federal de 1988 é o maior conjunto de leis que organiza o Estado brasileiro."><div class="q-num">12</div><span class="q-type">Estado e Constituição</span><div class="q-text">O maior conjunto de leis do Brasil, de 1988, se chama:</div><div class="options"><button class="opt-btn" data-c="0">Carta de Compras</button><button class="opt-btn" data-c="1">Constituição Federal</button><button class="opt-btn" data-c="0">Regra do Bairro</button></div><div class="feedback"></div></div>
+<div class="card" id="q13" data-type="mc" data-ans="vida, liberdade, igualdade, segurança e propriedade" data-exp="O artigo 5º destaca os direitos à vida, à liberdade, à igualdade, à segurança e à propriedade."><div class="q-num">13</div><span class="q-type">Estado e Constituição</span><div class="q-text">O artigo 5º da Constituição fala de direitos como:</div><div class="options"><button class="opt-btn" data-c="0">apenas esportes</button><button class="opt-btn" data-c="1">vida, liberdade, igualdade, segurança e propriedade</button><button class="opt-btn" data-c="0">só brinquedos e doces</button></div><div class="feedback"></div></div>
+<div class="card" id="q14" data-type="mc" data-ans="saúde" data-exp="Saúde, educação, segurança e justiça são serviços essenciais: permitem viver com dignidade."><div class="q-num">14</div><span class="q-type">Serviços essenciais</span><div class="q-text">Qual destes é um serviço essencial garantido pelo Estado?</div><div class="options"><button class="opt-btn" data-c="0">videogame</button><button class="opt-btn" data-c="0">festa de aniversário</button><button class="opt-btn" data-c="1">saúde</button></div><div class="feedback"></div></div>
+<div class="card" id="q15" data-type="mc" data-ans="Estado" data-exp="É dever do Estado oferecer o ensino obrigatório e gratuito."><div class="q-num">15</div><span class="q-type">Educação</span><div class="q-text">Segundo a Constituição (art. 208), oferecer ensino obrigatório e gratuito é dever do:</div><div class="options"><button class="opt-btn" data-c="1">Estado</button><button class="opt-btn" data-c="0">dono da escola particular</button><button class="opt-btn" data-c="0">vizinho</button></div><div class="feedback"></div></div>
+<div class="card" id="q16" data-type="mc" data-ans="5 anos" data-exp="Creche e pré-escola atendem crianças até 5 anos de idade."><div class="q-num">16</div><span class="q-type">Educação</span><div class="q-text">A educação infantil, em creche e pré-escola, é para crianças de até:</div><div class="options"><button class="opt-btn" data-c="0">10 anos</button><button class="opt-btn" data-c="0">15 anos</button><button class="opt-btn" data-c="1">5 anos</button></div><div class="feedback"></div></div>
+<div class="card" id="q17" data-type="mc" data-ans="quem tem necessidade especial (deficiência)" data-exp="O Estado deve oferecer atendimento especializado aos alunos com necessidade especial."><div class="q-num">17</div><span class="q-type">Educação</span><div class="q-text">A escola também deve ter atendimento educacional especializado para:</div><div class="options"><button class="opt-btn" data-c="0">só quem tira nota 10</button><button class="opt-btn" data-c="1">quem tem necessidade especial (deficiência)</button><button class="opt-btn" data-c="0">só quem mora perto da escola</button></div><div class="feedback"></div></div>
+<div class="card" id="q18" data-type="mc" data-ans="programas que ajudam o aluno e fazem parte do direito à educação" data-exp="São programas suplementares para apoiar o aluno durante os estudos."><div class="q-num">18</div><span class="q-type">Educação</span><div class="q-text">Material didático, transporte, alimentação e assistência à saúde na escola são:</div><div class="options"><button class="opt-btn" data-c="0">presentes do diretor</button><button class="opt-btn" data-c="0">coisas que só a família paga</button><button class="opt-btn" data-c="1">programas que ajudam o aluno e fazem parte do direito à educação</button></div><div class="feedback"></div></div>
+<div class="card" id="q19" data-type="mc" data-ans="infraestrutura básica" data-exp="Infraestrutura é o que dá suporte ao funcionamento da sociedade: transporte, saneamento, energia, telecomunicações e emergência."><div class="q-num">19</div><span class="q-type">Infraestrutura</span><div class="q-text">Estradas, ferrovias, energia elétrica e saneamento são exemplos de:</div><div class="options"><button class="opt-btn" data-c="0">profissões</button><button class="opt-btn" data-c="0">brinquedos de parque</button><button class="opt-btn" data-c="1">infraestrutura básica</button></div><div class="feedback"></div></div>
+<div class="card" id="q20" data-type="mc" data-ans="água potável, esgoto tratado, limpeza urbana e destino do lixo" data-exp="Saneamento básico: abastecimento de água potável, esgoto canalizado e tratado, limpeza urbana, drenagem da chuva e manejo do lixo."><div class="q-num">20</div><span class="q-type">Saneamento</span><div class="q-text">Saneamento básico inclui:</div><div class="options"><button class="opt-btn" data-c="0">só construir shoppings</button><button class="opt-btn" data-c="1">água potável, esgoto tratado, limpeza urbana e destino do lixo</button><button class="opt-btn" data-c="0">só pintar muros</button></div><div class="feedback"></div></div>
+<div class="card" id="q21" data-type="mc" data-ans="ser tratada" data-exp="A água não está limpa quando sai da fonte natural. Ela passa por tratamento e só depois fica potável."><div class="q-num">21</div><span class="q-type">Saneamento</span><div class="q-text">Antes de chegar às casas, a água retirada do rio precisa:</div><div class="options"><button class="opt-btn" data-c="0">ser congelada</button><button class="opt-btn" data-c="1">ser tratada</button><button class="opt-btn" data-c="0">ser misturada com esgoto</button></div><div class="feedback"></div></div>
+<div class="card" id="q22" data-type="mc" data-ans="direto nos rios, sem tratamento" data-exp="A água da chuva não precisa de tratamento, então vai direto para os rios."><div class="q-num">22</div><span class="q-type">Saneamento</span><div class="q-text">A água da chuva coletada na rede de esgoto pluvial é despejada:</div><div class="options"><button class="opt-btn" data-c="0">dentro das casas</button><button class="opt-btn" data-c="0">na estação de tratamento de água potável</button><button class="opt-btn" data-c="1">direto nos rios, sem tratamento</button></div><div class="feedback"></div></div>
+<div class="card" id="q23" data-type="mc" data-ans="ter consciência dos seus direitos e também dos seus deveres" data-exp="Cidadania é conhecer os direitos e cumprir os deveres, para termos uma sociedade mais justa e solidária."><div class="q-num">23</div><span class="q-type">Cidadania</span><div class="q-text">Exercer a cidadania é:</div><div class="options"><button class="opt-btn" data-c="1">ter consciência dos seus direitos e também dos seus deveres</button><button class="opt-btn" data-c="0">só reclamar do governo</button><button class="opt-btn" data-c="0">pedir tudo e não cuidar de nada</button></div><div class="feedback"></div></div>
+<div class="card" id="q24" data-type="mc" data-ans="todo cidadão, cuidando e preservando" data-exp="Cada cidadão é responsável por cuidar e preservar o que é de uso de todos."><div class="q-num">24</div><span class="q-type">Cidadania</span><div class="q-text">Quem é responsável por cuidar de uma praça ou parque que todos usam?</div><div class="options"><button class="opt-btn" data-c="0">só as crianças</button><button class="opt-btn" data-c="1">todo cidadão, cuidando e preservando</button><button class="opt-btn" data-c="0">só os governantes — o cidadão não precisa fazer nada</button></div><div class="feedback"></div></div>
+<div class="card" id="q25" data-type="mc" data-ans="alimentação" data-exp="Necessidades básicas são simples: alimentação, água, moradia, roupa, higiene, descanso..."><div class="q-num">25</div><span class="q-type">Necessidades</span><div class="q-text">Qual destas é uma necessidade básica?</div><div class="options"><button class="opt-btn" data-c="1">alimentação</button><button class="opt-btn" data-c="0">um tênis da moda</button><button class="opt-btn" data-c="0">um videogame novo</button></div><div class="feedback"></div></div>
+<div class="card" id="q26" data-type="mc" data-ans="secundárias, criadas pela vida moderna" data-exp="São necessidades secundárias: ligadas à tecnologia e ao acesso à informação, que há 100 anos não existiam."><div class="q-num">26</div><span class="q-type">Necessidades</span><div class="q-text">Celular, computador e internet são necessidades:</div><div class="options"><button class="opt-btn" data-c="0">básicas, existem desde sempre</button><button class="opt-btn" data-c="1">secundárias, criadas pela vida moderna</button><button class="opt-btn" data-c="0">proibidas</button></div><div class="feedback"></div></div>
+<div class="card" id="q27" data-type="mc" data-ans="ainda não existiam" data-exp="Muitas coisas que hoje fazem parte do dia a dia ainda não existiam há 100 anos ou menos."><div class="q-num">27</div><span class="q-type">Necessidades</span><div class="q-text">Há cerca de 100 anos, a tecnologia e a internet de hoje:</div><div class="options"><button class="opt-btn" data-c="1">ainda não existiam</button><button class="opt-btn" data-c="0">já eram usadas por todo mundo</button><button class="opt-btn" data-c="0">eram obrigatórias por lei</button></div><div class="feedback"></div></div>
+<div class="card" id="q28" data-type="mc" data-ans="desperdício" data-exp="Gastar energia sem precisar é desperdício."><div class="q-num">28</div><span class="q-type">Desperdício</span><div class="q-text">Deixar a luz ligada sem ninguém no quarto é:</div><div class="options"><button class="opt-btn" data-c="1">desperdício</button><button class="opt-btn" data-c="0">economia</button><button class="opt-btn" data-c="0">consumo consciente</button></div><div class="feedback"></div></div>
+<div class="card" id="q29" data-type="mc" data-ans="desperdício e consumismo" data-exp="Quando compramos além do necessário, caímos no desperdício e no consumismo."><div class="q-num">29</div><span class="q-type">Desperdício</span><div class="q-text">Comprar mais do que realmente precisamos pode virar:</div><div class="options"><button class="opt-btn" data-c="0">economia de dinheiro</button><button class="opt-btn" data-c="0">necessidade básica</button><button class="opt-btn" data-c="1">desperdício e consumismo</button></div><div class="feedback"></div></div>
+<div class="card" id="q30" data-type="mc" data-ans="a atitude de usar, gastar ou utilizar determinado objeto" data-exp="Consumo é usar ou gastar algo."><div class="q-num">30</div><span class="q-type">Consumo</span><div class="q-text">Consumo é:</div><div class="options"><button class="opt-btn" data-c="0">jogar tudo fora</button><button class="opt-btn" data-c="0">guardar sem usar</button><button class="opt-btn" data-c="1">a atitude de usar, gastar ou utilizar determinado objeto</button></div><div class="feedback"></div></div>
+<div class="card" id="q31" data-type="mc" data-ans="compra um produto e o utiliza (consome algo)" data-exp="Consumidor é aquele que consome alguma coisa."><div class="q-num">31</div><span class="q-type">Consumo</span><div class="q-text">Consumidor é quem:</div><div class="options"><button class="opt-btn" data-c="1">compra um produto e o utiliza (consome algo)</button><button class="opt-btn" data-c="0">vende o produto</button><button class="opt-btn" data-c="0">fabrica o produto</button></div><div class="feedback"></div></div>
+<div class="card" id="q32" data-type="mc" data-ans="comprar de forma exagerada, por vontade e não por necessidade real" data-exp="Consumismo é o ato desenfreado de consumir. Em casos extremos, pode virar uma doença."><div class="q-num">32</div><span class="q-type">Consumo</span><div class="q-text">Consumismo é:</div><div class="options"><button class="opt-btn" data-c="1">comprar de forma exagerada, por vontade e não por necessidade real</button><button class="opt-btn" data-c="0">doar o que não usa mais</button><button class="opt-btn" data-c="0">comprar só o necessário</button></div><div class="feedback"></div></div>
+<div class="card" id="q33" data-type="mc" data-ans="consumidor: o bebê; consumo: o leite" data-exp="O bebê é quem consome (consumidor) e o leite é o que é consumido (consumo)."><div class="q-num">33</div><span class="q-type">Consumo</span><div class="q-text">Um bebê mamando: quem é o consumidor e o que é consumido?</div><div class="options"><button class="opt-btn" data-c="0">consumidor: a mãe; consumo: a mamadeira</button><button class="opt-btn" data-c="1">consumidor: o bebê; consumo: o leite</button><button class="opt-btn" data-c="0">consumidor: o leite; consumo: o bebê</button></div><div class="feedback"></div></div>
+<div class="card" id="q34" data-type="mc" data-ans="fazer lista de compras antes de ir" data-exp="A lista ajuda a não comprar mais do que o necessário."><div class="q-num">34</div><span class="q-type">Cuidados do consumidor</span><div class="q-text">Qual atitude é boa pra quem vai ao mercado?</div><div class="options"><button class="opt-btn" data-c="0">ir com fome e sem lista</button><button class="opt-btn" data-c="1">fazer lista de compras antes de ir</button><button class="opt-btn" data-c="0">comprar tudo o que aparecer na frente</button></div><div class="feedback"></div></div>
+<div class="card" id="q35" data-type="mc" data-ans="comprar por impulso" data-exp="Comprar por impulso (sem pensar) leva ao desperdício."><div class="q-num">35</div><span class="q-type">Cuidados do consumidor</span><div class="q-text">Qual atitude é bom EVITAR?</div><div class="options"><button class="opt-btn" data-c="1">comprar por impulso</button><button class="opt-btn" data-c="0">fazer lista de compras</button><button class="opt-btn" data-c="0">doar roupas que não usa mais</button></div><div class="feedback"></div></div>
+<div class="card" id="q36" data-type="mc" data-ans="podem ser doados para quem precisa" data-exp="Doar é um jeito de ser solidário e alegrar quem precisa."><div class="q-num">36</div><span class="q-type">Cuidados do consumidor</span><div class="q-text">Roupas e brinquedos que você não usa mais, mas estão em bom estado:</div><div class="options"><button class="opt-btn" data-c="1">podem ser doados para quem precisa</button><button class="opt-btn" data-c="0">devem ser quebrados</button><button class="opt-btn" data-c="0">devem ser jogados no lixo</button></div><div class="feedback"></div></div>
+<div class="card" id="q37" data-type="mc" data-ans="no mundo, 1 a cada 4 pessoas não tem acesso à água potável" data-exp="Outros lugares do mundo não vivem a mesma realidade. A cada 4 pessoas no planeta, 1 não tem água potável."><div class="q-num">37</div><span class="q-type">Água</span><div class="q-text">O Brasil tem muita água, mas isso não quer dizer que podemos desperdiçar, porque:</div><div class="options"><button class="opt-btn" data-c="0">a água potável nunca acaba</button><button class="opt-btn" data-c="1">no mundo, 1 a cada 4 pessoas não tem acesso à água potável</button><button class="opt-btn" data-c="0">a água do Brasil é só de enfeite</button></div><div class="feedback"></div></div>
+<div class="card" id="q38" data-type="mc" data-ans="limitar o uso de recursos naturais (como a água) para preservar a vida ou em emergências" data-exp="Racionamento é a atitude de limitar os recursos para garantir a sobrevivência de todos."><div class="q-num">38</div><span class="q-type">Água</span><div class="q-text">Racionamento é:</div><div class="options"><button class="opt-btn" data-c="0">vender a água mais cara</button><button class="opt-btn" data-c="0">gastar o máximo possível</button><button class="opt-btn" data-c="1">limitar o uso de recursos naturais (como a água) para preservar a vida ou em emergências</button></div><div class="feedback"></div></div>
+<div class="card" id="q39" data-type="mc" data-ans="usar os recursos com sabedoria e responsabilidade, causando menos impacto à natureza e às pessoas" data-exp="Os recursos devem ser usados com sabedoria, minimizando os impactos à natureza e aos outros."><div class="q-num">39</div><span class="q-type">Consumo consciente</span><div class="q-text">Consumo consciente é:</div><div class="options"><button class="opt-btn" data-c="1">usar os recursos com sabedoria e responsabilidade, causando menos impacto à natureza e às pessoas</button><button class="opt-btn" data-c="0">nunca consumir nada</button><button class="opt-btn" data-c="0">consumir o máximo, sem pensar</button></div><div class="feedback"></div></div>
 <button class="finish-btn" id="finishBtn">Ver meu resultado 🎉</button>
-
-<div class="result-panel" id="resultPanel">
-  <div class="result-big" id="resultEmoji">🎉</div>
-  <div class="result-grade" id="resultGrade"></div>
-  <div class="result-grade-label" style="font-size:0.75rem;opacity:0.55;margin-bottom:2px;">pontos</div>
-  <div class="result-grade-label" id="resultGradeLabel"></div>
-  <div class="result-msg" id="resultMsg"></div>
-  <div class="result-score" id="resultScore"></div>
-  <div class="result-actions">
-    <button class="retry-btn" onclick="location.reload()">Tentar de novo 🔄</button>
-    <a href="gabarito.html" class="gabarito-link">📋 Ver Gabarito</a>
-  </div>
+<div class="result-panel" id="resultPanel"><div class="result-big" id="resultEmoji">🎉</div><div class="result-grade" id="resultGrade"></div>
+<div class="result-grade-label">pontos</div><div class="result-grade-label" id="resultGradeLabel"></div><div class="result-msg" id="resultMsg"></div><div class="result-score" id="resultScore"></div>
+<div class="result-actions"><button class="retry-btn" onclick="location.reload()">Tentar de novo 🔄</button><a href="gabarito.html" class="gabarito-link">📋 Ver Gabarito</a></div></div>
+<div class="bottom-nav"><a href="resumo_conteudo.html">← Voltar</a><a href="index.html" style="flex:.5">🏠</a><a class="nx" href="nivel2_intermediario.html">Avançar →</a></div>
 </div>
-
-<div class="bottom-nav">
-  <a href="resumo_conteudo.html" class="btn-prev">← Resumo</a>
-  <a href="index.html" class="btn-home-only">🏠</a>
-  <a href="nivel2_intermediario.html" class="btn-next">🔥 Nível 2 →</a>
-</div>
-</div>
-
 <div class="credit">Desenvolvido por <strong>Jhony Beraldo</strong></div>
-
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
 <script>
+var total = 39, score = 0;
+function norm(s){ return (s||'').toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g,'').replace(/[^a-z0-9 ]/g,'').replace(/\s+/g,' ').trim(); }
+function upd(){ document.getElementById('scoreDisplay').textContent = score + ' / ' + total; }
+document.querySelectorAll('.card[data-type="mc"]').forEach(function(card){
+  var fb = card.querySelector('.feedback');
+  card.querySelectorAll('.opt-btn').forEach(function(b){
+    b.addEventListener('click', function(){
+      if (card.getAttribute('data-done')) return;
+      card.setAttribute('data-done','1');
+      card.querySelectorAll('.opt-btn').forEach(function(x){ x.classList.add('disabled'); if (x.getAttribute('data-c')==='1') x.classList.add('correct'); });
+      if (b.getAttribute('data-c')==='1') { score++; upd(); fb.innerHTML = '✅ <b>Isso mesmo!</b> ' + card.getAttribute('data-exp'); fb.className = 'feedback show ok'; }
+      else { b.classList.add('wrong'); fb.innerHTML = '❌ <b>Quase!</b> A resposta certa é: <b>' + card.getAttribute('data-ans') + '</b>.<br>' + card.getAttribute('data-exp'); fb.className = 'feedback show nok'; }
+    });
+  });
+});
+document.querySelectorAll('.card[data-type="bl"]').forEach(function(card){
+  var btn = card.querySelector('.check-btn'), inp = card.querySelector('input'), fb = card.querySelector('.feedback');
+  btn.addEventListener('click', function(){
+    if (card.getAttribute('data-done')) return;
+    card.setAttribute('data-done','1'); btn.disabled = true;
+    var accs = card.getAttribute('data-acc').split('|').map(norm);
+    if (accs.indexOf(norm(inp.value)) !== -1) { score++; upd(); inp.classList.add('correct-input'); fb.innerHTML = '✅ <b>Isso mesmo!</b> ' + card.getAttribute('data-exp'); fb.className = 'feedback show ok'; }
+    else { inp.classList.add('wrong-input'); fb.innerHTML = '❌ <b>Quase!</b> A resposta certa é: <b>' + card.getAttribute('data-ans') + '</b>.<br>' + card.getAttribute('data-exp'); fb.className = 'feedback show nok'; }
+  });
+});
+document.querySelectorAll('.card[data-type="rf"]').forEach(function(card){
+  var btn = card.querySelector('.check-btn'), fb = card.querySelector('.feedback');
+  btn.addEventListener('click', function(){ btn.disabled = true; fb.innerHTML = '💡 ' + card.getAttribute('data-model'); fb.className = 'feedback show model'; });
+});
+document.getElementById('finishBtn').addEventListener('click', function(){
+  var panel = document.getElementById('resultPanel'); panel.classList.add('show');
+  var p = Math.round(score / total * 100), e, m, l;
+  if (p === 100) { e='🏆'; m='Perfeito! Você arrasou!'; l='PERFEITO!'; }
+  else if (p >= 90) { e='🎉'; m='Quase perfeito, continue assim!'; l='EXCELENTE!'; }
+  else if (p >= 75) { e='😄'; m='Muito bem! Você está dominando!'; l='MUITO BOM!'; }
+  else if (p >= 60) { e='😊'; m='Bom! Leia as explicações e tente de novo.'; l='BOM!'; }
+  else if (p >= 40) { e='💪'; m='Continue! Releia o resumo e tente outra vez.'; l='PODE MAIS!'; }
+  else { e='📚'; m='Sem desistir! Leia o resumo com calma e tente de novo. 💛'; l='ESTUDE MAIS!'; }
+  document.getElementById('resultEmoji').textContent = e;
+  document.getElementById('resultGrade').textContent = score + ' / ' + total;
+  document.getElementById('resultGradeLabel').textContent = l;
+  document.getElementById('resultMsg').textContent = m;
+  document.getElementById('resultScore').textContent = 'Você acertou ' + score + ' de ' + total + ' questões.';
+  panel.scrollIntoView({ behavior: 'smooth' });
+});
+
 function downloadPDF() {
   var btn = document.getElementById('pdfBtn');
   var originalText = btn.textContent;
   btn.textContent = '⏳ Gerando PDF...';
   btn.disabled = true;
   document.body.classList.add('pdf-export');
-  var opt = {
-    margin: 12,
-    filename: 'Geografia_Nivel1_Basico.pdf',
-    image: { type: 'jpeg', quality: 0.98 },
-    html2canvas: { scale: 2, useCORS: true },
-    jsPDF: { unit: 'mm', format: 'a4', orientation: 'portrait' },
-    pagebreak: { mode: ['css', 'legacy'] }
-  };
+  var opt = { margin: 12, filename: 'Geografia_Nivel1_Basico.pdf', image: { type: 'jpeg', quality: 0.98 },
+    html2canvas: { scale: 2, useCORS: true }, jsPDF: { unit: 'mm', format: 'a4', orientation: 'portrait' },
+    pagebreak: { mode: ['css', 'legacy'] } };
   html2pdf().set(opt).from(document.body).save().then(function() {
-    document.body.classList.remove('pdf-export');
-    btn.textContent = originalText;
-    btn.disabled = false;
+    document.body.classList.remove('pdf-export'); btn.textContent = originalText; btn.disabled = false;
   }).catch(function(err) {
-    document.body.classList.remove('pdf-export');
-    btn.textContent = originalText;
-    btn.disabled = false;
+    document.body.classList.remove('pdf-export'); btn.textContent = originalText; btn.disabled = false;
     alert('Nao foi possivel gerar o PDF. Tente novamente.');
   });
 }
 
-var score = 0;
-var answered = {};
-var total = 14;
-
-function showFeedback(qid, isCorrect, okMsg, nokMsg, tipMsg) {
-  var fb = document.getElementById('fb-' + qid);
-  if (isCorrect) {
-    fb.innerHTML = '<span class="fb-answer">✅ ' + okMsg + '</span>';
-    fb.className = 'feedback show ok';
-  } else {
-    fb.innerHTML = '<span class="fb-answer">❌ ' + nokMsg + '</span>' + (tipMsg ? '<span class="fb-tip">' + tipMsg + '</span>' : '');
-    fb.className = 'feedback show nok';
-  }
-}
-
-document.querySelectorAll('.opt-btn').forEach(function(btn) {
-  btn.addEventListener('click', function() {
-    var qid = btn.dataset.q;
-    if (answered[qid]) return;
-    answered[qid] = true;
-    var correct = btn.dataset.correct === 'true';
-    document.getElementById(qid).querySelectorAll('.opt-btn').forEach(function(b) { b.classList.add('disabled'); });
-    if (correct) {
-      btn.classList.add('correct'); score++;
-      document.getElementById('scoreDisplay').textContent = score + ' / ' + total;
-      showFeedback(qid, true, btn.dataset.msg, '', '');
-    } else {
-      btn.classList.add('wrong');
-      showFeedback(qid, false, '', btn.dataset.msg, btn.dataset.tip);
-    }
-  });
-});
-
-document.getElementById('finishBtn').addEventListener('click', function() {
-  var panel = document.getElementById('resultPanel');
-  panel.classList.add('show');
-  var nota = Math.round((score / total) * 100);
-  var emoji, msg, gradeLabel;
-  if (nota === 100)     { emoji = '🏆'; msg = 'Incrível! Nota máxima! Você é uma superestrela! 🌟'; gradeLabel = 'PERFEITO!'; }
-  else if (nota >= 90)  { emoji = '🎉'; msg = 'Arrasou! Quase perfeito, continue assim! 💪'; gradeLabel = 'EXCELENTE!'; }
-  else if (nota >= 75)  { emoji = '😄'; msg = 'Muito bem! Você está quase dominando! 🎯'; gradeLabel = 'MUITO BOM!'; }
-  else if (nota >= 60)  { emoji = '😊'; msg = 'Bom trabalho! Revise as dicas e tente de novo!'; gradeLabel = 'BOM!'; }
-  else if (nota >= 40)  { emoji = '💪'; msg = 'Continue tentando! Estude o resumo e vai arrasar!'; gradeLabel = 'PODE MAIS!'; }
-  else                   { emoji = '📚'; msg = 'Não desista! Leia o resumo e tente novamente! 💛'; gradeLabel = 'ESTUDE MAIS!'; }
-  document.getElementById('resultEmoji').textContent = emoji;
-  document.getElementById('resultGrade').textContent = score + ' / 14';
-  document.getElementById('resultGradeLabel').textContent = gradeLabel;
-  document.getElementById('resultMsg').textContent = msg;
-  document.getElementById('resultScore').textContent = 'Você acertou ' + score + ' de ' + total + ' questões.';
-  panel.scrollIntoView({ behavior: 'smooth' });
-});
-</script>
-</body>
-</html>
+</script></body></html>

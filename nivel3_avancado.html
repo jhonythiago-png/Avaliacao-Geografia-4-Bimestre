@@ -1,515 +1,201 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
-<title>💎 Nível 3 – Avançado</title>
-<style>
+<html lang="pt-BR"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+<title>💎 Nível 3 — Avançado – Geografia</title><style>
 * { box-sizing: border-box; margin: 0; padding: 0; }
-body { font-family: 'Segoe UI', system-ui, sans-serif; background: #0a1620; min-height: 100vh; padding-bottom: 40px; color:#f0f0ff; }
-.top-nav { background: rgba(0,0,0,0.5); padding: 10px 16px; display: flex; align-items: center; justify-content: space-between; position: sticky; top: 0; z-index: 50; border-bottom: 1px solid rgba(255,255,255,0.08); }
-.top-nav a.nav-home { color: #5eead4; font-size: 0.8rem; font-weight: 700; text-decoration: none; background: rgba(13,148,136,0.25); border: 1px solid rgba(13,148,136,0.4); padding: 5px 12px; border-radius: 20px; }
-.top-nav .nav-title { font-size: 0.78rem; color: rgba(255,255,255,0.45); flex: 1; text-align: center; }
-.exam-header { background: white; border: 2px solid #0369a1; border-radius: 16px; padding: 16px; margin: 12px 14px 16px; }
-.eh-title { text-align: center; font-size: 0.95rem; font-weight: 900; color: #0369a1; margin-bottom: 14px; }
+body { font-family: 'Segoe UI', system-ui, sans-serif; background: #211733; color: #f6efff; min-height: 100vh; padding-bottom: 40px; }
+.top-nav { background: #150d22; padding: 10px 16px; display: flex; align-items: center; justify-content: space-between; position: sticky; top: 0; z-index: 50; }
+.top-nav a { color: #fdba74; font-size: .8rem; font-weight: 700; text-decoration: none; background: rgba(255,255,255,.12); padding: 5px 12px; border-radius: 20px; }
+.top-nav .nav-title { font-size: .78rem; color: rgba(255,255,255,.55); flex: 1; text-align: center; }
+.exam-header { background: #fff; border: 2px solid #fb923c; border-radius: 16px; padding: 16px; margin: 12px 14px 16px; color: #333; }
+.eh-title { text-align: center; font-size: .95rem; font-weight: 900; color: #fb923c; margin-bottom: 14px; }
 .eh-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px 16px; }
-.eh-field label { display: block; font-size: 0.68rem; color: #888; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 4px; }
-.eh-field input { width: 100%; border: none; border-bottom: 2px solid #0369a1; padding: 5px 2px; font-size: 0.9rem; font-family: inherit; outline: none; background: transparent; color: #333; }
-.header { text-align: center; padding: 22px 16px 14px; background: linear-gradient(135deg,rgba(3,105,161,0.9),rgba(124,58,237,0.9)); margin-bottom: 18px; }
-.header h1 { font-size: 1.4rem; font-weight: 900; color: white; }
-.header p  { font-size: 0.82rem; color: rgba(255,255,255,0.8); margin-top: 4px; }
-.level-tag { display: inline-block; background: linear-gradient(90deg,#0369a1,#7c3aed); color: white; font-size: 0.72rem; font-weight: 800; padding: 3px 12px; border-radius: 20px; margin-bottom: 8px; text-transform: uppercase; letter-spacing: 1px; }
-.wrap { padding: 0 14px; }
+.eh-field label { display: block; font-size: .68rem; color: #888; text-transform: uppercase; margin-bottom: 4px; }
+.eh-field input { width: 100%; border: none; border-bottom: 2px solid #fb923c; padding: 5px 2px; font-size: .9rem; font-family: inherit; outline: none; background: transparent; color: #333; }
+.header { text-align: center; padding: 22px 16px 14px; background: linear-gradient(135deg,rgba(234,88,12,.9),rgba(168,85,247,.9)); margin-bottom: 18px; }
+.header h1 { font-size: 1.4rem; font-weight: 900; color: #fff; }
+.header p { font-size: .82rem; color: rgba(255,255,255,.88); margin-top: 4px; }
+.level-tag { display: inline-block; background: rgba(255,255,255,.25); color: #fff; font-size: .72rem; font-weight: 800; padding: 3px 12px; border-radius: 20px; margin-bottom: 8px; text-transform: uppercase; letter-spacing: 1px; }
+.wrap { padding: 0 14px; max-width: 700px; margin: 0 auto; }
 .print-btn-wrap { text-align: right; margin-bottom: 12px; }
-.print-btn { display: inline-flex; align-items: center; gap: 6px; padding: 7px 16px; background: transparent; border: 1px solid rgba(167,139,250,0.35); border-radius: 20px; font-size: 0.78rem; font-family: inherit; font-weight: 600; color: rgba(167,139,250,0.85); cursor: pointer; }
-.info-banner { background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); border-radius: 14px; padding: 12px 14px; margin-bottom: 16px; font-size: 0.82rem; color: rgba(255,255,255,0.75); line-height: 1.5; }
-.info-banner strong { color: #a78bfa; }
-.score-bar { background: rgba(255,255,255,0.06); border-radius: 14px; padding: 12px 16px; margin-bottom: 16px; display: flex; justify-content: space-between; align-items: center; }
-.score-label { font-size: 0.82rem; color: rgba(255,255,255,0.7); }
-.score-num { font-size: 1.4rem; font-weight: 900; color: #a78bfa; }
-.card { background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.09); border-radius: 16px; padding: 18px; margin-bottom: 14px; box-shadow: 0 3px 12px rgba(0,0,0,0.2); }
-.card.reflect { border: 1px dashed rgba(167,139,250,0.4); }
-.q-num { background: linear-gradient(135deg,#0369a1,#7c3aed); color: white; font-weight: 900; font-size: 0.75rem; padding: 3px 10px; border-radius: 20px; display: inline-block; margin-bottom: 8px; }
-.q-type { font-size: 0.72rem; opacity: 0.55; text-transform: uppercase; letter-spacing: 0.5px; color: rgba(255,255,255,0.4); margin-left: 6px; }
-.q-text { font-size: 0.97rem; color: #e0e0ff; margin-bottom: 14px; line-height: 1.6; }
-.q-text strong { color: #a78bfa; font-weight: 700; }
+.print-btn { padding: 7px 16px; background: transparent; border: 1px solid #fb923c; border-radius: 20px; font-size: .78rem; font-family: inherit; font-weight: 600; color: #fb923c; cursor: pointer; }
+.info-banner { background: rgba(255,255,255,.05); border: 1px solid rgba(255,255,255,.1); border-radius: 14px; padding: 12px 14px; margin-bottom: 16px; font-size: .84rem; line-height: 1.5; }
+.info-banner strong { color: #fb923c; }
+.score-bar { background: rgba(255,255,255,.05); border: 1px solid rgba(255,255,255,.1); border-radius: 14px; padding: 12px 16px; margin-bottom: 16px; display: flex; justify-content: space-between; align-items: center; }
+.score-label { font-size: .82rem; color: rgba(246,239,255,.65); }
+.score-num { font-size: 1.4rem; font-weight: 900; color: #fdba74; }
+.card { background: rgba(255,255,255,.05); border: 1px solid rgba(255,255,255,.1); border-radius: 16px; padding: 18px; margin-bottom: 14px; box-shadow: 0 3px 12px rgba(0,0,0,.07); }
+.card.reflect { border: 1px dashed #fb923c; }
+.card.passage { border-left: 5px solid #fb923c; }
+.q-num { background: linear-gradient(135deg,#ea580c,#a855f7); color: #fff; font-weight: 900; font-size: .75rem; padding: 3px 10px; border-radius: 20px; display: inline-block; margin-bottom: 8px; }
+.q-type { font-size: .72rem; opacity: .6; text-transform: uppercase; letter-spacing: .5px; margin-left: 6px; }
+.q-text { font-size: 1rem; margin-bottom: 14px; line-height: 1.6; }
+.q-text strong { color: #fb923c; }
 .options { display: flex; flex-direction: column; gap: 9px; }
-.opt-btn { background: rgba(255,255,255,0.06); border: 2px solid rgba(255,255,255,0.12); border-radius: 12px; padding: 12px 14px; font-size: 0.92rem; font-family: inherit; cursor: pointer; text-align: left; color: #e0e0ff; transition: transform 0.1s; line-height: 1.4; }
-.opt-btn:active { transform: scale(0.97); }
-.opt-btn.correct { background: rgba(52,211,153,0.15); border-color: #34d399; color: #6ee7b7; }
-.opt-btn.wrong   { background: rgba(248,113,113,0.12); border-color: #f87171; color: #fca5a5; }
+.opt-btn { background: rgba(255,255,255,.06); border: 2px solid rgba(255,255,255,.14); border-radius: 12px; padding: 12px 14px; font-size: .95rem; font-family: inherit; cursor: pointer; text-align: left; color: #f6efff; line-height: 1.4; transition: transform .1s; }
+.opt-btn:active { transform: scale(.97); }
+.opt-btn.correct { background: rgba(52,211,153,.15); border-color: #34d399; color: #a7f3d0; }
+.opt-btn.wrong { background: rgba(248,113,113,.15); border-color: #f87171; color: #fecaca; }
 .opt-btn.disabled { pointer-events: none; }
-.blank-input { background: rgba(255,255,255,0.07); border: 1.5px solid rgba(255,255,255,0.15); border-radius: 10px; padding: 11px 13px; color: white; font-size: 0.92rem; font-family: inherit; width: 100%; margin-bottom: 8px; outline: none; }
-.blank-input:focus { border-color: #0369a1; }
-.blank-input.correct-input { border-color: #4ade80; }
-.blank-input.wrong-input   { border-color: #f87171; }
-textarea.blank-input { min-height: 80px; resize: vertical; font-family: inherit; }
-.check-btn { background: linear-gradient(135deg,#0369a1,#7c3aed); border: none; border-radius: 10px; padding: 11px 20px; font-size: 0.9rem; font-family: inherit; font-weight: 800; color: white; cursor: pointer; display: block; width: 100%; }
-.check-btn:disabled { opacity: 0.35; pointer-events: none; }
-.feedback { display: none; margin-top: 10px; padding: 12px 13px; border-radius: 10px; font-size: 0.88rem; line-height: 1.6; }
+.blank-input { background: rgba(255,255,255,.08); border: 1.5px solid rgba(255,255,255,.14); border-radius: 10px; padding: 11px 13px; color: #fff; font-size: .95rem; font-family: inherit; width: 100%; margin-bottom: 8px; outline: none; }
+.blank-input:focus { border-color: #fb923c; }
+.blank-input.correct-input { border-color: #34d399; }
+.blank-input.wrong-input { border-color: #f87171; }
+textarea.blank-input { min-height: 80px; resize: vertical; }
+.check-btn { background: linear-gradient(135deg,#ea580c,#a855f7); border: none; border-radius: 10px; padding: 11px 20px; font-size: .9rem; font-family: inherit; font-weight: 800; color: #fff; cursor: pointer; display: block; width: 100%; }
+.check-btn:disabled { opacity: .4; pointer-events: none; }
+.feedback { display: none; margin-top: 10px; padding: 12px 13px; border-radius: 10px; font-size: .9rem; line-height: 1.6; }
 .feedback.show { display: block; }
-.feedback.ok  { background: rgba(52,211,153,0.1); border: 1px solid rgba(52,211,153,0.35); color: #6ee7b7; }
-.feedback.nok { background: rgba(248,113,113,0.1); border: 1px solid rgba(248,113,113,0.35); color: #fca5a5; }
-.feedback.model { background: rgba(167,139,250,0.1); border: 1px solid rgba(167,139,250,0.35); color: #d8c9ff; }
-.fb-answer { font-weight: 800; display: block; margin-bottom: 4px; }
-.fb-tip    { font-size: 0.83rem; opacity: 0.85; color: #fcd34d; }
-.finish-btn { display: block; width: 100%; padding: 16px; background: linear-gradient(135deg,#0369a1,#7c3aed); color: white; border: none; border-radius: 16px; font-size: 1.1rem; font-family: inherit; font-weight: 900; cursor: pointer; margin-top: 6px; }
-.result-panel { display: none; background: rgba(255,255,255,0.04); border: 1px solid rgba(124,58,237,0.3); border-radius: 20px; padding: 28px 20px; text-align: center; margin-top: 20px; }
+.feedback.ok { background: rgba(52,211,153,.15); border: 1px solid #34d399; color: #a7f3d0; }
+.feedback.nok { background: rgba(248,113,113,.15); border: 1px solid #f87171; color: #fecaca; }
+.feedback.model { background: rgba(255,255,255,.05); border: 1px solid #fb923c; }
+.finish-btn { display: block; width: 100%; padding: 16px; background: linear-gradient(135deg,#ea580c,#a855f7); color: #fff; border: none; border-radius: 16px; font-size: 1.1rem; font-family: inherit; font-weight: 900; cursor: pointer; margin-top: 6px; }
+.result-panel { display: none; background: rgba(255,255,255,.05); border: 1px solid rgba(255,255,255,.1); border-radius: 20px; padding: 28px 20px; text-align: center; margin-top: 20px; }
 .result-panel.show { display: block; }
 .result-big { font-size: 4rem; margin-bottom: 10px; }
-.result-grade { font-size: 3.5rem; font-weight: 900; background: linear-gradient(135deg,#0369a1,#a78bfa); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; margin: 8px 0 2px; }
-.result-grade-label { font-size: 0.8rem; font-weight: 700; color: rgba(255,255,255,0.6); text-transform: uppercase; letter-spacing: 1px; margin-bottom: 10px; }
-.result-msg   { font-size: 1.1rem; font-weight: 800; color: white; margin-bottom: 8px; }
-.result-score { font-size: 0.88rem; color: rgba(255,255,255,0.6); margin-bottom: 16px; }
+.result-grade { font-size: 3.2rem; font-weight: 900; color: #fb923c; margin: 8px 0 2px; }
+.result-grade-label { font-size: .8rem; font-weight: 700; opacity: .7; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 10px; }
+.result-msg { font-size: 1.1rem; font-weight: 800; margin-bottom: 8px; }
+.result-score { font-size: .88rem; opacity: .75; margin-bottom: 16px; }
 .result-actions { display: flex; gap: 10px; justify-content: center; flex-wrap: wrap; }
-.retry-btn { flex: 1; min-width: 130px; background: linear-gradient(135deg,#5eead4,#0369a1); color: white; border: none; border-radius: 14px; padding: 13px 16px; font-size: 0.9rem; font-family: inherit; font-weight: 700; cursor: pointer; }
-.gabarito-link { flex: 1; min-width: 130px; background: rgba(124,58,237,0.15); border: 1.5px solid rgba(124,58,237,0.3); color: #a78bfa !important; border-radius: 14px; padding: 13px 16px; text-decoration: none; font-weight: 700; font-size: 0.9rem; display: flex; align-items: center; justify-content: center; gap: 6px; }
-.bottom-nav { display: flex; gap: 10px; padding: 0; margin: 20px 0 10px; }
-.bottom-nav a { flex: 1; padding: 13px 10px; border-radius: 14px; text-decoration: none; text-align: center; font-size: 0.85rem; font-weight: 700; display: flex; align-items: center; justify-content: center; gap: 6px; }
-.btn-prev { background: rgba(255,255,255,0.05); border: 1.5px solid rgba(255,255,255,0.1); color: rgba(255,255,255,0.7) !important; }
-.btn-next { background: linear-gradient(135deg,#0c2d3c,#134e4a); color: white !important; }
-.btn-home-only { background: rgba(13,148,136,0.12); border: 1.5px solid rgba(13,148,136,0.3); color: #5eead4 !important; flex: 0.6; }
-.credit { text-align: center; padding: 20px 14px 8px; font-size: 0.75rem; color: rgba(255,255,255,0.3); }
-.credit strong { color: #5eead4; }
-@media print {
-  .top-nav,.print-btn-wrap,.info-banner,.score-bar,.finish-btn,.result-panel,#resultPanel,.bottom-nav { display: none !important; }
-  html, body { background: white !important; color: #111 !important; min-height: 0 !important; height: auto !important; overflow: visible !important; }
-  body { padding-bottom: 0 !important; }
-  body * { background-color: transparent !important; background-image: none !important; color: #111 !important; box-shadow: none !important; overflow: visible !important; }
-  .exam-header { display: block !important; border: 2px solid #555 !important; }
-  .eh-field input { border-bottom: 1.5px solid #555 !important; color: #111 !important; }
-  .card { border: 1px solid #ccc !important; break-inside: avoid !important; page-break-inside: avoid !important; }
-  .opt-btn { border: 1.5px solid #bbb !important; color: #222 !important; background: white !important; margin-bottom: 4px !important; }
-  .opt-btn.correct, .opt-btn.wrong { background: white !important; border-color: #bbb !important; }
-  .blank-input { border: none !important; border-bottom: 1.5px solid #555 !important; border-radius: 0 !important; color: #111 !important; background: transparent !important; }
-  textarea.blank-input { border: 1px solid #999 !important; }
-  .check-btn { display: none !important; }
-  .feedback { display: none !important; }
-  .header { background: #0369a1 !important; -webkit-print-color-adjust: exact !important; print-color-adjust: exact !important; }
-  .credit { color: #888 !important; }
-  @page { margin: 1.5cm; }
-}
-
-/* ---- PDF EXPORT (JS-generated, not native print) ---- */
-body.pdf-export .top-nav, body.pdf-export .print-btn-wrap, body.pdf-export .info-banner, body.pdf-export .score-bar, body.pdf-export .finish-btn, body.pdf-export .result-panel, body.pdf-export #resultPanel, body.pdf-export .bottom-nav { display: none !important; }
-  body.pdf-export, body.pdf-export { background: white !important; color: #111 !important; min-height: 0 !important; height: auto !important; overflow: visible !important; }
-  body.pdf-export { padding-bottom: 0 !important; }
-  body.pdf-export * { background-color: transparent !important; background-image: none !important; color: #111 !important; box-shadow: none !important; overflow: visible !important; }
-  body.pdf-export .exam-header { display: block !important; border: 2px solid #555 !important; }
-  body.pdf-export .eh-field input { border-bottom: 1.5px solid #555 !important; color: #111 !important; }
-  body.pdf-export .card { border: 1px solid #ccc !important; break-inside: avoid !important; page-break-inside: avoid !important; }
-  body.pdf-export .opt-btn { border: 1.5px solid #bbb !important; color: #222 !important; background: white !important; margin-bottom: 4px !important; }
-  body.pdf-export .opt-btn.correct, body.pdf-export .opt-btn.wrong { background: white !important; border-color: #bbb !important; }
-  body.pdf-export .blank-input { border: none !important; border-bottom: 1.5px solid #555 !important; border-radius: 0 !important; color: #111 !important; background: transparent !important; }
-  body.pdf-export textarea.blank-input { border: 1px solid #999 !important; }
-  body.pdf-export .check-btn { display: none !important; }
-  body.pdf-export .feedback { display: none !important; }
-  body.pdf-export .header { background: #0369a1 !important; -webkit-print-color-adjust: exact !important; print-color-adjust: exact !important; }
-  body.pdf-export .credit { color: #888 !important; }
-</style>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
-</head>
-<body>
-<div class="top-nav">
-  <a href="index.html" class="nav-home">🏠 Início</a>
-  <span class="nav-title">💎 Nível 3 — Avançado</span>
-</div>
-
-<div class="exam-header">
-  <div class="eh-title">🌎 Avaliação de Geografia — Nível 3</div>
-  <div class="eh-grid">
-    <div class="eh-field"><label>Nome</label><input type="text" placeholder="Seu nome"></div>
-    <div class="eh-field"><label>Data</label><input type="text" placeholder="__/__/____"></div>
-  </div>
-</div>
-
-<div class="header">
-  <div class="level-tag">Nível 3</div>
-  <h1>💎 Avançado</h1>
-  <p>Raciocínio, sequências e reflexão — 21 questões</p>
-</div>
-
+.retry-btn { flex: 1; min-width: 130px; background: linear-gradient(135deg,#ea580c,#a855f7); color: #fff; border: none; border-radius: 14px; padding: 13px 16px; font-size: .9rem; font-family: inherit; font-weight: 700; cursor: pointer; }
+.gabarito-link { flex: 1; min-width: 130px; border: 1.5px solid #fb923c; color: #fb923c !important; border-radius: 14px; padding: 13px 16px; text-decoration: none; font-weight: 700; font-size: .9rem; display: flex; align-items: center; justify-content: center; }
+.bottom-nav { display: flex; gap: 10px; margin: 20px 0 10px; }
+.bottom-nav a { flex: 1; padding: 13px 10px; border-radius: 14px; text-decoration: none; text-align: center; font-size: .85rem; font-weight: 700; display: flex; align-items: center; justify-content: center; border: 1.5px solid #fb923c; color: #fb923c; }
+.bottom-nav a.nx { background: linear-gradient(135deg,#ea580c,#a855f7); color: #fff; border: none; }
+.credit { text-align: center; padding: 20px 14px 8px; font-size: .75rem; opacity: .5; }
+body.pdf-export .top-nav, body.pdf-export .print-btn-wrap, body.pdf-export .score-bar, body.pdf-export .info-banner, body.pdf-export .finish-btn, body.pdf-export .result-panel, body.pdf-export .bottom-nav { display: none !important; }
+body.pdf-export { background: #fff !important; color: #111 !important; padding-bottom: 0 !important; }
+body.pdf-export * { background-color: transparent !important; background-image: none !important; color: #111 !important; box-shadow: none !important; }
+body.pdf-export .exam-header { border: 2px solid #555 !important; }
+body.pdf-export .eh-field input { border-bottom: 1.5px solid #555 !important; }
+body.pdf-export .card { border: 1px solid #ccc !important; break-inside: avoid; page-break-inside: avoid; }
+body.pdf-export .opt-btn { border: 1.5px solid #bbb !important; margin-bottom: 4px !important; }
+body.pdf-export .blank-input { border: none !important; border-bottom: 1.5px solid #555 !important; border-radius: 0 !important; }
+body.pdf-export textarea.blank-input { border: 1px solid #999 !important; }
+body.pdf-export .check-btn, body.pdf-export .feedback { display: none !important; }
+body.pdf-export .header { border-bottom: 2px solid #ea580c !important; }
+body.pdf-export .credit { color: #888 !important; }
+</style></head><body>
+<div class="top-nav"><a href="index.html">🏠 Início</a><span class="nav-title">💎 Nível 3 — Avançado</span></div>
+<div class="exam-header"><div class="eh-title">🌎 Avaliação de Geografia — Nível 3 — Avançado</div>
+<div class="eh-grid"><div class="eh-field"><label>Nome</label><input type="text" placeholder="Seu nome"></div><div class="eh-field"><label>Data</label><input type="text" placeholder="__/__/____"></div></div></div>
+<div class="header"><div class="level-tag">Nível 3 — Avançado</div><h1>💎 Nível 3 — Avançado</h1><p>Textos, regiões e reflexão — 40 questões</p></div>
 <div class="wrap">
 <div class="print-btn-wrap"><button class="print-btn" id="pdfBtn" onclick="downloadPDF()">⬇️ Baixar PDF</button></div>
-<div class="info-banner">💡 As questões de <strong>1 a 18</strong> valem ponto. As <strong>3 últimas</strong> são de reflexão (sem resposta certa ou errada) — depois é só conferir a sugestão no gabarito!</div>
-<div class="score-bar">
-  <span class="score-label">Pontuação</span>
-  <span class="score-num" id="scoreDisplay">0 / 18</span>
-</div>
-
-<!-- Q1 -->
-<div class="card" id="q1">
-  <div class="q-num">1</div><span class="q-type">Matéria-prima</span>
-  <div class="q-text">Qual é a ordem correta da transformação do milho até virar pamonha?</div>
-  <div class="options">
-    <button class="opt-btn" data-q="q1" data-correct="false" data-msg="Errado! Não dá para colher antes de plantar." data-tip="💡 Pense no início: primeiro se planta, depois se colhe.">Colher → Plantar → Cozinhar → Descascar → Enrolar</button>
-    <button class="opt-btn" data-q="q1" data-correct="true" data-msg="Isso mesmo! Primeiro se planta, depois colhe, descasca, prepara a massa, enrola na palha e cozinha." data-tip="">Plantar → Colher e descascar → Preparar a massa → Enrolar na palha → Cozinhar</button>
-    <button class="opt-btn" data-q="q1" data-correct="false" data-msg="Errado! Não dá para cozinhar antes de plantar e colher o milho." data-tip="💡 Pense no início: primeiro se planta, depois se colhe.">Cozinhar → Plantar → Enrolar → Colher</button>
-  </div>
-  <div class="feedback" id="fb-q1"></div>
-</div>
-
-<!-- Q2 blank -->
-<div class="card" id="q2">
-  <div class="q-num">2</div><span class="q-type">Tipos de água</span>
-  <div class="q-text">A água que vem dos rios, lagos, represas e chuvas, e que pode ser potável, é chamada de água <strong>______</strong>.</div>
-  <input type="text" class="blank-input" id="inp-q2" placeholder="Digite a cor...">
-  <button class="check-btn" id="btn-q2">Verificar resposta</button>
-  <div class="feedback" id="fb-q2"></div>
-</div>
-
-<!-- Q3 -->
-<div class="card" id="q3">
-  <div class="q-num">3</div><span class="q-type">Raciocínio</span>
-  <div class="q-text">Por que a água doce é tão preciosa, mesmo sendo uma parte pequena da água do planeta?</div>
-  <div class="options">
-    <button class="opt-btn" data-q="q3" data-correct="true" data-msg="Isso mesmo! É a única água que os seres vivos podem beber e usar no dia a dia, por isso deve ser bem cuidada." data-tip="">Porque é a única que os seres vivos podem beber e usar no dia a dia</button>
-    <button class="opt-btn" data-q="q3" data-correct="false" data-msg="Errado! O valor da água doce não tem relação com aparência." data-tip="💡 Pense em quem realmente precisa da água doce para viver.">Porque é mais bonita que a água salgada</button>
-    <button class="opt-btn" data-q="q3" data-correct="false" data-msg="Errado! A água doce existe, só que em quantidade muito menor que a salgada." data-tip="💡 Pense em quem realmente precisa da água doce para viver.">Porque não pode ser encontrada em lugar nenhum</button>
-  </div>
-  <div class="feedback" id="fb-q3"></div>
-</div>
-
-<!-- Q4 -->
-<div class="card" id="q4">
-  <div class="q-num">4</div><span class="q-type">Tipos de água</span>
-  <div class="q-text">"Água que já foi utilizada pelo ser humano e precisa ser tratada antes de voltar à natureza." Essa frase descreve a água:</div>
-  <div class="options">
-    <button class="opt-btn" data-q="q4" data-correct="false" data-msg="Errado! Água azul ainda não foi usada pelas pessoas." data-tip="💡 Pense na água que sai do ralo depois do banho.">Azul</button>
-    <button class="opt-btn" data-q="q4" data-correct="false" data-msg="Errado! Água verde é absorvida pelas plantas." data-tip="💡 Pense na água que sai do ralo depois do banho.">Verde</button>
-    <button class="opt-btn" data-q="q4" data-correct="true" data-msg="Isso mesmo! Essa é a água cinza, que precisa de tratamento antes de voltar à natureza." data-tip="">Cinza</button>
-  </div>
-  <div class="feedback" id="fb-q4"></div>
-</div>
-
-<!-- Q5 blank -->
-<div class="card" id="q5">
-  <div class="q-num">5</div><span class="q-type">Mananciais</span>
-  <div class="q-text">As reservas de água da Terra, como rios, lagos e lençóis freáticos, são chamadas de <strong>______</strong>.</div>
-  <input type="text" class="blank-input" id="inp-q5" placeholder="Digite a palavra...">
-  <button class="check-btn" id="btn-q5">Verificar resposta</button>
-  <div class="feedback" id="fb-q5"></div>
-</div>
-
-<!-- Q6 -->
-<div class="card" id="q6">
-  <div class="q-num">6</div><span class="q-type">Raciocínio</span>
-  <div class="q-text">Qual é a relação entre o desmatamento e o ciclo da água?</div>
-  <div class="options">
-    <button class="opt-btn" data-q="q6" data-correct="false" data-msg="Errado! O desmatamento afeta sim o ciclo da água." data-tip="💡 Lembre-se: as plantas soltam água no ar (evapotranspiração), ajudando a formar chuvas.">O desmatamento não afeta o ciclo da água</button>
-    <button class="opt-btn" data-q="q6" data-correct="true" data-msg="Isso mesmo! Com menos árvores, há menos evapotranspiração, o que pode diminuir as chuvas na região." data-tip="">Menos árvores podem significar menos evapotranspiração e menos chuvas na região</button>
-    <button class="opt-btn" data-q="q6" data-correct="false" data-msg="Errado! O desmatamento não aumenta a quantidade de água doce disponível." data-tip="💡 Lembre-se: as plantas soltam água no ar (evapotranspiração), ajudando a formar chuvas.">O desmatamento aumenta a quantidade de água doce do planeta</button>
-  </div>
-  <div class="feedback" id="fb-q6"></div>
-</div>
-
-<!-- Q7 -->
-<div class="card" id="q7">
-  <div class="q-num">7</div><span class="q-type">Saneamento</span>
-  <div class="q-text">No Brasil, cerca de 45 em cada 100 pessoas não têm rede de esgoto em casa. Isso é um problema de:</div>
-  <div class="options">
-    <button class="opt-btn" data-q="q7" data-correct="false" data-msg="Errado! Tecnologia não é o problema principal aqui." data-tip="💡 Pense no tratamento da água e do esgoto.">Tecnologia</button>
-    <button class="opt-btn" data-q="q7" data-correct="true" data-msg="Isso mesmo! Isso mostra um problema de saneamento básico." data-tip="">Saneamento básico</button>
-    <button class="opt-btn" data-q="q7" data-correct="false" data-msg="Errado! Matéria-prima não tem relação com rede de esgoto." data-tip="💡 Pense no tratamento da água e do esgoto.">Matéria-prima</button>
-  </div>
-  <div class="feedback" id="fb-q7"></div>
-</div>
-
-<!-- Q8 blank -->
-<div class="card" id="q8">
-  <div class="q-num">8</div><span class="q-type">Energia</span>
-  <div class="q-text">A energia gerada pela força da água que move as turbinas das usinas é chamada de energia <strong>______</strong>.</div>
-  <input type="text" class="blank-input" id="inp-q8" placeholder="Digite a palavra...">
-  <button class="check-btn" id="btn-q8">Verificar resposta</button>
-  <div class="feedback" id="fb-q8"></div>
-</div>
-
-<!-- Q9 -->
-<div class="card" id="q9">
-  <div class="q-num">9</div><span class="q-type">Trabalho manual x industrial</span>
-  <div class="q-text">Qual é a principal diferença entre o trabalho manual e o trabalho industrial?</div>
-  <div class="options">
-    <button class="opt-btn" data-q="q9" data-correct="false" data-msg="Errado! É o contrário: o industrial usa muitas máquinas." data-tip="💡 Pense em quem faz o produto: uma pessoa só, ou uma fábrica inteira?">O trabalho manual usa muitas máquinas, e o industrial não usa nenhuma</button>
-    <button class="opt-btn" data-q="q9" data-correct="true" data-msg="Isso mesmo! O trabalho manual é feito por uma só pessoa, do início ao fim; o industrial usa máquinas para produzir em grande quantidade." data-tip="">O trabalho manual é feito por uma pessoa, do início ao fim; o industrial usa máquinas para produzir em grande quantidade</button>
-    <button class="opt-btn" data-q="q9" data-correct="false" data-msg="Errado! Existe, sim, diferença entre os dois tipos de trabalho." data-tip="💡 Pense em quem faz o produto: uma pessoa só, ou uma fábrica inteira?">Não existe diferença entre os dois tipos de trabalho</button>
-  </div>
-  <div class="feedback" id="fb-q9"></div>
-</div>
-
-<!-- Q10 -->
-<div class="card" id="q10">
-  <div class="q-num">10</div><span class="q-type">História</span>
-  <div class="q-text">Qual acontecimento histórico é considerado o início do trabalho industrial?</div>
-  <div class="options">
-    <button class="opt-btn" data-q="q10" data-correct="false" data-msg="Errado! Esse acontecimento não deu início ao trabalho industrial." data-tip="💡 Pense na Inglaterra, por volta de 1760.">A chegada dos portugueses ao Brasil</button>
-    <button class="opt-btn" data-q="q10" data-correct="true" data-msg="Isso mesmo! A Revolução Industrial, na Inglaterra, deu início ao trabalho industrial." data-tip="">A Revolução Industrial, na Inglaterra</button>
-    <button class="opt-btn" data-q="q10" data-correct="false" data-msg="Errado! O computador surgiu muito depois do início do trabalho industrial." data-tip="💡 Pense na Inglaterra, por volta de 1760.">A invenção do computador</button>
-  </div>
-  <div class="feedback" id="fb-q10"></div>
-</div>
-
-<!-- Q11 blank -->
-<div class="card" id="q11">
-  <div class="q-num">11</div><span class="q-type">Trabalho manual</span>
-  <div class="q-text">O trabalho manual, que produz peças únicas com técnicas tradicionais, é chamado de <strong>______</strong>.</div>
-  <input type="text" class="blank-input" id="inp-q11" placeholder="Digite a palavra...">
-  <button class="check-btn" id="btn-q11">Verificar resposta</button>
-  <div class="feedback" id="fb-q11"></div>
-</div>
-
-<!-- Q12 -->
-<div class="card" id="q12">
-  <div class="q-num">12</div><span class="q-type">Revolução Industrial</span>
-  <div class="q-text">Durante a Revolução Industrial, o que substituiu aos poucos o trabalho manual e artesanal?</div>
-  <div class="options">
-    <button class="opt-btn" data-q="q12" data-correct="true" data-msg="Isso mesmo! A produção com máquinas, nas fábricas, substituiu aos poucos o trabalho manual." data-tip="">A produção com máquinas nas fábricas</button>
-    <button class="opt-btn" data-q="q12" data-correct="false" data-msg="Errado! A pesca artesanal não tem relação com esse processo." data-tip="💡 Pense em teares, trens e depois linhas de montagem.">A pesca artesanal</button>
-    <button class="opt-btn" data-q="q12" data-correct="false" data-msg="Errado! A agricultura de subsistência não é o que substituiu o trabalho manual." data-tip="💡 Pense em teares, trens e depois linhas de montagem.">A agricultura de subsistência</button>
-  </div>
-  <div class="feedback" id="fb-q12"></div>
-</div>
-
-<!-- Q13 -->
-<div class="card" id="q13">
-  <div class="q-num">13</div><span class="q-type">Tecnologia e minerais</span>
-  <div class="q-text">Para fabricar um computador, são usados minerais como quartzo, ouro, prata, chumbo e cobre. Isso mostra que a tecnologia depende:</div>
-  <div class="options">
-    <button class="opt-btn" data-q="q13" data-correct="false" data-msg="Errado! A eletricidade sozinha não fabrica um computador." data-tip="💡 Pense em onde esses minerais são encontrados: na natureza!">Apenas da eletricidade</button>
-    <button class="opt-btn" data-q="q13" data-correct="true" data-msg="Isso mesmo! A tecnologia depende de recursos naturais retirados da natureza." data-tip="">De recursos naturais retirados da natureza</button>
-    <button class="opt-btn" data-q="q13" data-correct="false" data-msg="Errado! O trabalho manual sozinho não fabrica um computador." data-tip="💡 Pense em onde esses minerais são encontrados: na natureza!">Somente do trabalho manual</button>
-  </div>
-  <div class="feedback" id="fb-q13"></div>
-</div>
-
-<!-- Q14 blank -->
-<div class="card" id="q14">
-  <div class="q-num">14</div><span class="q-type">Impactos ambientais</span>
-  <div class="q-text">Explorar recursos naturais sem cuidado pode causar desmatamento, poluição dos rios e perda de fertilidade do <strong>______</strong>.</div>
-  <input type="text" class="blank-input" id="inp-q14" placeholder="Digite a palavra...">
-  <button class="check-btn" id="btn-q14">Verificar resposta</button>
-  <div class="feedback" id="fb-q14"></div>
-</div>
-
-<!-- Q15 -->
-<div class="card" id="q15">
-  <div class="q-num">15</div><span class="q-type">Cuidado com a água</span>
-  <div class="q-text">Qual dessas atitudes ajuda a evitar o desperdício de água em casa?</div>
-  <div class="options">
-    <button class="opt-btn" data-q="q15" data-correct="false" data-msg="Errado! Isso é um grande desperdício de água." data-tip="💡 Pense em fechar a torneira quando não estiver usando a água.">Deixar a torneira aberta enquanto escova os dentes</button>
-    <button class="opt-btn" data-q="q15" data-correct="true" data-msg="Isso mesmo! Fechar a torneira quando não está usando a água economiza muitos litros por dia." data-tip="">Fechar a torneira enquanto ensaboa as mãos ou escova os dentes</button>
-    <button class="opt-btn" data-q="q15" data-correct="false" data-msg="Errado! Banhos muito longos aumentam o consumo de água." data-tip="💡 Pense em fechar a torneira quando não estiver usando a água.">Tomar banhos bem demorados todos os dias</button>
-  </div>
-  <div class="feedback" id="fb-q15"></div>
-</div>
-
-<!-- Q16 -->
-<div class="card" id="q16">
-  <div class="q-num">16</div><span class="q-type">Água virtual</span>
-  <div class="q-text">Sobre a água virtual (a água usada para produzir alimentos e outros produtos), é correto afirmar que:</div>
-  <div class="options">
-    <button class="opt-btn" data-q="q16" data-correct="false" data-msg="Errado! A água virtual existe de verdade, mesmo sem vermos diretamente." data-tip="💡 Pense em quantos litros de água são usados para produzir 1 kg de batata.">Ela não existe de verdade</button>
-    <button class="opt-btn" data-q="q16" data-correct="true" data-msg="Isso mesmo! É a quantidade de água gasta para produzir um alimento ou produto, mesmo que não vejamos essa água diretamente." data-tip="">É a quantidade de água gasta para produzir um alimento ou produto, mesmo que não a vejamos diretamente</button>
-    <button class="opt-btn" data-q="q16" data-correct="false" data-msg="Errado! A água virtual existe em qualquer país que produz alimentos, inclusive no Brasil." data-tip="💡 Pense em quantos litros de água são usados para produzir 1 kg de batata.">Só existe em outros países</button>
-  </div>
-  <div class="feedback" id="fb-q16"></div>
-</div>
-
-<!-- Q17 blank -->
-<div class="card" id="q17">
-  <div class="q-num">17</div><span class="q-type">Tipos de água</span>
-  <div class="q-text">A água absorvida pelas raízes das plantas, disponível no solo, é chamada de água <strong>______</strong>.</div>
-  <input type="text" class="blank-input" id="inp-q17" placeholder="Digite a cor...">
-  <button class="check-btn" id="btn-q17">Verificar resposta</button>
-  <div class="feedback" id="fb-q17"></div>
-</div>
-
-<!-- Q18 -->
-<div class="card" id="q18">
-  <div class="q-num">18</div><span class="q-type">Energia</span>
-  <div class="q-text">Qual é a função das hidrelétricas na sociedade?</div>
-  <div class="options">
-    <button class="opt-btn" data-q="q18" data-correct="false" data-msg="Errado! Irrigar plantações não é a função das hidrelétricas." data-tip="💡 Pense na palavra 'hidrelétrica' — tem 'elétrica' dentro dela!">Irrigar plantações de arroz</button>
-    <button class="opt-btn" data-q="q18" data-correct="true" data-msg="Isso mesmo! As hidrelétricas geram energia elétrica a partir da força da água." data-tip="">Gerar energia elétrica a partir da força da água</button>
-    <button class="opt-btn" data-q="q18" data-correct="false" data-msg="Errado! Fabricar tecidos não é a função das hidrelétricas." data-tip="💡 Pense na palavra 'hidrelétrica' — tem 'elétrica' dentro dela!">Fabricar tecidos e roupas</button>
-  </div>
-  <div class="feedback" id="fb-q18"></div>
-</div>
-
-<!-- Q19 reflection -->
-<div class="card reflect" id="q19">
-  <div class="q-num">19</div><span class="q-type">💭 Reflexão (não conta ponto)</span>
-  <div class="q-text">Na sua opinião, por que é importante cuidar da água mesmo ela parecendo "infinita" quando sai da torneira?</div>
-  <textarea class="blank-input" id="inp-q19" placeholder="Escreva sua resposta..."></textarea>
-  <button class="check-btn" id="btn-q19">Ver sugestão de resposta</button>
-  <div class="feedback" id="fb-q19"></div>
-</div>
-
-<!-- Q20 reflection -->
-<div class="card reflect" id="q20">
-  <div class="q-num">20</div><span class="q-type">💭 Reflexão (não conta ponto)</span>
-  <div class="q-text">Dê um exemplo de matéria-prima e o produto final que pode ser feito com ela.</div>
-  <textarea class="blank-input" id="inp-q20" placeholder="Escreva sua resposta..."></textarea>
-  <button class="check-btn" id="btn-q20">Ver sugestão de resposta</button>
-  <div class="feedback" id="fb-q20"></div>
-</div>
-
-<!-- Q21 reflection -->
-<div class="card reflect" id="q21">
-  <div class="q-num">21</div><span class="q-type">💭 Reflexão (não conta ponto)</span>
-  <div class="q-text">Cite uma atitude que você e sua família podem ter para economizar água ou energia em casa.</div>
-  <textarea class="blank-input" id="inp-q21" placeholder="Escreva sua resposta..."></textarea>
-  <button class="check-btn" id="btn-q21">Ver sugestão de resposta</button>
-  <div class="feedback" id="fb-q21"></div>
-</div>
-
+<div class="info-banner">💡 As questões de <strong>1 a 36</strong> valem ponto. As <strong>4 últimas</strong> são de reflexão (sem certo ou errado): é só conferir a sugestão!</div>
+<div class="score-bar"><span class="score-label">Pontuação</span><span class="score-num" id="scoreDisplay">0 / 36</span></div>
+<div class="card passage"><div class="q-type" style="margin:0">📖 Leitura 1 — O parque da vila</div><div class="q-text" style="margin-top:8px">Tom e Bia foram ao parque novo da cidade. Lá tinha ciclovia, academia ao ar livre e bancos para descansar. Bia lembrou que o parque foi construído com o dinheiro dos impostos, pagos por todos os cidadãos. Perto da academia, eles viram um banco quebrado e lixo espalhado. Tom disse: &quot;O parque é de todo mundo. Se estragar, todo mundo perde!&quot; Então os dois juntaram o lixo e avisaram a prefeitura sobre o banco quebrado.</div></div>
+<div class="card" id="q1" data-type="mc" data-ans="todos os cidadãos, por meio dos impostos" data-exp="O dinheiro dos impostos pagos por todos é usado para construir e manter os equipamentos públicos."><div class="q-num">1</div><span class="q-type">Leitura 1</span><div class="q-text">Quem pagou pelo parque?</div><div class="options"><button class="opt-btn" data-c="0">só o Tom e a Bia</button><button class="opt-btn" data-c="0">um mágico</button><button class="opt-btn" data-c="1">todos os cidadãos, por meio dos impostos</button></div><div class="feedback"></div></div>
+<div class="card" id="q2" data-type="mc" data-ans="equipamentos públicos" data-exp="Equipamentos públicos são feitos para uso de todos."><div class="q-num">2</div><span class="q-type">Leitura 1</span><div class="q-text">A ciclovia e a academia ao ar livre são exemplos de:</div><div class="options"><button class="opt-btn" data-c="0">necessidades básicas</button><button class="opt-btn" data-c="1">equipamentos públicos</button><button class="opt-btn" data-c="0">serviços privados</button></div><div class="feedback"></div></div>
+<div class="card" id="q3" data-type="bl" data-acc="cidadãos|cidadaos|cidadão|cidadao" data-ans="cidadãos" data-exp="Cuidar do que é de todos é um dever do cidadão."><div class="q-num">3</div><span class="q-type">Leitura 1</span><div class="q-text">Ao cuidar do parque, Tom e Bia agiram como bons <strong>______</strong>.</div><input type="text" class="blank-input" placeholder="Digite a resposta..."><button class="check-btn">Verificar resposta</button><div class="feedback"></div></div>
+<div class="card" id="q4" data-type="mc" data-ans="porque o parque é de todos e todos usam" data-exp="Equipamento público é de uso de todos, por isso todos devem cuidar."><div class="q-num">4</div><span class="q-type">Leitura 1</span><div class="q-text">Por que o Tom disse que, se o parque estragar, todo mundo perde?</div><div class="options"><button class="opt-btn" data-c="1">porque o parque é de todos e todos usam</button><button class="opt-btn" data-c="0">porque o parque é dele</button><button class="opt-btn" data-c="0">porque só ele usa o parque</button></div><div class="feedback"></div></div>
+<div class="card" id="q5" data-type="mc" data-ans="cidadania (cumprir deveres)" data-exp="Cidadania é conhecer direitos e cumprir deveres."><div class="q-num">5</div><span class="q-type">Leitura 1</span><div class="q-text">Juntar o lixo e avisar a prefeitura é um exemplo de:</div><div class="options"><button class="opt-btn" data-c="0">consumismo</button><button class="opt-btn" data-c="0">racionamento</button><button class="opt-btn" data-c="1">cidadania (cumprir deveres)</button></div><div class="feedback"></div></div>
+<div class="card passage"><div class="q-type" style="margin:0">📖 Leitura 2 — O aniversário do Davi</div><div class="q-text" style="margin-top:8px">Davi ganhou dinheiro de aniversário e quis comprar mais 5 carrinhos iguais aos que já tinha guardados no armário. Sua mãe lembrou que ele tinha muitos brinquedos que nunca usava e sugeriu doar alguns para crianças que não têm nenhum. Davi pensou melhor, fez uma lista do que realmente queria e comprou só uma coisa de que precisava: um caderno novo.</div></div>
+<div class="card" id="q6" data-type="mc" data-ans="consumismo" data-exp="Comprar coisas repetidas, sem necessidade, é sinal de consumismo."><div class="q-num">6</div><span class="q-type">Leitura 2</span><div class="q-text">Quando o Davi quis comprar mais 5 carrinhos iguais aos que já tinha, ele estava perto do:</div><div class="options"><button class="opt-btn" data-c="0">racionamento</button><button class="opt-btn" data-c="0">consumo consciente</button><button class="opt-btn" data-c="1">consumismo</button></div><div class="feedback"></div></div>
+<div class="card" id="q7" data-type="mc" data-ans="doar os brinquedos que ele não usava mais" data-exp="Doar ajuda quem precisa e evita o desperdício."><div class="q-num">7</div><span class="q-type">Leitura 2</span><div class="q-text">A melhor ideia da mãe foi:</div><div class="options"><button class="opt-btn" data-c="0">jogar tudo fora</button><button class="opt-btn" data-c="1">doar os brinquedos que ele não usava mais</button><button class="opt-btn" data-c="0">esconder os brinquedos para sempre</button></div><div class="feedback"></div></div>
+<div class="card" id="q8" data-type="mc" data-ans="não — necessidades básicas são coisas como comida, água e moradia" data-exp="Brinquedos são legais, mas não são necessidade básica."><div class="q-num">8</div><span class="q-type">Leitura 2</span><div class="q-text">Brinquedo novo é uma necessidade básica?</div><div class="options"><button class="opt-btn" data-c="0">sim, igual à comida</button><button class="opt-btn" data-c="0">sim, sem brinquedo ninguém vive</button><button class="opt-btn" data-c="1">não — necessidades básicas são coisas como comida, água e moradia</button></div><div class="feedback"></div></div>
+<div class="card" id="q9" data-type="bl" data-acc="solidário|solidario|solidária|solidaria" data-ans="solidário" data-exp="Solidário é quem pensa nos outros e ajuda."><div class="q-num">9</div><span class="q-type">Leitura 2</span><div class="q-text">Doar o que não usamos é um jeito de ser <strong>______</strong>.</div><input type="text" class="blank-input" placeholder="Digite a resposta..."><button class="check-btn">Verificar resposta</button><div class="feedback"></div></div>
+<div class="card" id="q10" data-type="mc" data-ans="a compra por impulso" data-exp="A lista mostra o que realmente é necessário."><div class="q-num">10</div><span class="q-type">Leitura 2</span><div class="q-text">Fazer uma lista antes de comprar ajuda a evitar:</div><div class="options"><button class="opt-btn" data-c="1">a compra por impulso</button><button class="opt-btn" data-c="0">a doação</button><button class="opt-btn" data-c="0">o saneamento</button></div><div class="feedback"></div></div>
+<div class="card" id="q11" data-type="mc" data-ans="Norte" data-exp="Norte: chove muito, mas a água potável é de difícil acesso em muitos locais."><div class="q-num">11</div><span class="q-type">Regiões e a água</span><div class="q-text">Região mais chuvosa do país, com os rios de maior extensão, mas com muitos locais sem saneamento e água potável de difícil acesso:</div><div class="options"><button class="opt-btn" data-c="0">Nordeste</button><button class="opt-btn" data-c="1">Norte</button><button class="opt-btn" data-c="0">Sul</button></div><div class="feedback"></div></div>
+<div class="card" id="q12" data-type="mc" data-ans="Nordeste" data-exp="No Nordeste, o clima favorece a seca em algumas partes."><div class="q-num">12</div><span class="q-type">Regiões e a água</span><div class="q-text">Em algumas partes dessa região o clima é seco e muita gente sofre com falta de água tratada e saneamento:</div><div class="options"><button class="opt-btn" data-c="0">Sul</button><button class="opt-btn" data-c="0">Sudeste</button><button class="opt-btn" data-c="1">Nordeste</button></div><div class="feedback"></div></div>
+<div class="card" id="q13" data-type="mc" data-ans="Centro-Oeste" data-exp="No Centro-Oeste, o uso agropecuário prejudica o fornecimento para a população."><div class="q-num">13</div><span class="q-type">Regiões e a água</span><div class="q-text">Região em que grande parte da água é usada na agricultura e na pecuária, e o Pantanal tem cada vez menos água:</div><div class="options"><button class="opt-btn" data-c="1">Centro-Oeste</button><button class="opt-btn" data-c="0">Sul</button><button class="opt-btn" data-c="0">Norte</button></div><div class="feedback"></div></div>
+<div class="card" id="q14" data-type="mc" data-ans="Sudeste" data-exp="Sudeste: muita gente e muita atividade poluente."><div class="q-num">14</div><span class="q-type">Regiões e a água</span><div class="q-text">Região em que, no inverno e em períodos sem chuva, é preciso racionar; superpopulação e atividades poluentes causam desperdício e contaminação:</div><div class="options"><button class="opt-btn" data-c="1">Sudeste</button><button class="opt-btn" data-c="0">Norte</button><button class="opt-btn" data-c="0">Nordeste</button></div><div class="feedback"></div></div>
+<div class="card" id="q15" data-type="mc" data-ans="Sul" data-exp="Sul: bons índices, mas a agricultura intensa e a seca exigem racionamento."><div class="q-num">15</div><span class="q-type">Regiões e a água</span><div class="q-text">Região com os melhores índices de saneamento e abastecimento, mas que também racionaliza em períodos de seca por causa da agricultura intensa:</div><div class="options"><button class="opt-btn" data-c="1">Sul</button><button class="opt-btn" data-c="0">Norte</button><button class="opt-btn" data-c="0">Centro-Oeste</button></div><div class="feedback"></div></div>
+<div class="card" id="q16" data-type="mc" data-ans="que ela precisa ser usada com cuidado em todo o país" data-exp="Em todo o Brasil é preciso cuidar da água."><div class="q-num">16</div><span class="q-type">Regiões e a água</span><div class="q-text">O que todas as regiões mostram sobre a água?</div><div class="options"><button class="opt-btn" data-c="1">que ela precisa ser usada com cuidado em todo o país</button><button class="opt-btn" data-c="0">que só o Norte precisa economizar</button><button class="opt-btn" data-c="0">que o Brasil tem água demais pra se preocupar</button></div><div class="feedback"></div></div>
+<div class="card" id="q17" data-type="mc" data-ans="1 pessoa" data-exp="1 a cada 4 pessoas não tem acesso à água potável."><div class="q-num">17</div><span class="q-type">Água</span><div class="q-text">A cada 4 pessoas no planeta, quantas não têm acesso à água potável?</div><div class="options"><button class="opt-btn" data-c="0">nenhuma</button><button class="opt-btn" data-c="0">3 pessoas</button><button class="opt-btn" data-c="1">1 pessoa</button></div><div class="feedback"></div></div>
+<div class="card" id="q18" data-type="mc" data-ans="Verdadeiro" data-exp="O saneamento básico é um direito garantido pela Constituição Federal e instituído pela lei nº 11.445/2007."><div class="q-num">18</div><span class="q-type">Verdadeiro ou falso</span><div class="q-text">Verdadeiro ou falso: o saneamento básico é um direito garantido pela Constituição.</div><div class="options"><button class="opt-btn" data-c="1">Verdadeiro</button><button class="opt-btn" data-c="0">Falso</button></div><div class="feedback"></div></div>
+<div class="card" id="q19" data-type="mc" data-ans="Falso" data-exp="Ela é despejada direto nos rios, pois não precisa de tratamento."><div class="q-num">19</div><span class="q-type">Verdadeiro ou falso</span><div class="q-text">Verdadeiro ou falso: a água da chuva da rede pluvial passa por tratamento antes de ir para os rios.</div><div class="options"><button class="opt-btn" data-c="0">Verdadeiro</button><button class="opt-btn" data-c="1">Falso</button></div><div class="feedback"></div></div>
+<div class="card" id="q20" data-type="mc" data-ans="Verdadeiro" data-exp="O artigo 208 da Constituição estabelece que a educação é dever do Estado."><div class="q-num">20</div><span class="q-type">Verdadeiro ou falso</span><div class="q-text">Verdadeiro ou falso: oferecer educação é dever do Estado.</div><div class="options"><button class="opt-btn" data-c="1">Verdadeiro</button><button class="opt-btn" data-c="0">Falso</button></div><div class="feedback"></div></div>
+<div class="card" id="q21" data-type="mc" data-ans="Falso" data-exp="O cidadão tem direito de saber e fiscalizar."><div class="q-num">21</div><span class="q-type">Verdadeiro ou falso</span><div class="q-text">Verdadeiro ou falso: quem paga impostos não tem direito de saber como o dinheiro público é usado.</div><div class="options"><button class="opt-btn" data-c="0">Verdadeiro</button><button class="opt-btn" data-c="1">Falso</button></div><div class="feedback"></div></div>
+<div class="card" id="q22" data-type="mc" data-ans="Falso" data-exp="Consumir faz parte da vida. O problema é o excesso (consumismo) e o desperdício."><div class="q-num">22</div><span class="q-type">Verdadeiro ou falso</span><div class="q-text">Verdadeiro ou falso: consumir é sempre errado, ninguém deveria consumir nada.</div><div class="options"><button class="opt-btn" data-c="0">Verdadeiro</button><button class="opt-btn" data-c="1">Falso</button></div><div class="feedback"></div></div>
+<div class="card" id="q23" data-type="mc" data-ans="desperdício de energia" data-exp="Luz acesa sem necessidade gasta energia à toa."><div class="q-num">23</div><span class="q-type">Desperdício</span><div class="q-text">Postes de luz acesos durante o dia mostram:</div><div class="options"><button class="opt-btn" data-c="0">consumo consciente</button><button class="opt-btn" data-c="1">desperdício de energia</button><button class="opt-btn" data-c="0">economia de energia</button></div><div class="feedback"></div></div>
+<div class="card" id="q24" data-type="mc" data-ans="desperdício de água" data-exp="Usar mais água do que o necessário é desperdício."><div class="q-num">24</div><span class="q-type">Desperdício</span><div class="q-text">Uma mangueira jogando água na rua para lavar o carro por muito tempo mostra:</div><div class="options"><button class="opt-btn" data-c="0">racionamento</button><button class="opt-btn" data-c="1">desperdício de água</button><button class="opt-btn" data-c="0">uso consciente da água</button></div><div class="feedback"></div></div>
+<div class="card" id="q25" data-type="mc" data-ans="instalando sensores que acendem só quando escurece" data-exp="Sensores de luz economizam energia."><div class="q-num">25</div><span class="q-type">Desperdício</span><div class="q-text">Como a prefeitura pode evitar postes acesos de dia?</div><div class="options"><button class="opt-btn" data-c="1">instalando sensores que acendem só quando escurece</button><button class="opt-btn" data-c="0">ligando mais postes de dia</button><button class="opt-btn" data-c="0">tirando todos os postes</button></div><div class="feedback"></div></div>
+<div class="card" id="q26" data-type="mc" data-ans="transporte, saneamento, energia elétrica e telecomunicações" data-exp="Infraestrutura: transporte, saneamento, energia, telecomunicações e serviços de emergência."><div class="q-num">26</div><span class="q-type">Infraestrutura</span><div class="q-text">Qual lista traz só serviços de infraestrutura básica?</div><div class="options"><button class="opt-btn" data-c="0">praça, brinquedo, sorvete e festa</button><button class="opt-btn" data-c="0">tênis, mochila, caderno e lápis</button><button class="opt-btn" data-c="1">transporte, saneamento, energia elétrica e telecomunicações</button></div><div class="feedback"></div></div>
+<div class="card" id="q27" data-type="mc" data-ans="os governantes eleitos, pensando no bem da sociedade" data-exp="Os governantes eleitos tomam decisões para promover qualidade de vida."><div class="q-num">27</div><span class="q-type">Impostos</span><div class="q-text">Quem decide construir uma praça nova com o dinheiro dos impostos?</div><div class="options"><button class="opt-btn" data-c="0">uma empresa sorteada</button><button class="opt-btn" data-c="0">qualquer criança sozinha</button><button class="opt-btn" data-c="1">os governantes eleitos, pensando no bem da sociedade</button></div><div class="feedback"></div></div>
+<div class="card" id="q28" data-type="mc" data-ans="direta" data-exp="Quem recebe salário e paga imposto sobre ele é contribuinte direto."><div class="q-num">28</div><span class="q-type">Impostos</span><div class="q-text">Quando a criança completar 18 anos e começar a trabalhar, será contribuinte:</div><div class="options"><button class="opt-btn" data-c="0">nunca</button><button class="opt-btn" data-c="0">só indireta</button><button class="opt-btn" data-c="1">direta</button></div><div class="feedback"></div></div>
+<div class="card" id="q29" data-type="mc" data-ans="permitem que a pessoa viva com dignidade" data-exp="Direitos essenciais precisam estar à disposição de todos."><div class="q-num">29</div><span class="q-type">Serviços essenciais</span><div class="q-text">Saúde, educação e segurança são serviços essenciais porque:</div><div class="options"><button class="opt-btn" data-c="1">permitem que a pessoa viva com dignidade</button><button class="opt-btn" data-c="0">são só para quem tem dinheiro</button><button class="opt-btn" data-c="0">dão lucro ao governo</button></div><div class="feedback"></div></div>
+<div class="card" id="q30" data-type="mc" data-ans="11.445/2007" data-exp="Lei nº 11.445/2007."><div class="q-num">30</div><span class="q-type">Saneamento</span><div class="q-text">O saneamento básico foi instituído pela lei nº:</div><div class="options"><button class="opt-btn" data-c="0">1.234/2020</button><button class="opt-btn" data-c="0">5.000/1900</button><button class="opt-btn" data-c="1">11.445/2007</button></div><div class="feedback"></div></div>
+<div class="card" id="q31" data-type="mc" data-ans="&quot;Compro o que preciso, uso com cuidado e doo o que não uso.&quot;" data-exp="Consciente = pensar antes de comprar, cuidar e doar."><div class="q-num">31</div><span class="q-type">Consumo consciente</span><div class="q-text">Qual frase mostra melhor o consumo consciente?</div><div class="options"><button class="opt-btn" data-c="0">&quot;Compro tudo o que vejo na propaganda.&quot;</button><button class="opt-btn" data-c="1">&quot;Compro o que preciso, uso com cuidado e doo o que não uso.&quot;</button><button class="opt-btn" data-c="0">&quot;Compro e jogo fora quando enjoo.&quot;</button></div><div class="feedback"></div></div>
+<div class="card" id="q32" data-type="mc" data-ans="solidariedade" data-exp="Solidariedade é pensar nos outros e ajudar."><div class="q-num">32</div><span class="q-type">Solidariedade</span><div class="q-text">Pensar que tem gente que gostaria de estar no nosso lugar ajuda a desenvolver:</div><div class="options"><button class="opt-btn" data-c="0">desperdício</button><button class="opt-btn" data-c="1">solidariedade</button><button class="opt-btn" data-c="0">consumismo</button></div><div class="feedback"></div></div>
+<div class="card" id="q33" data-type="mc" data-ans="Judas, que reclamou do &quot;desperdício&quot; pensando em si" data-exp="Maria usou algo valioso por amor e gratidão; Judas reclamou, mas pensava em si mesmo."><div class="q-num">33</div><span class="q-type">Para pensar</span><div class="q-text">No texto bíblico de João 12, quem agiu de forma egoísta, segundo a reflexão do livro?</div><div class="options"><button class="opt-btn" data-c="0">Maria, que usou o perfume para honrar Jesus</button><button class="opt-btn" data-c="0">Jesus</button><button class="opt-btn" data-c="1">Judas, que reclamou do &quot;desperdício&quot; pensando em si</button></div><div class="feedback"></div></div>
+<div class="card" id="q34" data-type="mc" data-ans="tenha atitudes de desperdício" data-exp="Muitos &quot;sim&quot; mostram hábitos de desperdício."><div class="q-num">34</div><span class="q-type">Desperdício</span><div class="q-text">Se a maioria das respostas de uma entrevista sobre desperdício for &quot;sim&quot; (joga comida fora, deixa luz ligada...), é provável que a pessoa:</div><div class="options"><button class="opt-btn" data-c="0">nunca desperdice nada</button><button class="opt-btn" data-c="1">tenha atitudes de desperdício</button><button class="opt-btn" data-c="0">seja muito econômica</button></div><div class="feedback"></div></div>
+<div class="card" id="q35" data-type="mc" data-ans="pegar só a comida que vai comer e apagar a luz ao sair" data-exp="Pequenas atitudes diárias evitam o desperdício."><div class="q-num">35</div><span class="q-type">Desperdício</span><div class="q-text">Qual conselho é melhor pra quem desperdiça?</div><div class="options"><button class="opt-btn" data-c="1">pegar só a comida que vai comer e apagar a luz ao sair</button><button class="opt-btn" data-c="0">deixar tudo ligado</button><button class="opt-btn" data-c="0">colocar mais comida no prato pra sobrar</button></div><div class="feedback"></div></div>
+<div class="card" id="q36" data-type="bl" data-acc="consciente" data-ans="consciente" data-exp="Consumo consciente é usar com sabedoria e responsabilidade."><div class="q-num">36</div><span class="q-type">Consumo consciente</span><div class="q-text">Usar a água sem desperdício é um jeito de fazer consumo <strong>______</strong>.</div><input type="text" class="blank-input" placeholder="Digite a resposta..."><button class="check-btn">Verificar resposta</button><div class="feedback"></div></div>
+<div class="card reflect" id="q37" data-type="rf" data-model="Sugestão: não jogar lixo no chão, não riscar nem quebrar bancos e brinquedos, avisar a prefeitura quando algo estragar e ensinar os amigos a cuidar também."><div class="q-num">37</div><span class="q-type">💭 Reflexão (não conta ponto)</span><div class="q-text">Escreva 3 atitudes que você pode ter pra cuidar dos equipamentos públicos do seu bairro (praça, ponto de ônibus, ruas...).</div><textarea class="blank-input" placeholder="Escreva sua resposta..."></textarea><button class="check-btn">Ver sugestão de resposta</button><div class="feedback"></div></div>
+<div class="card reflect" id="q38" data-type="rf" data-model="Sugestão: consumo é usar ou gastar algo; consumidor é quem compra e usa; consumismo é comprar demais, sem necessidade, só por vontade."><div class="q-num">38</div><span class="q-type">💭 Reflexão (não conta ponto)</span><div class="q-text">Explique com suas palavras a diferença entre consumo, consumidor e consumismo.</div><textarea class="blank-input" placeholder="Escreva sua resposta..."></textarea><button class="check-btn">Ver sugestão de resposta</button><div class="feedback"></div></div>
+<div class="card reflect" id="q39" data-type="rf" data-model="Sugestão: a água tratada fica potável e evita doenças; o esgoto tratado devolve a água limpa à natureza e não polui os rios."><div class="q-num">39</div><span class="q-type">💭 Reflexão (não conta ponto)</span><div class="q-text">Por que o tratamento da água e do esgoto é importante pra uma cidade?</div><textarea class="blank-input" placeholder="Escreva sua resposta..."></textarea><button class="check-btn">Ver sugestão de resposta</button><div class="feedback"></div></div>
+<div class="card reflect" id="q40" data-type="rf" data-model="Sugestão: qualquer resposta bem explicada vale — por exemplo, mais ciclovias para andar com segurança, ou mais coleta seletiva para reciclar o lixo."><div class="q-num">40</div><span class="q-type">💭 Reflexão (não conta ponto)</span><div class="q-text">Qual serviço ou infraestrutura você gostaria que existisse (ou melhorasse) na sua cidade? Por quê?</div><textarea class="blank-input" placeholder="Escreva sua resposta..."></textarea><button class="check-btn">Ver sugestão de resposta</button><div class="feedback"></div></div>
 <button class="finish-btn" id="finishBtn">Ver meu resultado 🎉</button>
-
-<div class="result-panel" id="resultPanel">
-  <div class="result-big" id="resultEmoji">🎉</div>
-  <div class="result-grade" id="resultGrade"></div>
-  <div class="result-grade-label" style="font-size:0.75rem;opacity:0.55;margin-bottom:2px;">pontos</div>
-  <div class="result-grade-label" id="resultGradeLabel"></div>
-  <div class="result-msg" id="resultMsg"></div>
-  <div class="result-score" id="resultScore"></div>
-  <div class="result-actions">
-    <button class="retry-btn" onclick="location.reload()">Tentar de novo 🔄</button>
-    <a href="gabarito.html" class="gabarito-link">📋 Ver Gabarito</a>
-  </div>
+<div class="result-panel" id="resultPanel"><div class="result-big" id="resultEmoji">🎉</div><div class="result-grade" id="resultGrade"></div>
+<div class="result-grade-label">pontos</div><div class="result-grade-label" id="resultGradeLabel"></div><div class="result-msg" id="resultMsg"></div><div class="result-score" id="resultScore"></div>
+<div class="result-actions"><button class="retry-btn" onclick="location.reload()">Tentar de novo 🔄</button><a href="gabarito.html" class="gabarito-link">📋 Ver Gabarito</a></div></div>
+<div class="bottom-nav"><a href="nivel2_intermediario.html">← Voltar</a><a href="index.html" style="flex:.5">🏠</a><a class="nx" href="gabarito.html">Avançar →</a></div>
 </div>
-
-<div class="bottom-nav">
-  <a href="nivel2_intermediario.html" class="btn-prev">← Nível 2</a>
-  <a href="index.html" class="btn-home-only">🏠</a>
-  <a href="gabarito.html" class="btn-next">📋 Gabarito →</a>
-</div>
-</div>
-
 <div class="credit">Desenvolvido por <strong>Jhony Beraldo</strong></div>
-
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
 <script>
+var total = 36, score = 0;
+function norm(s){ return (s||'').toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g,'').replace(/[^a-z0-9 ]/g,'').replace(/\s+/g,' ').trim(); }
+function upd(){ document.getElementById('scoreDisplay').textContent = score + ' / ' + total; }
+document.querySelectorAll('.card[data-type="mc"]').forEach(function(card){
+  var fb = card.querySelector('.feedback');
+  card.querySelectorAll('.opt-btn').forEach(function(b){
+    b.addEventListener('click', function(){
+      if (card.getAttribute('data-done')) return;
+      card.setAttribute('data-done','1');
+      card.querySelectorAll('.opt-btn').forEach(function(x){ x.classList.add('disabled'); if (x.getAttribute('data-c')==='1') x.classList.add('correct'); });
+      if (b.getAttribute('data-c')==='1') { score++; upd(); fb.innerHTML = '✅ <b>Isso mesmo!</b> ' + card.getAttribute('data-exp'); fb.className = 'feedback show ok'; }
+      else { b.classList.add('wrong'); fb.innerHTML = '❌ <b>Quase!</b> A resposta certa é: <b>' + card.getAttribute('data-ans') + '</b>.<br>' + card.getAttribute('data-exp'); fb.className = 'feedback show nok'; }
+    });
+  });
+});
+document.querySelectorAll('.card[data-type="bl"]').forEach(function(card){
+  var btn = card.querySelector('.check-btn'), inp = card.querySelector('input'), fb = card.querySelector('.feedback');
+  btn.addEventListener('click', function(){
+    if (card.getAttribute('data-done')) return;
+    card.setAttribute('data-done','1'); btn.disabled = true;
+    var accs = card.getAttribute('data-acc').split('|').map(norm);
+    if (accs.indexOf(norm(inp.value)) !== -1) { score++; upd(); inp.classList.add('correct-input'); fb.innerHTML = '✅ <b>Isso mesmo!</b> ' + card.getAttribute('data-exp'); fb.className = 'feedback show ok'; }
+    else { inp.classList.add('wrong-input'); fb.innerHTML = '❌ <b>Quase!</b> A resposta certa é: <b>' + card.getAttribute('data-ans') + '</b>.<br>' + card.getAttribute('data-exp'); fb.className = 'feedback show nok'; }
+  });
+});
+document.querySelectorAll('.card[data-type="rf"]').forEach(function(card){
+  var btn = card.querySelector('.check-btn'), fb = card.querySelector('.feedback');
+  btn.addEventListener('click', function(){ btn.disabled = true; fb.innerHTML = '💡 ' + card.getAttribute('data-model'); fb.className = 'feedback show model'; });
+});
+document.getElementById('finishBtn').addEventListener('click', function(){
+  var panel = document.getElementById('resultPanel'); panel.classList.add('show');
+  var p = Math.round(score / total * 100), e, m, l;
+  if (p === 100) { e='🏆'; m='Perfeito! Você arrasou!'; l='PERFEITO!'; }
+  else if (p >= 90) { e='🎉'; m='Quase perfeito, continue assim!'; l='EXCELENTE!'; }
+  else if (p >= 75) { e='😄'; m='Muito bem! Você está dominando!'; l='MUITO BOM!'; }
+  else if (p >= 60) { e='😊'; m='Bom! Leia as explicações e tente de novo.'; l='BOM!'; }
+  else if (p >= 40) { e='💪'; m='Continue! Releia o resumo e tente outra vez.'; l='PODE MAIS!'; }
+  else { e='📚'; m='Sem desistir! Leia o resumo com calma e tente de novo. 💛'; l='ESTUDE MAIS!'; }
+  document.getElementById('resultEmoji').textContent = e;
+  document.getElementById('resultGrade').textContent = score + ' / ' + total;
+  document.getElementById('resultGradeLabel').textContent = l;
+  document.getElementById('resultMsg').textContent = m;
+  document.getElementById('resultScore').textContent = 'Você acertou ' + score + ' de ' + total + ' questões.';
+  panel.scrollIntoView({ behavior: 'smooth' });
+});
+
 function downloadPDF() {
   var btn = document.getElementById('pdfBtn');
   var originalText = btn.textContent;
   btn.textContent = '⏳ Gerando PDF...';
   btn.disabled = true;
   document.body.classList.add('pdf-export');
-  var opt = {
-    margin: 12,
-    filename: 'Geografia_Nivel3_Avancado.pdf',
-    image: { type: 'jpeg', quality: 0.98 },
-    html2canvas: { scale: 2, useCORS: true },
-    jsPDF: { unit: 'mm', format: 'a4', orientation: 'portrait' },
-    pagebreak: { mode: ['css', 'legacy'] }
-  };
+  var opt = { margin: 12, filename: 'Geografia_Nivel3_Avancado.pdf', image: { type: 'jpeg', quality: 0.98 },
+    html2canvas: { scale: 2, useCORS: true }, jsPDF: { unit: 'mm', format: 'a4', orientation: 'portrait' },
+    pagebreak: { mode: ['css', 'legacy'] } };
   html2pdf().set(opt).from(document.body).save().then(function() {
-    document.body.classList.remove('pdf-export');
-    btn.textContent = originalText;
-    btn.disabled = false;
+    document.body.classList.remove('pdf-export'); btn.textContent = originalText; btn.disabled = false;
   }).catch(function(err) {
-    document.body.classList.remove('pdf-export');
-    btn.textContent = originalText;
-    btn.disabled = false;
+    document.body.classList.remove('pdf-export'); btn.textContent = originalText; btn.disabled = false;
     alert('Nao foi possivel gerar o PDF. Tente novamente.');
   });
 }
 
-var score = 0;
-var answered = {};
-var total = 18;
-
-var blankCfg = {
-  'q2':  { accepts: ['azul'], ok: 'Isso mesmo! Água azul vem de rios, lagos, represas e chuvas.', nok: 'A resposta correta é: azul.', tip: '💡 Pense na cor do céu e dos rios!' },
-  'q5':  { accepts: ['mananciais','manancial'], ok: 'Isso mesmo! Mananciais são as reservas de água da Terra.', nok: 'A resposta correta é: mananciais.', tip: '💡 A palavra lembra "manar", que é jorrar água.' },
-  'q8':  { accepts: ['hidreletrica','hidrelétrica','hidraulica','hidráulica'], ok: 'Isso mesmo! A energia gerada pela força da água é a energia hidrelétrica.', nok: 'A resposta correta é: hidrelétrica.', tip: '💡 Pense na Usina de Itaipu!' },
-  'q11': { accepts: ['artesanato'], ok: 'Isso mesmo! Artesanato é o trabalho manual que produz peças únicas.', nok: 'A resposta correta é: artesanato.', tip: '💡 Pense em quem faz potes de cerâmica ou cestos à mão.' },
-  'q14': { accepts: ['solo'], ok: 'Isso mesmo! A exploração sem cuidado pode causar perda de fertilidade do solo.', nok: 'A resposta correta é: solo.', tip: '💡 Pense na terra onde as plantas crescem.' },
-  'q17': { accepts: ['verde'], ok: 'Isso mesmo! Água verde é absorvida pelas raízes das plantas.', nok: 'A resposta correta é: verde.', tip: '💡 Pense na cor das folhas!' },
-};
-
-var reflectionModel = {
-  'q19': 'Sugestão: a água doce que podemos beber e usar é uma parte muito pequena da água do planeta. Se ela for desperdiçada ou poluída, pode faltar para as pessoas, os animais e as plantas no futuro.',
-  'q20': 'Sugestão: o algodão (matéria-prima) é usado para fazer roupas (produto final). Outros exemplos: madeira → móveis; argila → potes de cerâmica; milho → pamonha.',
-  'q21': 'Sugestão: respostas pessoais! Exemplos: fechar a torneira ao escovar os dentes, tomar banhos mais rápidos, apagar as luzes ao sair do quarto, desligar aparelhos que não estão em uso.'
-};
-
-function showFeedback(qid, isCorrect, okMsg, nokMsg, tipMsg) {
-  var fb = document.getElementById('fb-' + qid);
-  if (isCorrect) {
-    fb.innerHTML = '<span class="fb-answer">✅ ' + okMsg + '</span>';
-    fb.className = 'feedback show ok';
-  } else {
-    fb.innerHTML = '<span class="fb-answer">❌ ' + nokMsg + '</span>' + (tipMsg ? '<span class="fb-tip">' + tipMsg + '</span>' : '');
-    fb.className = 'feedback show nok';
-  }
-}
-
-document.querySelectorAll('.opt-btn').forEach(function(btn) {
-  btn.addEventListener('click', function() {
-    var qid = btn.dataset.q;
-    if (answered[qid]) return;
-    answered[qid] = true;
-    var correct = btn.dataset.correct === 'true';
-    document.getElementById(qid).querySelectorAll('.opt-btn').forEach(function(b) { b.classList.add('disabled'); });
-    if (correct) {
-      btn.classList.add('correct'); score++;
-      document.getElementById('scoreDisplay').textContent = score + ' / ' + total;
-      showFeedback(qid, true, btn.dataset.msg, '', '');
-    } else {
-      btn.classList.add('wrong');
-      showFeedback(qid, false, '', btn.dataset.msg, btn.dataset.tip);
-    }
-  });
-});
-
-Object.keys(blankCfg).forEach(function(qid) {
-  var btn = document.getElementById('btn-' + qid);
-  if (!btn) return;
-  btn.addEventListener('click', function() {
-    if (answered[qid]) return;
-    answered[qid] = true;
-    btn.disabled = true;
-    var inp = document.getElementById('inp-' + qid);
-    var val = inp.value.trim().toLowerCase().replace(/[.!?]$/, '');
-    var cfg = blankCfg[qid];
-    if (cfg.accepts.indexOf(val) !== -1) {
-      inp.classList.add('correct-input'); score++;
-      document.getElementById('scoreDisplay').textContent = score + ' / ' + total;
-      showFeedback(qid, true, cfg.ok, '', '');
-    } else {
-      inp.classList.add('wrong-input');
-      showFeedback(qid, false, '', cfg.nok, cfg.tip);
-    }
-  });
-});
-
-['q19','q20','q21'].forEach(function(qid) {
-  var btn = document.getElementById('btn-' + qid);
-  btn.addEventListener('click', function() {
-    btn.disabled = true;
-    var fb = document.getElementById('fb-' + qid);
-    fb.innerHTML = '<span class="fb-answer">💡 ' + reflectionModel[qid] + '</span>';
-    fb.className = 'feedback show model';
-  });
-});
-
-document.getElementById('finishBtn').addEventListener('click', function() {
-  var panel = document.getElementById('resultPanel');
-  panel.classList.add('show');
-  var nota = Math.round((score / total) * 100);
-  var emoji, msg, gradeLabel;
-  if (nota === 100)     { emoji = '🏆'; msg = 'Sensacional! Você dominou o nível avançado! 🌟'; gradeLabel = 'PERFEITO!'; }
-  else if (nota >= 90)  { emoji = '🎉'; msg = 'Incrível! Quase perfeito, mande ver na prova! 💪'; gradeLabel = 'EXCELENTE!'; }
-  else if (nota >= 75)  { emoji = '😄'; msg = 'Muito bem! Você está pronta(o) para a prova! 🎯'; gradeLabel = 'MUITO BOM!'; }
-  else if (nota >= 60)  { emoji = '😊'; msg = 'Bom trabalho! Revise as dicas e tente de novo!'; gradeLabel = 'BOM!'; }
-  else if (nota >= 40)  { emoji = '💪'; msg = 'Continue tentando! Releia o resumo com calma!'; gradeLabel = 'PODE MAIS!'; }
-  else                   { emoji = '📚'; msg = 'Não desista! Volte ao resumo e tente novamente! 💛'; gradeLabel = 'ESTUDE MAIS!'; }
-  document.getElementById('resultEmoji').textContent = emoji;
-  document.getElementById('resultGrade').textContent = score + ' / ' + total;
-  document.getElementById('resultGradeLabel').textContent = gradeLabel;
-  document.getElementById('resultMsg').textContent = msg;
-  document.getElementById('resultScore').textContent = 'Você acertou ' + score + ' de ' + total + ' questões que valem ponto.';
-  panel.scrollIntoView({ behavior: 'smooth' });
-});
-</script>
-</body>
-</html>
+</script></body></html>
